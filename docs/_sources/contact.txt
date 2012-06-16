@@ -32,6 +32,11 @@ To quickly get started:
     > /nick my-preferred-nickname (optional)
     > /join #freeseer
 
+.. tip::
+
+    Shortcuts exists, such as `/j` instead of `/join`.
+    To block activity messages in the room: `/ignore -channels #freeseer * JOINS
+    PARTS QUITS NICKS`. You can specificy more rooms by comma separating them.
 
 Twitter, Facebook, and Blog
 ---------------------------
@@ -42,8 +47,13 @@ You can also find Freeseer community members on various channels across the web:
 * Like `FOSSLC's Facebook Page <https://www.facebook.com/FreeAndOpenSourceSoftwareLearningCentre>`_
 * Read and comment on `FOSSLC's blog <http://www.fosslc.org/drupal/category/community/freeseer>`_
 
-  * The FOSSLC blog doesn't contain *all* Freeseer blog posts. Part of the Freeseer community prefers to blog about Freeseer on their personal blogs.
+.. seealso::
 
+    The FOSSLC blog doesn't contain *all* Freeseer blog posts.
+    Part of the Freeseer community prefers to blog about Freeseer on their
+    personal blogs.
+
+.. TODO: see IRC notes on http://code.google.com/p/google-summer-of-code/wiki/Irc
 
 Toll-free Phone Number
 ----------------------
@@ -54,7 +64,15 @@ If Andrew (our project leader) isn't available to answer the call, then you'll b
 We're thinking of setting up a system that forwards these voicemails to our mailing list. Stay tuned! 
 
 
-G+ Hangouts
+Google+ Hangouts
 -----------
 
-*TODO:* We're considering using Google+ Hangouts to host Freeseer meetups. Anyone will be welcome to join. Stay tuned!
+We occasionally use `Google+ Hangouts
+<http://www.google.com/+/learnmore/hangouts/>`_ for Freeseer meetings.
+
+Here's some tips for joining our next video chat:
+
+* Add `Andrew Ross <http://gplus.to/aross>`_ to your G+ circles, he leads the
+  discussion and starts the hangout.
+* Have a working webcam.
+* Have a headset (a dedicated microphone and headphones greatly improves audio quality).
