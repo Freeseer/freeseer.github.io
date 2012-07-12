@@ -53,6 +53,17 @@
             <p class="logo"><a href="../index.html">
               <img class="logo" src="../_static/freeseer_logo.png" alt="Logo"/>
             </a></p>
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Record</a><ul>
+<li><a class="reference internal" href="#report-tool">Report Tool</a><ul>
+<li><a class="reference internal" href="#using-the-report-tool">Using the Report Tool</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
   <h4>Previous topic</h4>
   <p class="topless"><a href="index.html"
                         title="previous chapter">User Guide</a></p>
@@ -87,7 +98,54 @@
             
   <div class="section" id="record">
 <h1>Record<a class="headerlink" href="#record" title="Permalink to this headline">¶</a></h1>
-<p><em>TODO: freeseer-record</em></p>
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">Todo</p>
+<p class="last">document freeseer-record</p>
+</div>
+<div class="section" id="report-tool">
+<h2>Report Tool<a class="headerlink" href="#report-tool" title="Permalink to this headline">¶</a></h2>
+<p>Issues can occasionally occur during a recording, such as the audio or video
+not working, or perhaps the presenter does not wish to be recorded. After a
+conference, it&#8217;s difficult and time consuming for one person to know which
+recordings have issues, especially if 100s of talks were recorded at the event.</p>
+<p>To solve this issue, Freeseer comes with a basic reporting tool that allows the
+person recording to report issues with their recordings inside the application.
+This will allow whomever is uploading the recordings to quickly scan through
+and find those which have issues.</p>
+<div class="section" id="using-the-report-tool">
+<h3>Using the Report Tool<a class="headerlink" href="#using-the-report-tool" title="Permalink to this headline">¶</a></h3>
+<p>To access the report tool:</p>
+<ol class="arabic simple">
+<li>Open <strong>freeseer-record</strong></li>
+<li>Click <strong>Help</strong> &gt; <strong>Report</strong></li>
+</ol>
+<div class="figure align-center">
+<img alt="../_images/reporttool.png" src="../_images/reporttool.png" />
+<p class="caption">A basic form will open for the currently selected talk.</p>
+</div>
+<p>The form has 3 fields which need to be assessed by the reporter.</p>
+<ol class="arabic simple">
+<li>A textfield for a short comment describing the issue</li>
+<li>A dropdown list containing options for the type of issue<ul>
+<li>Current options are &#8220;No Issue&#8221;, &#8220;No Audio&#8221;, &#8220;No Video&#8221;, and
+&#8220;No Audio/Video&#8221;</li>
+</ul>
+</li>
+<li>A checkbox indicating if a Release Form was received <a class="footnote-reference" href="#release" id="id1">[1]</a></li>
+</ol>
+<p>After an event is complete the organizer can use the <a class="reference internal" href="reporteditor.html#report-editor"><em>Report Editor</em></a> to
+view the submitted reports.</p>
+<p class="rubric">Footnotes</p>
+<table class="docutils footnote" frame="void" id="release" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>The &#8220;Release Received&#8221; checkbox was added since many events require
+presenters to sign a legal release form indicating they are giving permission
+to record their talk.</td></tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 
 
@@ -113,7 +171,7 @@
       </ul>
     </div>
     <div class="footer">
-        &copy; Copyright 2011, Dennis Ideler and the Freeseer community.
+        &copy; Copyright 2011-2012  Free and Open Source Software Learning Centre.
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.
     </div>
   </body>
