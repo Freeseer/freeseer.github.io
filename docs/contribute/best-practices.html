@@ -57,8 +57,9 @@
   <ul>
 <li><a class="reference internal" href="#">Best Practices</a><ul>
 <li><a class="reference internal" href="#don-t-develop-on-master-branch">Don&#8217;t Develop on Master Branch</a></li>
-<li><a class="reference internal" href="#branch-names">Branch Names</a></li>
-<li><a class="reference internal" href="#multi-tasking">Multi-tasking</a></li>
+<li><a class="reference internal" href="#name-your-branch-after-an-issue-or-task">Name Your Branch After an Issue or Task</a></li>
+<li><a class="reference internal" href="#start-a-new-task-on-a-new-branch">Start a New Task on a New Branch</a></li>
+<li><a class="reference internal" href="#properly-style-your-commit-messages">Properly Style Your Commit Messages</a></li>
 </ul>
 </li>
 </ul>
@@ -103,18 +104,61 @@
 It&#8217;s way too risky to include development code on it.
 Instead, base your development branch off Freeseer&#8217;s experimental or development branch.</p>
 </div>
-<div class="section" id="branch-names">
-<span id="id1"></span><h2>Branch Names<a class="headerlink" href="#branch-names" title="Permalink to this headline">¶</a></h2>
-<p>Try naming your development branch after the <a class="reference external" href="http://github.com/Freeseer/freeseer/issues">issue</a> you&#8217;re working on.
-Name it by issue # and description. For example, if you’re working on Issue #100, a new logo, your development branch should be called 100-new-logo.</p>
+<div class="section" id="name-your-branch-after-an-issue-or-task">
+<span id="branch-names"></span><h2>Name Your Branch After an Issue or Task<a class="headerlink" href="#name-your-branch-after-an-issue-or-task" title="Permalink to this headline">¶</a></h2>
+<p>If an <a class="reference external" href="http://github.com/Freeseer/freeseer/issues">issue exists</a> for the task
+you&#8217;re going to work on, name your new branch after the issue # and description.
+For example, if you’re working on Issue #100, a new logo, your branch name would
+be &#8220;100-new-logo&#8221;.</p>
+<p>If you&#8217;ll be working on a task which no issue exists for, consider creating an
+issue for it. If you decide to go issue-less, at least give your branch a
+descriptive name that matches the task you&#8217;ll be working on.</p>
 <div class="admonition-see-also admonition seealso">
 <p class="first admonition-title">See also</p>
-<p class="last">Want to <a class="reference external" href="basics.html#renaming-your-branch">rename your branch</a>?</p>
+<p class="last">Could your branch name be improved?
+<a class="reference external" href="basics.html#renaming-your-branch">Rename your branch!</a></p>
 </div>
 </div>
-<div class="section" id="multi-tasking">
-<h2>Multi-tasking<a class="headerlink" href="#multi-tasking" title="Permalink to this headline">¶</a></h2>
-<p>If you decide to work on another issue mid-stream, create a new branch for that issue—don’t work on multiple issues or features in one branch.</p>
+<div class="section" id="start-a-new-task-on-a-new-branch">
+<h2>Start a New Task on a New Branch<a class="headerlink" href="#start-a-new-task-on-a-new-branch" title="Permalink to this headline">¶</a></h2>
+<p>Using git requires a certain mindset:</p>
+<ul class="simple">
+<li><strong>Branches</strong> are <strong>tasks</strong></li>
+<li><strong>Commits</strong> are <strong>subtasks</strong></li>
+</ul>
+<p>Tasks are major changes to the codebase, such as a new feature.
+Tasks are usually projects of their own and require a large amount of work.
+A task can be broken down into subtasks. These are the smaller problems that
+need to be solved to make progress towards your larger task.</p>
+<p>Each new task should have its own branch. Why?</p>
+<ul class="simple">
+<li>Your work is more organized (separate branches for separate tasks)</li>
+<li>Easier for everyone to see what task you&#8217;re working on</li>
+<li>Reduces the risk of introducing new bugs</li>
+<li>Easier to isolate and fix new bugs</li>
+<li>Good for experimenting as nothing outside that branch is harmed</li>
+</ul>
+</div>
+<div class="section" id="properly-style-your-commit-messages">
+<h2>Properly Style Your Commit Messages<a class="headerlink" href="#properly-style-your-commit-messages" title="Permalink to this headline">¶</a></h2>
+<p>To help keep the style of our commit messages consistent and for easier viewing
+on GitHub, please write your commit messages in accordance with this style:</p>
+<div class="highlight-python"><pre>Capitalized and concise (70 chars or less) summary of your commit
+
+More detailed explanatory text if necessary. Wrap at 72 characters.
+Notice that the above summary message does not end with a period,
+and there's a blank line between the summary and body text.
+
+- Bullet points (hyphens or asterisks) are allowed
+
+- No ending period needed and wrap at 72 chars
+
+- Put a space after bullet points and blank lines between them</pre>
+</div>
+<p>If you can describe your commit with just a summary line, you may use
+git commit&#8217;s message argument:</p>
+<div class="highlight-python"><pre>git commit -m "Summary of your commit (70 chars or less)"</pre>
+</div>
 </div>
 </div>
 

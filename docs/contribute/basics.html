@@ -60,8 +60,8 @@
 <li><a class="reference internal" href="#forking-freeseer">Forking Freeseer</a></li>
 <li><a class="reference internal" href="#basic-workflow">Basic Workflow</a></li>
 <li><a class="reference internal" href="#workflow-diagram">Workflow Diagram</a></li>
-<li><a class="reference internal" href="#starting-a-new-task-making-a-new-feature-branch">Starting a new task / Making a new feature branch</a></li>
-<li><a class="reference internal" href="#close-and-reference-issues-with-commit-message">Close and Reference Issues with Commit Message</a></li>
+<li><a class="reference internal" href="#create-issue-specific-branches">Create Issue-Specific Branches</a></li>
+<li><a class="reference internal" href="#close-and-reference-issues-with-a-commit-message">Close and Reference Issues with a Commit Message</a></li>
 <li><a class="reference internal" href="#dealing-with-conflicts">Dealing with Conflicts</a></li>
 <li><a class="reference internal" href="#renaming-your-branch">Renaming your Branch</a></li>
 </ul>
@@ -183,7 +183,7 @@ $ git fetch upstream</pre>
 <li>Add and commit files you worked on. Optionally sign-off your commit with -s.</li>
 <li>Push your branch to your remote fork (and automatically create it if it doesn&#8217;t exist yet) on GitHub.</li>
 <li>Send a pull request when your feature is ready to be merged. You can still make additional changes later.</li>
-<li>Delete your local branch (add -r to include remote branch) when you&#8217;re absolutely sure you no longer need it.</li>
+<li>Delete your local (and remote) branch when you&#8217;re absolutely sure you no longer need it.</li>
 </ol>
 </div>
 <div class="section" id="workflow-diagram">
@@ -194,18 +194,8 @@ $ git fetch upstream</pre>
 <p class="last">Finish diagram</p>
 </div>
 </div>
-<div class="section" id="starting-a-new-task-making-a-new-feature-branch">
-<h2>Starting a new task / Making a new feature branch<a class="headerlink" href="#starting-a-new-task-making-a-new-feature-branch" title="Permalink to this headline">¶</a></h2>
-<p>Each new task or set of edits should have its own branch.
-It&#8217;s a lot more organized than having all your work under the same branch (try to avoid this).</p>
-<p>A few reasons why tasks should have their own branches:</p>
-<ul class="simple">
-<li>Less bugs and easier to find and fix the bugs that do exist</li>
-<li>Easier for us (and yourself) to see what you&#8217;re working on</li>
-<li>Easier for us (and yourself) when it&#8217;s time for you to send a pull request</li>
-<li>It&#8217;s an isolated sandbox, so if you screw up, nothing outside that branch is harmed</li>
-<li>Because it&#8217;s a sandbox, it&#8217;s also good for experimenting - maybe you intentionally want to screw up!</li>
-</ul>
+<div class="section" id="create-issue-specific-branches">
+<h2>Create Issue-Specific Branches<a class="headerlink" href="#create-issue-specific-branches" title="Permalink to this headline">¶</a></h2>
 <p>Create a new branch based off Freeseer&#8217;s experimental branch and make it your current branch:</p>
 <div class="highlight-python"><pre>$ git branch new-feature upstream/experimental
 $ git checkout new-feature</pre>
@@ -229,8 +219,8 @@ for shorthand.</p>
 <p class="last">Be descriptive when naming your new branch! See <a class="reference internal" href="best-practices.html#branch-names"><em>branch naming suggestions</em></a>.</p>
 </div>
 </div>
-<div class="section" id="close-and-reference-issues-with-commit-message">
-<h2>Close and Reference Issues with Commit Message<a class="headerlink" href="#close-and-reference-issues-with-commit-message" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="close-and-reference-issues-with-a-commit-message">
+<h2>Close and Reference Issues with a Commit Message<a class="headerlink" href="#close-and-reference-issues-with-a-commit-message" title="Permalink to this headline">¶</a></h2>
 <p>To reduce overhead and management, we use a single issue tracker for all the
 organization&#8217;s repositories. It can be found at our main repo:
 <a class="reference external" href="https://github.com/Freeseer/freeseer/issues">github.com/Freeseer/freeseer/issues</a>.</p>
@@ -297,7 +287,8 @@ $ git rebase --continue</pre>
 </div>
 <div class="section" id="renaming-your-branch">
 <h2>Renaming your Branch<a class="headerlink" href="#renaming-your-branch" title="Permalink to this headline">¶</a></h2>
-<p>Want to use a better name for your branch? These steps show you how to rename your local <em>and</em> remote branch.</p>
+<p>Want to use a better name for your branch?
+Here&#8217;s how to rename your <strong>local</strong> and <strong>remote</strong> branches.</p>
 <div class="highlight-python"><pre>$ git branch -m old-name new-name  # Rename your local branch
 $ git push origin new-name  # Add the new branch to your origin remote
 $ git push origin :old-name  # Delete the old remote branch</pre>

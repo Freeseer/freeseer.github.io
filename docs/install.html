@@ -57,6 +57,12 @@
 <li><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
 <li><a class="reference internal" href="#installers">Installers</a></li>
 <li><a class="reference internal" href="#build-from-source">Build from Source</a></li>
+<li><a class="reference internal" href="#os-specific-plugins">OS-Specific Plugins</a><ul>
+<li><a class="reference internal" href="#id1">Linux Plugins</a></li>
+<li><a class="reference internal" href="#id2">Windows Plugins</a></li>
+<li><a class="reference internal" href="#installation-of-passlib-for-freeseer-server">Installation of passlib for Freeseer Server</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -105,22 +111,53 @@
 <li>python-feedparser</li>
 <li>python-setuptools</li>
 <li>yapsy (needs setuptools to install)</li>
+<li>passlib (this is required for the server)</li>
 </ul>
 </div>
 <div class="section" id="installers">
 <h2>Installers<a class="headerlink" href="#installers" title="Permalink to this headline">¶</a></h2>
 <p>Visit our <a class="reference external" href="https://github.com/Freeseer/freeseer/downloads">download page</a> for installers for Debian/Ubuntu and Windows.</p>
-<p><em>TODO: Add note about potential error message on Linux</em></p>
-<p><em>TODO: Add image of download page</em></p>
 </div>
 <div class="section" id="build-from-source">
 <h2>Build from Source<a class="headerlink" href="#build-from-source" title="Permalink to this headline">¶</a></h2>
 <p>Download the source code as a <a class="reference external" href="https://github.com/Freeseer/freeseer/zipball/master">zip</a> or
-<a class="reference external" href="https://github.com/fosslc/freeseer/tarball/master">tarball</a>.</p>
+<a class="reference external" href="https://github.com/Freeseer/freeseer/tarball/master">tarball</a>.</p>
 <p>Alternatively, potential contributors can clone the project with git:</p>
-<div class="highlight-python"><pre>$ git clone git@github.com:fosslc/freeseer.git  # Clones a copy of the master repo</pre>
+<div class="highlight-python"><pre>$ git clone git@github.com:Freeseer/freeseer.git  # Clones a copy of the master repo</pre>
 </div>
-<p><em>TODO: Add build instructions (make not required)</em></p>
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">Todo</p>
+<p class="last">Add build instructions (or just link to readme)</p>
+</div>
+</div>
+<div class="section" id="os-specific-plugins">
+<h2>OS-Specific Plugins<a class="headerlink" href="#os-specific-plugins" title="Permalink to this headline">¶</a></h2>
+<p>Plugins offer extra functionaltiy, so you&#8217;ll want to download them.</p>
+<p>We have OS-specific repositories to simplify the organization of Freeseer plugins.</p>
+<p>Clone the OS-specific plugins to your <cite>~/.freeseer/plugins</cite> directory
+and Freeseer should detect them.</p>
+<div class="section" id="id1">
+<h3><a class="reference external" href="https://github.com/Freeseer/freeseer-plugins-linux">Linux Plugins</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><pre>$ git clone git@github.com:Freeseer/freeseer-plugins-linux.git ~/.freeseer/plugins</pre>
+</div>
+</div>
+<div class="section" id="id2">
+<h3><a class="reference external" href="https://github.com/Freeseer/freeseer-plugins-windows">Windows Plugins</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><pre>$ git clone git@github.com:Freeseer/freeseer-plugins-windows.git ~/.freeseer/plugins</pre>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">On both platforms the <cite>.freeseer</cite> directory is in the user&#8217;s HOME
+folder. On Windows this is <cite>C:\Users\username\.freeseer\</cite>.</p>
+</div>
+</div>
+<div class="section" id="installation-of-passlib-for-freeseer-server">
+<h3>Installation of passlib for Freeseer Server<a class="headerlink" href="#installation-of-passlib-for-freeseer-server" title="Permalink to this headline">¶</a></h3>
+<p>Passlib needs to be installed to run the Freeseer Server.
+It can be easily installed using this command:</p>
+<div class="highlight-python"><pre>$ sudo easy_install passlib</pre>
+</div>
+</div>
 </div>
 </div>
 

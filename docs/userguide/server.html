@@ -1,0 +1,177 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Server &mdash; Freeseer 3.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="Freeseer 3.0.0 documentation" href="../index.html" />
+    <link rel="up" title="User Guide" href="index.html" />
+    <link rel="next" title="Settings" href="config/index.html" />
+    <link rel="prev" title="Report Editor" href="reporteditor.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="config/index.html" title="Settings"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="reporteditor.html" title="Report Editor"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Freeseer 3.0.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">User Guide</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/freeseer_logo.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Server</a><ul>
+<li><a class="reference internal" href="#dependencies">Dependencies</a></li>
+<li><a class="reference internal" href="#usage">Usage</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="reporteditor.html"
+                        title="previous chapter">Report Editor</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="config/index.html"
+                        title="next chapter">Settings</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/userguide/server.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="server">
+<h1>Server<a class="headerlink" href="#server" title="Permalink to this headline">¶</a></h1>
+<p>The <em>Freeseer Server</em> tool communicates with the <a class="reference internal" href="record.html"><em>Freeseer Record</em></a> tool over a network.
+The server can be used to <strong>start</strong>, <strong>stop</strong>, <strong>pause</strong>, and <strong>resume recording</strong>.</p>
+<div class="section" id="dependencies">
+<h2>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h2>
+<p>The PassLib library is required to run the server.</p>
+<p>To install it using pip:</p>
+<div class="highlight-python"><pre>sudo pip install passlib</pre>
+</div>
+<p>To install it using easy_install:</p>
+<div class="highlight-python"><pre>sudo easy_install passlib</pre>
+</div>
+<div class="admonition-todo admonition" id="index-0">
+<p class="first admonition-title">Todo</p>
+<p class="last">Add MS instructions</p>
+</div>
+</div>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Open <strong>freeseer-server</strong></li>
+</ol>
+<div class="figure align-center">
+<img alt="../_images/server_s1.png" src="../_images/server_s1.png" />
+<p class="caption">The server interface will appear.</p>
+</div>
+<p>Before clicking &#8220;Start Server&#8221; button, you can choose the IP you would like to use from the combobox next to the &#8220;IP:&#8221; label
+After you choose the ip or leaving the default you will have to click &#8220;Start Server&#8221;. This will initialize and start our server.</p>
+<div class="figure align-center">
+<img alt="../_images/server_s2.png" src="../_images/server_s2.png" />
+<p class="caption">This is how the server looks when it is running.</p>
+</div>
+<div class="figure align-center">
+<img alt="../_images/server_s3.png" src="../_images/server_s3.png" />
+<p class="caption">A client is connected.</p>
+</div>
+<p>From here we can tell the client to start recording, pause recording or stop recording. Client&#8217;s status is shown next to the IP address of the client.
+Right now client is idle so we can start recording.
+When &#8220;Start Recording&#8221; button is pressed, client&#8217;s status will change. Acording to the client&#8217;s status, the buttons will updated with the appropriate labels.
+Client can also be disconnected if &#8220;Disconnect&#8221; button is triggered. Client can also be disconnect from the server from client side.</p>
+<div class="figure align-center">
+<img alt="../_images/server_s4.png" src="../_images/server_s4.png" />
+<p class="caption">Here client is in recording state.</p>
+</div>
+<p>When client is recording we could pause or stop recording. Triggering the appropriate button will send the action to the client.</p>
+<div class="figure align-center">
+<img alt="../_images/server_s5.png" src="../_images/server_s5.png" />
+<p class="caption">When recording is paused it can be resumed or it can be stopped.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="config/index.html" title="Settings"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="reporteditor.html" title="Report Editor"
+             >previous</a> |</li>
+        <li><a href="../index.html">Freeseer 3.0.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" >User Guide</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011-2012  Free and Open Source Software Learning Centre.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>
