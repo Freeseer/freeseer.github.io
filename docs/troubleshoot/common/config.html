@@ -8,7 +8,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Common Problems &mdash; Freeseer 3.0.0 documentation</title>
+    <title>The experimental version of Freeseer is unresponsive &mdash; Freeseer 3.0.0 documentation</title>
     
     <link rel="stylesheet" href="../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -27,9 +27,9 @@
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="top" title="Freeseer 3.0.0 documentation" href="../../index.html" />
-    <link rel="up" title="Troubleshoot" href="../index.html" />
-    <link rel="next" title="The experimental version of Freeseer is unresponsive" href="config.html" />
-    <link rel="prev" title="Application Messages" href="../messages.html" /> 
+    <link rel="up" title="Common Problems" href="index.html" />
+    <link rel="next" title="I do not see a preview of my video source" href="preview.html" />
+    <link rel="prev" title="Common Problems" href="index.html" /> 
   </head>
   <body>
     <div class="related">
@@ -39,13 +39,14 @@
           <a href="../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="config.html" title="The experimental version of Freeseer is unresponsive"
+          <a href="preview.html" title="I do not see a preview of my video source"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="../messages.html" title="Application Messages"
+          <a href="index.html" title="Common Problems"
              accesskey="P">previous</a> |</li>
         <li><a href="../../index.html">Freeseer 3.0.0 documentation</a> &raquo;</li>
-          <li><a href="../index.html" accesskey="U">Troubleshoot</a> &raquo;</li> 
+          <li><a href="../index.html" >Troubleshoot</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Common Problems</a> &raquo;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar">
@@ -55,23 +56,21 @@
             </a></p>
   <h3><a href="../../index.html">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">Common Problems</a><ul>
-<li><a class="reference internal" href="#advanced-troubleshooting">Advanced Troubleshooting</a><ul>
-</ul>
-</li>
+<li><a class="reference internal" href="#">The experimental version of Freeseer is unresponsive</a><ul>
+<li><a class="reference internal" href="#did-you-run-freeseer-version-2-5-3-or-less-before-running-version-3">Did you run Freeseer version 2.5.3 (or less) before running version 3?</a></li>
 </ul>
 </li>
 </ul>
 
   <h4>Previous topic</h4>
-  <p class="topless"><a href="../messages.html"
-                        title="previous chapter">Application Messages</a></p>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Common Problems</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="config.html"
-                        title="next chapter">The experimental version of Freeseer is unresponsive</a></p>
+  <p class="topless"><a href="preview.html"
+                        title="next chapter">I do not see a preview of my video source</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
-    <li><a href="../../_sources/troubleshoot/common/index.txt"
+    <li><a href="../../_sources/troubleshoot/common/config.txt"
            rel="nofollow">Show Source</a></li>
   </ul>
 <div id="searchbox" style="display: none">
@@ -95,25 +94,16 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="common-problems">
-<h1>Common Problems<a class="headerlink" href="#common-problems" title="Permalink to this headline">¶</a></h1>
-<p>Freeseer is a work in progress, and certain known problems which can occur have simple solutions.
-Some problems may not be caused by Freeseer but may be encountered when using Freeseer.</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="config.html">The experimental version of Freeseer is unresponsive</a></li>
-<li class="toctree-l1"><a class="reference internal" href="preview.html">I do not see a preview of my video source</a></li>
-<li class="toctree-l1"><a class="reference internal" href="youtube.html">My recordings look different on YouTube</a></li>
-</ul>
-</div>
-<div class="section" id="advanced-troubleshooting">
-<h2>Advanced Troubleshooting<a class="headerlink" href="#advanced-troubleshooting" title="Permalink to this headline">¶</a></h2>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="advanced/consolelog.html">Making sense of the console logger</a></li>
-<li class="toctree-l1"><a class="reference internal" href="advanced/syslog.html">Making sense of the system logger</a></li>
-</ul>
-</div>
+  <div class="section" id="the-experimental-version-of-freeseer-is-unresponsive">
+<h1>The experimental version of Freeseer is unresponsive<a class="headerlink" href="#the-experimental-version-of-freeseer-is-unresponsive" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="did-you-run-freeseer-version-2-5-3-or-less-before-running-version-3">
+<h2>Did you run Freeseer version 2.5.3 (or less) before running version 3?<a class="headerlink" href="#did-you-run-freeseer-version-2-5-3-or-less-before-running-version-3" title="Permalink to this headline">¶</a></h2>
+<p>The current master version is 2.5.3 and uses a different configuration than the
+current experimental version (v3.0). These files are saved in a hidden folder in
+the user&#8217;s home directory. Freeseer-experimental will try to load the config
+files that were created by Freeseer-master, and it won&#8217;t work &#8211; you&#8217;ll probably
+see an sqlite3 error.</p>
+<p>To fix it, delete the <cite>.freeseer/</cite> directory in your home directory.</p>
 </div>
 </div>
 
@@ -130,13 +120,14 @@ Some problems may not be caused by Freeseer but may be encountered when using Fr
           <a href="../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="config.html" title="The experimental version of Freeseer is unresponsive"
+          <a href="preview.html" title="I do not see a preview of my video source"
              >next</a> |</li>
         <li class="right" >
-          <a href="../messages.html" title="Application Messages"
+          <a href="index.html" title="Common Problems"
              >previous</a> |</li>
         <li><a href="../../index.html">Freeseer 3.0.0 documentation</a> &raquo;</li>
-          <li><a href="../index.html" >Troubleshoot</a> &raquo;</li> 
+          <li><a href="../index.html" >Troubleshoot</a> &raquo;</li>
+          <li><a href="index.html" >Common Problems</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">

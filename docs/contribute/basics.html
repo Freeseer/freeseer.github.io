@@ -105,12 +105,17 @@
 <div class="section" id="git-github">
 <h2>Git &amp; GitHub<a class="headerlink" href="#git-github" title="Permalink to this headline">¶</a></h2>
 <p>Freeseer is hosted on <a class="reference external" href="http://github.com">GitHub</a>, which uses <a class="reference external" href="http://git-scm.com/">Git</a>. You&#8217;ll generally encounter both while contributing.</p>
-<p>Git allows groups of people to work on the same documents (often code) at the
-same time, and without stepping on each other&#8217;s toes. It&#8217;s a distributed version
-control system. Git can be complicated for beginners or for people who have
+<p>Git allows many people to work on the same documents (e.g. source code) at the
+same time, without stepping on each other&#8217;s toes. It&#8217;s a <em>distributed version
+control system</em>. Git can be complicated for beginners or for people who have
 previously used a version control system that&#8217;s different by design (e.g. Subversion).</p>
 <p>No worries, there are tons of online resources. If you can&#8217;t find what you&#8217;re
 looking for, please ask us!</p>
+<p>Before we begin, keep in mind that there is no <em>correct</em> way of using git. With
+git, you can often achieve the same results via different ways. How you use git
+is often determined by the guidelines of the project you&#8217;re contributing to.
+The examples on this page are how we recommend you use git when contributing to
+Freeseer.</p>
 <div class="admonition-see-also admonition seealso">
 <p class="first admonition-title">See also</p>
 <ul class="last simple">
@@ -129,7 +134,7 @@ looking for, please ask us!</p>
 <li>Forgetful?
 <math xmlns="http://www.w3.org/1998/Math/MathML">
 <mrow><mo>→</mo></mrow></math> <a class="reference external" href="https://na1.salesforce.com/help/doc/en/salesforce_git_developer_cheatsheet.pdf">Git Cheat Sheet</a></li>
-<li>Eclipse is your favourite IDE?
+<li>Eclipse is your preferred IDE?
 <math xmlns="http://www.w3.org/1998/Math/MathML">
 <mrow><mo>→</mo></mrow></math> <a class="reference external" href="https://github.com/blog/1181-eclipse-git-plugin-2-0-released">Eclipse Git Plugin</a></li>
 <li>Prefer GUIs over CLIs?
@@ -141,31 +146,31 @@ looking for, please ask us!</p>
 </div>
 <div class="section" id="forking-freeseer">
 <h2>Forking Freeseer<a class="headerlink" href="#forking-freeseer" title="Permalink to this headline">¶</a></h2>
-<p>Once you have a GitHub account and Git installed and configured, the next step is to fork the Freeseer repo.
+<p>Once you have a GitHub account and Git installed and configured, the next step is to fork the Freeseer repo[sitory].
 &#8220;Forking&#8221; means you use someone&#8217;s project as a starting point for your own.</p>
 <ol class="arabic simple">
 <li>Go to the <a class="reference external" href="https://github.com/Freeseer/freeseer">Freeseer repo</a> on GitHub.</li>
-<li>Fork the &#8220;Freeseer&#8221; repo by clicking the button.</li>
+<li>Fork the &#8220;Freeseer&#8221; repo by clicking the fork button. This creates a remote
+copy of the project under your GitHub profile (github.com/username/freeseer).
+Next, you&#8217;ll use your fork to set up your local repo <a class="footnote-reference" href="#f1" id="id1">[1]</a>.</li>
 </ol>
-<img alt="../_images/fork.jpg" src="../_images/fork.jpg" />
-<p>Your fork is now complete! Next you&#8217;ll set up your local repo.</p>
+<img alt="Click the fork button on the page *github.com/Freeseer/freeseer*." class="align-center" src="../_images/fork.jpg" />
 <ol class="arabic" start="3">
-<li><p class="first">Clone the project. First clone the master branch:</p>
-<div class="highlight-python"><pre>$ git clone git@github.com:username/freeseer.git freeseer # where username is *your* username</pre>
+<li><p class="first">Clone the experimental branch. You&#8217;ll be basing your work off of this branch.
+Cloning the master branch is optional&#8212;it contains an older version of
+Freeseer that you won&#8217;t be working on&#8212;so we skip that step.</p>
+<div class="highlight-python"><pre>$ git clone -b experimental https://github.com/your_username/freeseer.git freeseer-experimental</pre>
 </div>
 </li>
-<li><p class="first">Also clone the experimental branch <a class="footnote-reference" href="#f1" id="id1">[1]</a>:</p>
-<div class="highlight-python"><pre>$ git clone -b experimental git@github.com:username/freeseer.git freeseer-experimental</pre>
-</div>
-</li>
-<li><p class="first">Configure remotes. Add a remote named <tt class="docutils literal"><span class="pre">upstream</span></tt> to keep track of the original Freeseer repo:</p>
-<div class="highlight-python"><pre>$ cd freeseer
-$ git remote add upstream git://github.com/Freeseer/freeseer.git
-$ git fetch upstream
-$ # Do the same for the experimental directory
-$ cd ../freeseer-experimental
-$ git remote add upstream git://github.com/Freeseer/freeseer.git
+<li><p class="first">Configure remotes. Add a remote named <tt class="docutils literal"><span class="pre">upstream</span></tt> to keep track of the original Freeseer repo.</p>
+<div class="highlight-python"><pre>$ cd freeseer-experimental
+$ git remote add upstream https://github.com/Freeseer/freeseer.git
 $ git fetch upstream</pre>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">The name <tt class="docutils literal"><span class="pre">upstream</span></tt> is by convention. You can use whatever name
+you prefer (e.g. <tt class="docutils literal"><span class="pre">mainstream</span></tt> or <tt class="docutils literal"><span class="pre">mothership</span></tt>).</p>
 </div>
 </li>
 </ol>
@@ -174,16 +179,31 @@ $ git fetch upstream</pre>
 <h2>Basic Workflow<a class="headerlink" href="#basic-workflow" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-todo admonition" id="index-0">
 <p class="first admonition-title">Todo</p>
-<p class="last">See NumPy&#8217;s docs (Development workflow), ThinkUp&#8217;s docs (Developer), and my Google Doc&#8217;s Freeseer scrap notes!</p>
+<p class="last">(Dennis) See NumPy&#8217;s docs (Development workflow), ThinkUp&#8217;s docs (Developer), and my Google Doc&#8217;s Freeseer scrap notes!</p>
 </div>
-<ol class="arabic simple">
-<li>Create a new branch based off the central repo&#8217;s (i.e. Freeseer&#8217;s) experimental branch.</li>
-<li>Fetch any changes for good measure (optional).</li>
-<li>Work on your feature.</li>
-<li>Add and commit files you worked on. Optionally sign-off your commit with -s.</li>
-<li>Push your branch to your remote fork (and automatically create it if it doesn&#8217;t exist yet) on GitHub.</li>
-<li>Send a pull request when your feature is ready to be merged. You can still make additional changes later.</li>
-<li>Delete your local (and remote) branch when you&#8217;re absolutely sure you no longer need it.</li>
+<ol class="arabic">
+<li><p class="first">Create a new branch based off the central repo&#8217;s (i.e. Freeseer&#8217;s) experimental branch.</p>
+</li>
+<li><p class="first">Fetch any changes for good measure (optional).</p>
+<div class="highlight-python"><pre>$ git fetch upstream
+$ git merge upstream/experimental
+# OR
+$ git pull upstream experimental # Fetch and merge
+# The latter method (pull) is more prone to conflicts.
+# If you want to keep your repo up to date but don't want to break something
+# by updating your files, fetch but do not merge right after.</pre>
+</div>
+</li>
+<li><p class="first">Work on your feature.</p>
+</li>
+<li><p class="first">Add and commit files you worked on. Optionally sign-off your commit with -s.</p>
+</li>
+<li><p class="first">Push your branch to your remote fork (and automatically create it if it doesn&#8217;t exist yet) on GitHub.</p>
+</li>
+<li><p class="first">Send a pull request when your feature is ready to be merged. You can still make additional changes later.</p>
+</li>
+<li><p class="first">Delete your local (and remote) branch when you&#8217;re absolutely sure you no longer need it.</p>
+</li>
 </ol>
 </div>
 <div class="section" id="workflow-diagram">
@@ -289,9 +309,9 @@ $ git rebase --continue</pre>
 <h2>Renaming your Branch<a class="headerlink" href="#renaming-your-branch" title="Permalink to this headline">¶</a></h2>
 <p>Want to use a better name for your branch?
 Here&#8217;s how to rename your <strong>local</strong> and <strong>remote</strong> branches.</p>
-<div class="highlight-python"><pre>$ git branch -m old-name new-name  # Rename your local branch
-$ git push origin new-name  # Add the new branch to your origin remote
-$ git push origin :old-name  # Delete the old remote branch</pre>
+<div class="highlight-python"><pre>$ git branch -m old-name new-name  # Renames your local branch
+$ git push origin new-name  # Adds the new branch to your origin remote
+$ git push origin --delete old-name  # Deletes the old remote branch</pre>
 </div>
 <p>As far as I know, there&#8217;s no easy way to rename a remote branch.
 Hence the deletion and adding steps.
@@ -300,7 +320,11 @@ If you don&#8217;t have a remote tracking branch yet (i.e. you only have a local
 <table class="docutils footnote" frame="void" id="f1" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Depending on the work you&#8217;re doing, you may want to clone the development branch instead.</td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Your local repo, in this case, will be a copy (or <em>clone</em>) of your fork onto your computer.
+You&#8217;ll be doing all your work in your local repo. You don&#8217;t need to be
+connected to the internet to work in your local repo. However, you will
+need to be if you want to push your changes to a remote repo or pull in
+changes from a remote repo.</td></tr>
 </tbody>
 </table>
 </div>
