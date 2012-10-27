@@ -47,6 +47,18 @@ Freeseer.
 
 
 
+Git Philosophy
+--------------
+- Use the topic-branch model
+  - Each branch has its own topic
+- Commit early, commit often
+  - Easier to read changes
+  - Can always revert or squash your commits
+- Push often
+  - Rule of thumb is to push your changes at the end of the day
+- Your working directory, branches, and local repo are your scratch pads
+
+
 Forking Freeseer
 ----------------
 

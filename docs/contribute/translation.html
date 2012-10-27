@@ -59,6 +59,7 @@
 <li><a class="reference internal" href="#how-to-contribute-translations">How to Contribute Translations</a></li>
 <li><a class="reference internal" href="#how-to-update-translation-resources">How to update translation resources</a><ul>
 <li><a class="reference internal" href="#updating-translation-files">Updating Translation Files</a></li>
+<li><a class="reference internal" href="#adding-qt-translation-files-to-freeseer-monitored-list">Adding Qt Translation Files to Freeseer-monitored List:</a></li>
 <li><a class="reference internal" href="#updating-qt-resource-files">Updating Qt Resource Files</a></li>
 </ul>
 </li>
@@ -124,6 +125,20 @@ pylupdate4 freeseer.pro</pre>
 <p>The freeseer.pro file contains details regarding which source files contain translation strings as well as which
 translation files need to be updated and/or created. If you wish to translate a new langauge simply add a new locale
 for the language you wish to translate.</p>
+</div>
+<div class="section" id="adding-qt-translation-files-to-freeseer-monitored-list">
+<h3>Adding Qt Translation Files to Freeseer-monitored List:<a class="headerlink" href="#adding-qt-translation-files-to-freeseer-monitored-list" title="Permalink to this headline">¶</a></h3>
+<p>Now the developer needs to update the list of monitored translations by editing the resources file using these commands:</p>
+<div class="highlight-python"><pre>cd &lt;freeseerroot&gt;/src/freeseer/frontend/qtcommon
+&lt;texteditor&gt; resource.qrc</pre>
+</div>
+<p>The following line should be added:</p>
+<div class="highlight-python"><pre>&lt;file alias="languages/tr_LANGUAGE_LOCALE.qm"&gt;languages/tr_LANGUAGE_LOCALE.qm&lt;/file&gt;</pre>
+</div>
+<p>where LANGUAGE and LOCALE are specific to your translation. For example, an American English translation
+would be:</p>
+<div class="highlight-python"><pre>&lt;file alias="languages/tr_en_US.qm"&gt;languages/tr_en_US.qm&lt;/file&gt;.</pre>
+</div>
 </div>
 <div class="section" id="updating-qt-resource-files">
 <h3>Updating Qt Resource Files<a class="headerlink" href="#updating-qt-resource-files" title="Permalink to this headline">¶</a></h3>
