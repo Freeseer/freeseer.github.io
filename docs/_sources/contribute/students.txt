@@ -15,7 +15,8 @@ Undergraduate Capstone Open Source Projects (UCOSP), and Fedora Summer Coding.
 
 Getting Started
 ---------------
-1. Apply for a free micro account at `github.com/edu <http://github.com/edu>`_.
+1. :doc: `Introduce yourself</contact>` to the Freeseer community via the mailing list
+2. Register a GitHub account Apply for a free micro account at `github.com/edu <http://github.com/edu>`_.
 
    - This step is optional, it's one of the perks of being a student
    - A micro account allows you to have 5 private repositories

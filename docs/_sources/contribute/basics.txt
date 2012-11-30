@@ -49,14 +49,9 @@ Freeseer.
 
 Git Philosophy
 --------------
-- Use the topic-branch model
-  - Each branch has its own topic
+- Branches are tasks, commits are subtasks
 - Commit early, commit often
-  - Easier to read changes
-  - Can always revert or squash your commits
-- Push often
-  - Rule of thumb is to push your changes at the end of the day
-- Your working directory, branches, and local repo are your scratch pads
+- Your local repo is your scratch pad
 
 
 Forking Freeseer

@@ -61,6 +61,7 @@
 <li><a class="reference internal" href="#updating-translation-files">Updating Translation Files</a></li>
 <li><a class="reference internal" href="#adding-qt-translation-files-to-freeseer-monitored-list">Adding Qt Translation Files to Freeseer-monitored List:</a></li>
 <li><a class="reference internal" href="#updating-qt-resource-files">Updating Qt Resource Files</a></li>
+<li><a class="reference internal" href="#commiting-and-pushing-the-translation">Commiting and Pushing the Translation</a></li>
 </ul>
 </li>
 </ul>
@@ -148,6 +149,16 @@ following commands:</p>
 <div class="highlight-python"><pre>cd &lt;freeseerroot&gt;/src/freeseer/frontend/qtcommon
 make</pre>
 </div>
+<p>After the above steps are followed, a sample run of Freeseer should confirm that the translation is working.</p>
+</div>
+<div class="section" id="commiting-and-pushing-the-translation">
+<h3>Commiting and Pushing the Translation<a class="headerlink" href="#commiting-and-pushing-the-translation" title="Permalink to this headline">¶</a></h3>
+<p>When all is ready to be commited please ensure that you remove the resource_rc.py files from the commit so it doesn&#8217;t
+cause conflicts with any other work on translation that&#8217;s currently being done. You do this by git-adding the files as
+normal and then issuing the following command before commiting:</p>
+<div class="highlight-python"><pre>git rm src/freeseer/frontend/resource_rc.py</pre>
+</div>
+<p>Note: This command is assumed to run from the root directory of the Freeseer source code.</p>
 </div>
 </div>
 </div>

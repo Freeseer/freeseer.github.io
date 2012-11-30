@@ -1,0 +1,414 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Run Freeseer’s Test Suite &mdash; Freeseer 3.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '3.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="top" title="Freeseer 3.0.0 documentation" href="../../index.html" />
+    <link rel="up" title="Developer" href="index.html" />
+    <link rel="next" title="Coding Guidelines" href="coding-guidelines.html" />
+    <link rel="prev" title="Develop from Source" href="develop-from-source.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="coding-guidelines.html" title="Coding Guidelines"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="develop-from-source.html" title="Develop from Source"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">Freeseer 3.0.0 documentation</a> &raquo;</li>
+          <li><a href="../index.html" >Contribute</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Developer</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../index.html">
+              <img class="logo" src="../../_static/freeseer_logo.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Run Freeseer&#8217;s Test Suite</a><ul>
+<li><a class="reference internal" href="#configure-your-test-environment">Configure your Test Environment</a></li>
+<li><a class="reference internal" href="#extending-the-test-suite">Extending the Test Suite</a><ul>
+<li><a class="reference internal" href="#structure-of-test-directory">Structure of test directory</a></li>
+<li><a class="reference internal" href="#adding-editing-a-test-module">Adding/Editing a test module</a><ul>
+<li><a class="reference internal" href="#an-example">An example</a></li>
+<li><a class="reference internal" href="#import-unittest">import unittest</a></li>
+<li><a class="reference internal" href="#from-freeseer-framework-presentation-import-presentation">from freeseer.framework.presentation import Presentation</a></li>
+<li><a class="reference internal" href="#class-testpresentation-unittest-testcase">class TestPresentation(unittest.TestCase):</a></li>
+<li><a class="reference internal" href="#setup-runtest-test-teardown">setUp, runTest, test_*, tearDown</a></li>
+<li><a class="reference internal" href="#python-s-unittest-module-lifecycle">Python&#8217;s unittest module &#8220;lifecycle&#8221;</a></li>
+<li><a class="reference internal" href="#the-assert-family-of-methods">The assert* family of methods</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#best-practices">Best practices</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#running-the-test-suite">Running the Test Suite</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#command-line-options">Command line options</a><ul>
+<li><a class="reference internal" href="#example-1-discovery-run-all-tests">Example #1: Discovery, Run all tests</a></li>
+<li><a class="reference internal" href="#example-2-discovery-verbose-run-all-tests">Example #2: Discovery, Verbose, Run all tests</a></li>
+<li><a class="reference internal" href="#example-3-discovery-verbose-run-until-fail">Example #3: Discovery, Verbose, Run until fail</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#gotchas-a-k-a-q-a">Gotchas! a.k.a Q&amp;A</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="develop-from-source.html"
+                        title="previous chapter">Develop from Source</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="coding-guidelines.html"
+                        title="next chapter">Coding Guidelines</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/contribute/developers/testing.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="run-freeseer-s-test-suite">
+<h1>Run Freeseer&#8217;s Test Suite<a class="headerlink" href="#run-freeseer-s-test-suite" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="configure-your-test-environment">
+<h2>Configure your Test Environment<a class="headerlink" href="#configure-your-test-environment" title="Permalink to this headline">¶</a></h2>
+<p>If you can run Freeseer, you should have nothing to configure. This is because
+Python&#8217;s <tt class="docutils literal"><span class="pre">unittest</span></tt> module and PyQt&#8217;s <tt class="docutils literal"><span class="pre">QtTest</span></tt> module are used for
+Freeseer&#8217;s test suite. The <tt class="docutils literal"><span class="pre">unittest</span></tt> module is Python&#8217;s standard unit testing
+framework, and thus part of the standard library. The <tt class="docutils literal"><span class="pre">QtTest</span></tt> module is
+included with the PyQt4 package, which you should have installed as it&#8217;s
+a dependency for Freeseer.</p>
+<p>If you want to make sure, you can start the Python interpreter and
+import <tt class="docutils literal"><span class="pre">unittest</span></tt> and <tt class="docutils literal"><span class="pre">QtTest</span></tt>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">unittest</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">PyQt4</span> <span class="kn">import</span> <span class="n">QtTest</span>
+</pre></div>
+</div>
+<p>If there are any errors, you won&#8217;t be able to proceed with testing.</p>
+</div>
+<div class="section" id="extending-the-test-suite">
+<h2>Extending the Test Suite<a class="headerlink" href="#extending-the-test-suite" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="structure-of-test-directory">
+<h3>Structure of test directory<a class="headerlink" href="#structure-of-test-directory" title="Permalink to this headline">¶</a></h3>
+<p>At this time, the test modules are contained in a folder in the src/freeseer directory called test.</p>
+<p>Since as of Python 2.7, unittest supports (recursive) test module discovery, all test modules should exist somewhere inside the src/freeseer/test folder because when we run the suite later, we&#8217;ll be pointing to this folder as the root.</p>
+<p>See the Best Practices section for details available here: <a class="reference internal" href="#best-practices"><em>Best practices</em></a>.</p>
+</div>
+<div class="section" id="adding-editing-a-test-module">
+<h3>Adding/Editing a test module<a class="headerlink" href="#adding-editing-a-test-module" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="an-example">
+<h4>An example<a class="headerlink" href="#an-example" title="Permalink to this headline">¶</a></h4>
+<p>We now know where the test suite is located: src/freeseer/test.
+We also know that the directory hierarchy below test matches the one below src/freeseer.
+Next, as developers we&#8217;d like to add a new test module or modify an existing one.</p>
+<p>Let&#8217;s write a simple test case for the Presentation class found in src/freeseer/framework/presentation.py.
+This class is simple, it is a model which holds data.
+We pass a bunch of parameters and all the class attributes are public.
+We&#8217;ll create an instance, ensure the values we pass are correctly set and learn about the unittest module in the process.</p>
+<p>We&#8217;ll need to go to src/freeseer/test and check if there is a folder named framework.
+If there isn&#8217;t let&#8217;s create it and immediately add an empty __init__.py inside it (see Note from part 2).</p>
+<p>Next, we&#8217;ll create our test module.
+It would be nice to keep convention and name it test_presentation.py (i.e. the convention is test_my_module_name.py where the module counterpart is name my_module_name.py) but there is no way to enforce it.
+As such this is going to be a &#8220;best practice&#8221;.
+Fortunately, unittest does enforce something: the name of the test module must have the form test_*.py or it will not be discovered.
+Thus, your module name must start with <strong>test_</strong> and finish with <strong>.py</strong>.
+This little bit can be configured (we&#8217;ll see how in part 4), but the default pattern for unittest discovery is &#8216;test_*.py&#8217;.</p>
+<p>We now have our test module which can be found at: <strong>src/freeseer/test/framework/test_presentation.py</strong>.</p>
+<p>Let&#8217;s add some functionality!</p>
+<p><strong>Note: The example used in the rest of this entry is to experiment with unittest and may not implement logical test cases!</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">unittest</span>
+
+<span class="kn">from</span> <span class="nn">freeseer.framework.presentation</span> <span class="kn">import</span> <span class="n">Presentation</span>
+
+<span class="k">class</span> <span class="nc">TestPresentation</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+
+  <span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">pres</span> <span class="o">=</span> <span class="n">Presentation</span><span class="p">(</span><span class="s">&quot;John Doe&quot;</span><span class="p">,</span> <span class="n">event</span><span class="o">=</span><span class="s">&quot;haha&quot;</span><span class="p">,</span> <span class="n">time</span><span class="o">=</span><span class="s">&quot;NOW&quot;</span><span class="p">)</span>
+
+  <span class="k">def</span> <span class="nf">test_correct_time_set</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pres</span><span class="o">.</span><span class="n">time</span> <span class="o">==</span> <span class="s">&quot;NOW&quot;</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">pres</span><span class="o">.</span><span class="n">speaker</span> <span class="o">=</span> <span class="s">&quot;John Doe&quot;</span>
+
+  <span class="k">def</span> <span class="nf">test_speaker_not_first_param</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">assertNotEquals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pres</span><span class="o">.</span><span class="n">speaker</span><span class="p">,</span> <span class="s">&quot;John Doe&quot;</span><span class="p">)</span>
+
+  <span class="k">def</span> <span class="nf">test_event_is_default</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">assertFalse</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pres</span><span class="o">.</span><span class="n">event</span> <span class="o">!=</span> <span class="s">&quot;Default&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>There we have it, our first unit test to test Freeseer functionality!
+Since there are no comments, let&#8217;s go through it quick and take some time to understand the important parts:</p>
+</div>
+<div class="section" id="import-unittest">
+<h4>import unittest<a class="headerlink" href="#import-unittest" title="Permalink to this headline">¶</a></h4>
+<p>This will be in <strong>every</strong> test module. As we will see, each test class we write will subclass unittest.TestCase and this class is also where we get the assert* family of calls.</p>
+</div>
+<div class="section" id="from-freeseer-framework-presentation-import-presentation">
+<h4>from freeseer.framework.presentation import Presentation<a class="headerlink" href="#from-freeseer-framework-presentation-import-presentation" title="Permalink to this headline">¶</a></h4>
+<p>This will also be in <strong>every</strong> module but slightly modified.
+Our target class to test this time is the Presentation class found in src/freeseer/framework/presentation.py.
+When python loads the packages, it will convert src/freeseer/framework/presentation.py into freeseer.framework.presentation (this is an oversimplification of course).
+Therefore, ensure your import path is correct for the target module. From the import path, simply import the class you wish to test against &#8211; in our case this is Presentation.</p>
+</div>
+<div class="section" id="class-testpresentation-unittest-testcase">
+<h4>class TestPresentation(unittest.TestCase):<a class="headerlink" href="#class-testpresentation-unittest-testcase" title="Permalink to this headline">¶</a></h4>
+<p><strong>First: unittest.TestCase is required as the parent class or this will not be treated as a test class.</strong>
+This is the class we&#8217;re creating which will encapsulate all the testing functionality for the Presentation class.
+How do we know we&#8217;re using this class to test the Presentation class? &#8211; <strong>we don&#8217;t</strong>.
+It&#8217;s up to the developer to name it appropriately and naming the class TestPresentation is another unenforceable best practice.</p>
+</div>
+<div class="section" id="setup-runtest-test-teardown">
+<h4>setUp, runTest, test_*, tearDown<a class="headerlink" href="#setup-runtest-test-teardown" title="Permalink to this headline">¶</a></h4>
+<p>I invite you to read the <a class="reference external" href="http://docs.python.org/2/library/unittest.html">documentation</a>.</p>
+<p>The unittest.TestCase offers a &#8220;life cycle&#8221; a.k.a an ordered method call framework allowing a developer to setup, run and takedown tests respectively.</p>
+<p>If the unittest.TestCase has implemented the setUp() method, then this method runs first. It is used to set-up any code required for the tests.</p>
+<p>The next method which will run depends on whether the developer implemented runTest() or test_* methods.
+The choice here is a matter of opinion, but if runTest() is implemented, then all tests are in this method.
+If no assertion fails, runTest() will return OK, otherwise it will return <strong>FAIL</strong>.
+If a collection of test_* methods are implemented, then we can still have several assertions in each test_* method, but now every individual test_* has an <strong>OK/FAIL</strong>.</p>
+<p>If the unittest.TestCase has implemented the tearDown() method, then this method runs last. It is used to unset or destroy code required for the tests.</p>
+</div>
+<div class="section" id="python-s-unittest-module-lifecycle">
+<h4>Python&#8217;s unittest module &#8220;lifecycle&#8221;<a class="headerlink" href="#python-s-unittest-module-lifecycle" title="Permalink to this headline">¶</a></h4>
+<p>There is a predefined order of execution for the above methods:</p>
+<ul>
+<li><p class="first">Case 1: User implements runTest()</p>
+<p>First, setUp() will be executed.</p>
+<p>If there is an exception, then then runTest() will not be executed. If setUp() succeeds, then runTest() is executed.</p>
+<p>Regardless of the result of runTest(), tearDown() will be executed.</p>
+</li>
+<li><p class="first">Case 2: User implements test_* methods</p>
+<p>As above, if setUp() fails, then test_* will not be executed and regardless of the result of the test_* method, tearDown() will be executed.</p>
+<p>However, now for each test_* method, we will execute setUp(), a test_* method, then tearDown().</p>
+<p><em>Note: The order in which test_* methods are run is determined by their alphanumeric ordering. For a given unittest.TestCase class, the test_* methods will sorted alphanumerically in increasing order, then run in this order. *</em></p>
+</li>
+</ul>
+</div>
+<div class="section" id="the-assert-family-of-methods">
+<h4>The assert* family of methods<a class="headerlink" href="#the-assert-family-of-methods" title="Permalink to this headline">¶</a></h4>
+<p>Each of these has the power to <strong>FAIL</strong> a test_* or runTest method.
+A test could contain several assert methods and will continue to run until an assertion fails.
+If no assertion fails, then the test will be marked as OK.</p>
+<p>A useful addition to the assert methods provided are the option to pass a message when the assertion fails. For example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">runTest</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">assertEquals</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="s">&quot;Silly you, 3 is not 4!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>If the optional message ( &#8220;Silly you, 3 is not 4!&#8221; in this case) is given, then if the assertion fails the user will be given this optional message instead of the generic message.</p>
+</div>
+</div>
+<div class="section" id="best-practices">
+<span id="id1"></span><h3>Best practices<a class="headerlink" href="#best-practices" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>Since Freeseer is well organized into modules, we&#8217;d like to mirror this setup in the test folder. This means that if your code is located in src/freeseer/framework/core.py then your test code should be found in src/test/framework/test_core.py (more about file naming conventions later). We do this for logical ordering: it tells us that test modules in src/freeseer/test/folder_name are for testing modules in src/freeseer/folder_name.</li>
+<li>If you are creating a new folder in src/freeseer/test/*, ensure that your folder contains a __init__.py such that your test module can be imported by unittest during discovery.</li>
+</ol>
+</div>
+</div>
+<div class="section" id="running-the-test-suite">
+<h2>Running the Test Suite<a class="headerlink" href="#running-the-test-suite" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="introduction">
+<h3>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h3>
+<p>We&#8217;ve written our test case(s) and now we want to see the results. First, let&#8217;s go over the expected results:</p>
+<p>Recall: we are using the test_* methods, thus setUp() will execute before each test_* and the test_* methods will be executed in alphanumeric order. A test_* will FAIL if any of its assertions are false.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">setUp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">pres</span> <span class="o">=</span> <span class="n">Presentation</span><span class="p">(</span><span class="s">&quot;John Doe&quot;</span><span class="p">,</span> <span class="n">event</span><span class="o">=</span><span class="s">&quot;haha&quot;</span><span class="p">,</span> <span class="n">time</span><span class="o">=</span><span class="s">&quot;NOW&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In setUp(), we are creating a Presentation instance and storing it in self.pres. Now, each test_* will access this instance using self.pres.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">test_correct_time_set</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">assertTrue</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pres</span><span class="o">.</span><span class="n">time</span> <span class="o">==</span> <span class="s">&quot;NOW&quot;</span><span class="p">)</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">pres</span><span class="o">.</span><span class="n">speaker</span> <span class="o">=</span> <span class="s">&quot;John Doe&quot;</span>
+</pre></div>
+</div>
+<p>In test_correct_time_set(), we are checking that the time parameter in the constructor was correctly set to &#8220;NOW&#8221;, then we are setting self.pres.speaker to &#8220;John Doe&#8221;.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">test_speaker_not_first_param</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">assertNotEquals</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pres</span><span class="o">.</span><span class="n">speaker</span><span class="p">,</span> <span class="s">&quot;John Doe&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In test_speaker_not_first_param(), we are checking that &#8220;John Doe&#8221; was in fact not set as the Presentation.speaker (it will be set as Presentation.title).</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">test_event_is_default</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">assertFalse</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pres</span><span class="o">.</span><span class="n">event</span> <span class="o">!=</span> <span class="s">&quot;Default&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Finally, in test_event_is_default(), we are checking that self.pres.event was set as &#8220;Default&#8221;. Note that this case should fail.</p>
+<p>Before we begin, a note about the alphanumeric order. The test_* methods will run in the following order:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>setUp(), test_correct_time()</li>
+<li>setUp(), test_event_is_default()</li>
+<li>setUp(), test_speaker_not_first_param()</li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="command-line-options">
+<h3>Command line options<a class="headerlink" href="#command-line-options" title="Permalink to this headline">¶</a></h3>
+<p><strong>Note: to avoid package import errors, we need to run the following commands from the src folder.</strong></p>
+<div class="section" id="example-1-discovery-run-all-tests">
+<h4>Example #1: Discovery, Run all tests<a class="headerlink" href="#example-1-discovery-run-all-tests" title="Permalink to this headline">¶</a></h4>
+<p>This first method is the most basic and least verbose version. We are running unittest as a module and telling it to &#8220;discover&#8221;; recursively find tests starting from freeseer/test.</p>
+<p>In the output, we see a <strong>FAIL</strong> in test_event_is_default, which we expected to fail.
+Along with the <strong>FAIL</strong> message, we get the module information framework.test_presentation.TestPresentation, line number where the failure occured, the code of the failed assertion and the AssertionError with a generic message (this is where your custom message would be printed instead).
+Finally, we get the number of tests executed, total time and number of <strong>FAILED</strong>.</p>
+<p>Something to note here is that even if a test fails, we mark it as <strong>FAIL</strong> and move on. This can be configured (see -f ).</p>
+<div class="highlight-none"><div class="highlight"><pre>$ python -m unittest discover freeseer/test/
+.F.
+======================================================================
+FAIL: test_event_is_default (framework.test_presentation.TestPresentation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File (path to test_presentation.py), line 20, in test_event_is_default
+    self.assertFalse(self.pres.event != &quot;Default&quot;)
+AssertionError: True is not false
+----------------------------------------------------------------------
+Ran 3 tests in 0.001s
+
+FAILED (failures=1)
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-2-discovery-verbose-run-all-tests">
+<h4>Example #2: Discovery, Verbose, Run all tests<a class="headerlink" href="#example-2-discovery-verbose-run-all-tests" title="Permalink to this headline">¶</a></h4>
+<p>This next method is the same as before, but with the added -v.
+We are telling unittest to be more verbose (output more information).
+The output will be as above but will also contain a listing of each test method, module and result information.</p>
+<div class="highlight-none"><div class="highlight"><pre>$ python -m unittest discover freeseer/test/ -v
+test_correct_time_set (framework.test_presentation.TestPresentation) ... ok
+test_event_is_default (framework.test_presentation.TestPresentation) ... FAIL
+test_speaker_not_first_param (framework.test_presentation.TestPresentation) ... ok
+======================================================================
+FAIL: test_event_is_default (framework.test_presentation.TestPresentation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File (path to test_presentation.py), line 20, in test_event_is_default
+    self.assertFalse(self.pres.event != &quot;Default&quot;)
+AssertionError: True is not false
+----------------------------------------------------------------------
+Ran 3 tests in 0.001s
+
+FAILED (failures=1)
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-3-discovery-verbose-run-until-fail">
+<h4>Example #3: Discovery, Verbose, Run until fail<a class="headerlink" href="#example-3-discovery-verbose-run-until-fail" title="Permalink to this headline">¶</a></h4>
+<p>As in the previous method, we are telling unittest to be more verbose but now we are also instructing -f.
+This option means &#8220;fail fast&#8221; and will cancel the entire test execution on a failure.
+Looking at the output, only 2 tests were executed because the second failed.</p>
+<p><strong>Note: If the intent is to see whether or not your new code breaks any functionality, you will likely use this method.</strong></p>
+<div class="highlight-none"><div class="highlight"><pre>$ python -m unittest discover freeseer/test/ -v -f
+test_correct_time_set (framework.test_presentation.TestPresentation) ... ok
+test_event_is_default (framework.test_presentation.TestPresentation) ... FAIL
+
+======================================================================
+FAIL: test_event_is_default (framework.test_presentation.TestPresentation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File (path to test_presentation.py), line 20, in test_event_is_default
+    self.assertFalse(self.pres.event != &quot;Default&quot;)
+AssertionError: True is not false
+----------------------------------------------------------------------
+Ran 2 tests in 0.006s
+
+FAILED (failures=1)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="gotchas-a-k-a-q-a">
+<h2>Gotchas! a.k.a Q&amp;A<a class="headerlink" href="#gotchas-a-k-a-q-a" title="Permalink to this headline">¶</a></h2>
+<p><strong>Q: Why didn&#8217;t test_speaker_not_first_param() fail if it is being set to &#8220;John Doe&#8221; in test_correct_time_set() ?</strong></p>
+<p>A: Because before test_speaker_not_first_param() is invoked, setUp() is executed which resets self.pres to a new instance. Thus self.pres is as it would be and self.pres.speaker = &#8220;&#8221;.</p>
+<p><strong>Q: When I run (example #1, #2 and/or #3), I get the unittest help menu, why could this be happening OR I am getting weird import errors from unittest, what&#8217;s going on ?</strong></p>
+<p>A: From experience this was ultimately the result of an import error or invocation from the wrong place...</p>
+<ol class="arabic simple">
+<li>Ensure you are in the src folder</li>
+<li>Check that you are in fact using -v and/or -v after unittest (easiest to remember if it&#8217;s at the end of the command).</li>
+<li>Ensure that you are using __init__.py files (they can be empty files as they only tell Python to treat the folder as a package) in all the directories inside src/freeseer/test. If that&#8217;s correct, maybe</li>
+<li>Make sure you that in your test module, you are importing from freeseer.folder.module_name</li>
+</ol>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="coding-guidelines.html" title="Coding Guidelines"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="develop-from-source.html" title="Develop from Source"
+             >previous</a> |</li>
+        <li><a href="../../index.html">Freeseer 3.0.0 documentation</a> &raquo;</li>
+          <li><a href="../index.html" >Contribute</a> &raquo;</li>
+          <li><a href="index.html" >Developer</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011-2012  Free and Open Source Software Learning Centre.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>
