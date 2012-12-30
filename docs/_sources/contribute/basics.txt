@@ -47,13 +47,6 @@ Freeseer.
 
 
 
-Git Philosophy
---------------
-- Branches are tasks, commits are subtasks
-- Commit early, commit often
-- Your local repo is your scratch pad
-
-
 Forking Freeseer
 ----------------
 
@@ -91,16 +84,7 @@ Basic Workflow
 .. todo:: (Dennis) See NumPy's docs (Development workflow), ThinkUp's docs (Developer), and my Google Doc's Freeseer scrap notes!
 
 1. Create a new branch based off the central repo's (i.e. Freeseer's) experimental branch.
-2. Fetch any changes for good measure (optional). ::
-
-    $ git fetch upstream
-    $ git merge upstream/experimental
-    # OR
-    $ git pull upstream experimental # Fetch and merge
-    # The latter method (pull) is more prone to conflicts.
-    # If you want to keep your repo up to date but don't want to break something
-    # by updating your files, fetch but do not merge right after.
-
+2. Fetch any changes for good measure (optional).
 3. Work on your feature.
 4. Add and commit files you worked on. Optionally sign-off your commit with -s.
 5. Push your branch to your remote fork (and automatically create it if it doesn't exist yet) on GitHub.
