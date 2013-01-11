@@ -57,6 +57,7 @@
   <ul>
 <li><a class="reference internal" href="#">Basics</a><ul>
 <li><a class="reference internal" href="#git-github">Git &amp; GitHub</a></li>
+<li><a class="reference internal" href="#git-philosophy">Git Philosophy</a></li>
 <li><a class="reference internal" href="#forking-freeseer">Forking Freeseer</a></li>
 <li><a class="reference internal" href="#basic-workflow">Basic Workflow</a></li>
 <li><a class="reference internal" href="#workflow-diagram">Workflow Diagram</a></li>
@@ -120,29 +121,37 @@ Freeseer.</p>
 <p class="first admonition-title">See also</p>
 <ul class="last simple">
 <li>Set up Git and your GitHub account
-<span class="math">\(\rightarrow\)</span>
- <a class="reference external" href="http://help.github.com">help.github.com</a></li>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow><mo>→</mo></mrow></math> <a class="reference external" href="http://help.github.com">help.github.com</a></li>
 <li>Learn by doing
-<span class="math">\(\rightarrow\)</span>
- <a class="reference external" href="http://try.github.com/">Try Git</a></li>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow><mo>→</mo></mrow></math> <a class="reference external" href="http://try.github.com/">Try Git</a></li>
 <li>Learn by watching
-<span class="math">\(\rightarrow\)</span>
- <a class="reference external" href="http://git-scm.com/videos">Git Videos</a></li>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow><mo>→</mo></mrow></math> <a class="reference external" href="http://git-scm.com/videos">Git Videos</a></li>
 <li>Learn by reading
-<span class="math">\(\rightarrow\)</span>
- <a class="reference external" href="http://book.git-scm.com">Pro Git book</a> (free)</li>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow><mo>→</mo></mrow></math> <a class="reference external" href="http://book.git-scm.com">Pro Git book</a> (free)</li>
 <li>Forgetful?
-<span class="math">\(\rightarrow\)</span>
- <a class="reference external" href="https://na1.salesforce.com/help/doc/en/salesforce_git_developer_cheatsheet.pdf">Git Cheat Sheet</a></li>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow><mo>→</mo></mrow></math> <a class="reference external" href="https://na1.salesforce.com/help/doc/en/salesforce_git_developer_cheatsheet.pdf">Git Cheat Sheet</a></li>
 <li>Eclipse is your preferred IDE?
-<span class="math">\(\rightarrow\)</span>
- <a class="reference external" href="https://github.com/blog/1181-eclipse-git-plugin-2-0-released">Eclipse Git Plugin</a></li>
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow><mo>→</mo></mrow></math> <a class="reference external" href="https://github.com/blog/1181-eclipse-git-plugin-2-0-released">Eclipse Git Plugin</a></li>
 <li>Prefer GUIs over CLIs?
-<span class="math">\(\rightarrow\)</span>
- <a class="reference external" href="http://windows.github.com/">GitHub for Windows</a> or
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow><mo>→</mo></mrow></math> <a class="reference external" href="http://windows.github.com/">GitHub for Windows</a> or
 <a class="reference external" href="http://mac.github.com/">GitHub for Mac</a></li>
 </ul>
 </div>
+</div>
+<div class="section" id="git-philosophy">
+<h2>Git Philosophy<a class="headerlink" href="#git-philosophy" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Branches are tasks, commits are subtasks</li>
+<li>Commit early, commit often</li>
+<li>Your local repo is your scratch pad</li>
+</ul>
 </div>
 <div class="section" id="forking-freeseer">
 <h2>Forking Freeseer<a class="headerlink" href="#forking-freeseer" title="Permalink to this headline">¶</a></h2>
@@ -181,14 +190,29 @@ you prefer (e.g. <tt class="docutils literal"><span class="pre">mainstream</span
 <p class="first admonition-title">Todo</p>
 <p class="last">(Dennis) See NumPy&#8217;s docs (Development workflow), ThinkUp&#8217;s docs (Developer), and my Google Doc&#8217;s Freeseer scrap notes!</p>
 </div>
-<ol class="arabic simple">
-<li>Create a new branch based off the central repo&#8217;s (i.e. Freeseer&#8217;s) experimental branch.</li>
-<li>Fetch any changes for good measure (optional).</li>
-<li>Work on your feature.</li>
-<li>Add and commit files you worked on. Optionally sign-off your commit with -s.</li>
-<li>Push your branch to your remote fork (and automatically create it if it doesn&#8217;t exist yet) on GitHub.</li>
-<li>Send a pull request when your feature is ready to be merged. You can still make additional changes later.</li>
-<li>Delete your local (and remote) branch when you&#8217;re absolutely sure you no longer need it.</li>
+<ol class="arabic">
+<li><p class="first">Create a new branch based off the central repo&#8217;s (i.e. Freeseer&#8217;s) experimental branch.</p>
+</li>
+<li><p class="first">Fetch any changes for good measure (optional).</p>
+<div class="highlight-python"><pre>$ git fetch upstream
+$ git merge upstream/experimental
+# OR
+$ git pull upstream experimental # Fetch and merge
+# The latter method (pull) is more prone to conflicts.
+# If you want to keep your repo up to date but don't want to break something
+# by updating your files, fetch but do not merge right after.</pre>
+</div>
+</li>
+<li><p class="first">Work on your feature.</p>
+</li>
+<li><p class="first">Add and commit files you worked on. Optionally sign-off your commit with -s.</p>
+</li>
+<li><p class="first">Push your branch to your remote fork (and automatically create it if it doesn&#8217;t exist yet) on GitHub.</p>
+</li>
+<li><p class="first">Send a pull request when your feature is ready to be merged. You can still make additional changes later.</p>
+</li>
+<li><p class="first">Delete your local (and remote) branch when you&#8217;re absolutely sure you no longer need it.</p>
+</li>
 </ol>
 </div>
 <div class="section" id="workflow-diagram">
@@ -226,30 +250,39 @@ for shorthand.</p>
 </div>
 <div class="section" id="close-and-reference-issues-with-a-commit-message">
 <h2>Close and Reference Issues with a Commit Message<a class="headerlink" href="#close-and-reference-issues-with-a-commit-message" title="Permalink to this headline">¶</a></h2>
-<p>To reduce overhead and management, we use a single issue tracker for all the
-organization&#8217;s repositories. It can be found at our main repo:
-<a class="reference external" href="https://github.com/Freeseer/freeseer/issues">github.com/Freeseer/freeseer/issues</a>.</p>
-<p>Using a few simple keywords you can close an issue right from a commit
-message, or just leave a note on the issue.</p>
-<p>Referencing GitHub issues from the commit message:</p>
-<ul class="simple">
-<li>Link: use the issue number</li>
-<li>Link &amp; close: use a keyword and issue number</li>
-<li>Link from a repo that&#8217;s not freeseer.git: explicitly reference Freeseer/freeseer</li>
-</ul>
-<p>Examples:</p>
-<div class="highlight-python"><pre>git commit -m &#x27;closes #35&#x27;
-              &#x27;closes gh-35&#x27;
-              &#x27;Resolved issue #35&#x27;
-              &#x27;See #35 for more info&#x27;
-              &#x27;Fixes issues Freeseer/freeseer#35&#x27;</pre>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">To reduce overhead, we use a single issue tracker for all the organization&#8217;s repositories:
+<a class="reference external" href="https://github.com/Freeseer/freeseer/issues">github.com/Freeseer/freeseer/issues</a></p>
 </div>
+<p>GitHub allows you to reference and close issues from a commit message. <a class="footnote-reference" href="#f2" id="id4">[2]</a>
+When you reference an issue via a commit message, the commit that contains the
+reference will appear as a note on the issue&#8217;s page. This is useful if you
+want to easily see which commits are related to the issue.
+<a class="reference external" href="https://github.com/Freeseer/freeseer/issues/258#commit-ref-c578203">See an example of this in practice.</a></p>
+<p>There are two ways to reference issues.
+For example, let&#8217;s reference issue 123 from a commit message.</p>
+<ol class="arabic simple">
+<li>Short form: <cite>&#8216;#123&#8217;</cite> or <cite>&#8216;GH-123&#8217;</cite> or <cite>&#8216;gh-123&#8217;</cite></li>
+<li>Long form: <cite>&#8216;Freeseer/freeseer#123&#8217;</cite></li>
+</ol>
+<p>Using the long form, you can also reference issues that belong to different
+repositories on GitHub. This is called a cross-repo reference.
+<a class="reference external" href="https://github.com/Freeseer/freeseer/issues/266#commit-ref-619d989">See an example of this in practice.</a></p>
+<p>To close an issue, place a supported keyword directly in front of the reference.
+E.g. <cite>&#8216;Close #123&#8217;</cite>, <cite>&#8216;Fix gh-123&#8217;</cite>.</p>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
-<p>Supported keywords: <strong>close</strong>, <strong>closes</strong>, <strong>closed</strong>, <strong>fixes</strong>, <strong>fixed</strong>, <strong>fix</strong>, <strong>resolved</strong></p>
-<p class="last">Keywords are not case sensitive.</p>
+<ul class="last simple">
+<li>Supported keywords: <strong>close</strong>, <strong>closes</strong>, <strong>closed</strong>, <strong>fix</strong>, <strong>fixes</strong>, <strong>fixed</strong>, <strong>resolved</strong></li>
+<li>Keywords (including organization and repo names) are case-insensitive.</li>
+<li>If you don&#8217;t have permission to close a specific issue on GitHub,
+you won&#8217;t be able to close it from a commit message.</li>
+<li>If you forked a repository, you can use the short form to reference issues
+that belong to the original repository. This is especially useful for
+interns who contribute to Freeseer.</li>
+</ul>
 </div>
-<p>Anyone with <strong>write access</strong> to the repository may close an issue or leave a note.</p>
 </div>
 <div class="section" id="dealing-with-conflicts">
 <h2>Dealing with Conflicts<a class="headerlink" href="#dealing-with-conflicts" title="Permalink to this headline">¶</a></h2>
@@ -270,7 +303,7 @@ $ git mergetool -t meld  # Some alternatives are kdiff3, opendiff, diffmerge, et
 ... The visual merge tool is launched.
 ... It shows three versions of the file (local, failed merge, remote).
 ... You can easily choose code from any and all of them to resolve conflicts.
-... Don&#x27;t forget to save the file when you&#x27;re done.</pre>
+... Don't forget to save the file when you're done.</pre>
 </div>
 </li>
 <li><p class="first">Ignore their changes, use your file:</p>
@@ -283,7 +316,7 @@ $ git mergetool -t meld  # Some alternatives are kdiff3, opendiff, diffmerge, et
 </li>
 </ol>
 <p>Once you&#8217;ve resolved all conflicts:</p>
-<div class="highlight-python"><pre>$ git add &lt;filename&gt;  # Or &#x27;git add .&#x27; to mark all files as resolved
+<div class="highlight-python"><pre>$ git add &lt;filename&gt;  # Or 'git add .' to mark all files as resolved
 $ git rebase --continue</pre>
 </div>
 <p>To abort the conflict merging process at any time:</p>
@@ -312,6 +345,17 @@ need to be if you want to push your changes to a remote repo or pull in
 changes from a remote repo.</td></tr>
 </tbody>
 </table>
+<table class="docutils footnote" frame="void" id="f2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id4">[2]</a></td><td>You can reference any issue on GitHub via a commit message, but you
+can only close an issue via a commit message if the issue belongs to
+the same repository as the commit. In other words, you cannot close an
+issue from a commit message if it’s cross-repo. You’ll have to close
+it manually on GitHub. Keep this in mind when working on issues that
+belong to Freeseer’s documentation.</td></tr>
+</tbody>
+</table>
 </div>
 </div>
 
@@ -337,9 +381,13 @@ changes from a remote repo.</td></tr>
           <li><a href="index.html" >Contributor Guide</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2011-2012  Free and Open Source Software Learning Centre.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
-    </div>
+<div class="footer">
+  © 2013 FOSSLC
+  | <a href="./contact.html">Contact us</a>
+  | Found an issue?
+  <a href="https://github.com/Freeseer/freeseer/issues/new" target="_blank">Report it!</a>
+  | Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
+</div>
+
   </body>
 </html>

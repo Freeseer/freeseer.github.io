@@ -56,12 +56,14 @@
   <h3><a href="../index.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Translator</a><ul>
-<li><a class="reference internal" href="#how-to-contribute-translations">How to Contribute Translations</a></li>
+<li><a class="reference internal" href="#how-to-contribute-translations">How to Contribute Translations</a><ul>
+<li><a class="reference internal" href="#translating-freeseer">Translating Freeseer</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#how-to-update-translation-resources">How to update translation resources</a><ul>
 <li><a class="reference internal" href="#updating-translation-files">Updating Translation Files</a></li>
 <li><a class="reference internal" href="#adding-qt-translation-files-to-freeseer-monitored-list">Adding Qt Translation Files to Freeseer-monitored List:</a></li>
 <li><a class="reference internal" href="#updating-qt-resource-files">Updating Qt Resource Files</a></li>
-<li><a class="reference internal" href="#commiting-and-pushing-the-translation">Commiting and Pushing the Translation</a></li>
 </ul>
 </li>
 </ul>
@@ -107,10 +109,22 @@ There should be no language barrier between Freeseer and our users.
 You can help in our localization efforts.</p>
 <div class="section" id="how-to-contribute-translations">
 <h2>How to Contribute Translations<a class="headerlink" href="#how-to-contribute-translations" title="Permalink to this headline">¶</a></h2>
-<p><em>TODO:</em> <a class="reference external" href="https://github.com/Freeseer/freeseer/issues/127">https://github.com/Freeseer/freeseer/issues/127</a></p>
+<div class="section" id="translating-freeseer">
+<h3>Translating Freeseer<a class="headerlink" href="#translating-freeseer" title="Permalink to this headline">¶</a></h3>
+<p>In order to translate Freeseer a translator can use Qt Linguist tool to read the translation files located in</p>
+<blockquote>
+<div>cd &lt;freeseerroot&gt;/src/freeseer/frontend/qtcommon/languages</div></blockquote>
+<p>In this directory there exists several <a href="#id1"><span class="problematic" id="id2">*</span></a>.ts files. These are the translation files for each language. Simply
+load the language you would like to translate into Qt Linguist and complete the translations.</p>
+<p>If the language you wish to translate is not available, the section <a class="reference internal" href="#updating-translation-files">Updating Translation Files</a></p>
+<p>Once your translation is complete simply send a pull request containing only the <a href="#id3"><span class="problematic" id="id4">*</span></a>.ts file that you are contributing
+back.</p>
+</div>
 </div>
 <div class="section" id="how-to-update-translation-resources">
 <h2>How to update translation resources<a class="headerlink" href="#how-to-update-translation-resources" title="Permalink to this headline">¶</a></h2>
+<p>The following steps are not required for a translator but more for a developer to make new translation contributions
+appear in freeseer.</p>
 <p>There are 2 items to keep in mind in relation to updating translation resources.</p>
 <ol class="arabic simple">
 <li>Updating Translation Files</li>
@@ -134,11 +148,11 @@ for the language you wish to translate.</p>
 &lt;texteditor&gt; resource.qrc</pre>
 </div>
 <p>The following line should be added:</p>
-<div class="highlight-python"><pre>&lt;file alias=&quot;languages/tr_LANGUAGE_LOCALE.qm&quot;&gt;languages/tr_LANGUAGE_LOCALE.qm&lt;/file&gt;</pre>
+<div class="highlight-python"><pre>&lt;file alias="languages/tr_LANGUAGE_LOCALE.qm"&gt;languages/tr_LANGUAGE_LOCALE.qm&lt;/file&gt;</pre>
 </div>
 <p>where LANGUAGE and LOCALE are specific to your translation. For example, an American English translation
 would be:</p>
-<div class="highlight-python"><pre>&lt;file alias=&quot;languages/tr_en_US.qm&quot;&gt;languages/tr_en_US.qm&lt;/file&gt;.</pre>
+<div class="highlight-python"><pre>&lt;file alias="languages/tr_en_US.qm"&gt;languages/tr_en_US.qm&lt;/file&gt;.</pre>
 </div>
 </div>
 <div class="section" id="updating-qt-resource-files">
@@ -150,15 +164,6 @@ following commands:</p>
 make</pre>
 </div>
 <p>After the above steps are followed, a sample run of Freeseer should confirm that the translation is working.</p>
-</div>
-<div class="section" id="commiting-and-pushing-the-translation">
-<h3>Commiting and Pushing the Translation<a class="headerlink" href="#commiting-and-pushing-the-translation" title="Permalink to this headline">¶</a></h3>
-<p>When all is ready to be commited please ensure that you remove the resource_rc.py files from the commit so it doesn&#8217;t
-cause conflicts with any other work on translation that&#8217;s currently being done. You do this by git-adding the files as
-normal and then issuing the following command before commiting:</p>
-<div class="highlight-python"><pre>git rm src/freeseer/frontend/resource_rc.py</pre>
-</div>
-<p>Note: This command is assumed to run from the root directory of the Freeseer source code.</p>
 </div>
 </div>
 </div>
@@ -185,9 +190,13 @@ normal and then issuing the following command before commiting:</p>
           <li><a href="index.html" >Contributor Guide</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2011-2012  Free and Open Source Software Learning Centre.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
-    </div>
+<div class="footer">
+  © 2013 FOSSLC
+  | <a href="./contact.html">Contact us</a>
+  | Found an issue?
+  <a href="https://github.com/Freeseer/freeseer/issues/new" target="_blank">Report it!</a>
+  | Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
+</div>
+
   </body>
 </html>

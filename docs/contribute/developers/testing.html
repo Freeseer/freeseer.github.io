@@ -27,9 +27,9 @@
     <script type="text/javascript" src="../../_static/doctools.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="top" title="Freeseer 3.0.0 documentation" href="../../index.html" />
-    <link rel="up" title="Developer" href="../developers/index.html" />
-    <link rel="next" title="Coding Guidelines" href="../developers/coding-guidelines.html" />
-    <link rel="prev" title="Develop from Source" href="../developers/develop-from-source.html" /> 
+    <link rel="up" title="Developer" href="index.html" />
+    <link rel="next" title="Coding Guidelines" href="coding-guidelines.html" />
+    <link rel="prev" title="Develop from Source" href="develop-from-source.html" /> 
   </head>
   <body>
     <div class="related">
@@ -39,14 +39,14 @@
           <a href="../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="../developers/coding-guidelines.html" title="Coding Guidelines"
+          <a href="coding-guidelines.html" title="Coding Guidelines"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="../developers/develop-from-source.html" title="Develop from Source"
+          <a href="develop-from-source.html" title="Develop from Source"
              accesskey="P">previous</a> |</li>
         <li><a href="../../index.html">Freeseer 3.0.0 documentation</a> &raquo;</li>
           <li><a href="../index.html" >Contributor Guide</a> &raquo;</li>
-          <li><a href="../developers/index.html" accesskey="U">Developer</a> &raquo;</li> 
+          <li><a href="index.html" accesskey="U">Developer</a> &raquo;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar">
@@ -59,7 +59,7 @@
 <li><a class="reference internal" href="#">Run Freeseer&#8217;s Test Suite</a><ul>
 <li><a class="reference internal" href="#configure-your-test-environment">Configure your Test Environment</a></li>
 <li><a class="reference internal" href="#extending-the-test-suite">Extending the Test Suite</a><ul>
-<li><a class="reference internal" href="#structure-of-test-directory">Structure of test directory</a></li>
+<li><a class="reference internal" href="#structure-of-test-directory">Structure of Test Directory</a></li>
 <li><a class="reference internal" href="#adding-editing-a-test-module">Adding/Editing a test module</a><ul>
 <li><a class="reference internal" href="#an-example">An example</a></li>
 <li><a class="reference internal" href="#import-unittest">import unittest</a></li>
@@ -70,7 +70,6 @@
 <li><a class="reference internal" href="#the-assert-family-of-methods">The assert* family of methods</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#best-practices">Best practices</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#running-the-test-suite">Running the Test Suite</a><ul>
@@ -83,16 +82,19 @@
 </li>
 </ul>
 </li>
-<li><a class="reference internal" href="#gotchas-a-k-a-q-a">Gotchas! a.k.a Q&amp;A</a></li>
+<li><a class="reference internal" href="#gotchas-a-k-a-q-a">Gotchas! a.k.a Q&amp;A</a><ul>
+<li><a class="reference internal" href="#what-should-testers-focus-on">What should testers focus on?</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 
   <h4>Previous topic</h4>
-  <p class="topless"><a href="../developers/develop-from-source.html"
+  <p class="topless"><a href="develop-from-source.html"
                         title="previous chapter">Develop from Source</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="../developers/coding-guidelines.html"
+  <p class="topless"><a href="coding-guidelines.html"
                         title="next chapter">Coding Guidelines</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
@@ -125,9 +127,9 @@
 <div class="section" id="configure-your-test-environment">
 <h2>Configure your Test Environment<a class="headerlink" href="#configure-your-test-environment" title="Permalink to this headline">¶</a></h2>
 <p>If you can run Freeseer, you should have nothing to configure. This is because
-Python&#8217;s <tt class="docutils literal"><span class="pre">unittest</span></tt> module and PyQt&#8217;s <tt class="docutils literal"><span class="pre">QtTest</span></tt> module are used for
-Freeseer&#8217;s test suite. The <tt class="docutils literal"><span class="pre">unittest</span></tt> module is Python&#8217;s standard unit testing
-framework, and thus part of the standard library. The <tt class="docutils literal"><span class="pre">QtTest</span></tt> module is
+Python&#8217;s <cite>unittest</cite> module and PyQt&#8217;s <cite>QtTest</cite> module are used for
+Freeseer&#8217;s test suite. The <cite>unittest</cite> module is Python&#8217;s standard unit testing
+framework, and thus part of the standard library. The <cite>QtTest</cite> module is
 included with the PyQt4 package, which you should have installed as it&#8217;s
 a dependency for Freeseer.</p>
 <p>If you want to make sure, you can start the Python interpreter and
@@ -141,10 +143,21 @@ import <tt class="docutils literal"><span class="pre">unittest</span></tt> and <
 <div class="section" id="extending-the-test-suite">
 <h2>Extending the Test Suite<a class="headerlink" href="#extending-the-test-suite" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="structure-of-test-directory">
-<h3>Structure of test directory<a class="headerlink" href="#structure-of-test-directory" title="Permalink to this headline">¶</a></h3>
-<p>At this time, the test modules are contained in a folder in the src/freeseer directory called test.</p>
-<p>Since as of Python 2.7, unittest supports (recursive) test module discovery, all test modules should exist somewhere inside the src/freeseer/test folder because when we run the suite later, we&#8217;ll be pointing to this folder as the root.</p>
-<p>See the Best Practices section for details available here: <a class="reference internal" href="#best-practices"><em>Best practices</em></a>.</p>
+<h3>Structure of Test Directory<a class="headerlink" href="#structure-of-test-directory" title="Permalink to this headline">¶</a></h3>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">test</p>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">All test modules should exist somewhere inside <tt class="docutils literal"><span class="pre">src/freeseer/test/</span></tt> for
+<cite>unittest</cite> to find them.</p>
+</div>
+<p>Since Freeseer is well organized into modules, we&#8217;d like to mirror this setup
+in the test folder. For example, the test code for src/freeseer/framework/core.py
+should be located in src/test/framework/test_core.py (more about file naming conventions later).
+We do this for logical ordering: it tells us that test modules in src/freeseer/test/folder_name are for testing modules in src/freeseer/folder_name.</p>
+<p>If you are creating a new folder in src/freeseer/test/*, ensure that your folder contains a __init__.py such that your test module can be imported by unittest during discovery.</p>
 </div>
 <div class="section" id="adding-editing-a-test-module">
 <h3>Adding/Editing a test module<a class="headerlink" href="#adding-editing-a-test-module" title="Permalink to this headline">¶</a></h3>
@@ -248,13 +261,6 @@ If no assertion fails, then the test will be marked as OK.</p>
 </div>
 <p>If the optional message ( &#8220;Silly you, 3 is not 4!&#8221; in this case) is given, then if the assertion fails the user will be given this optional message instead of the generic message.</p>
 </div>
-</div>
-<div class="section" id="best-practices">
-<span id="id1"></span><h3>Best practices<a class="headerlink" href="#best-practices" title="Permalink to this headline">¶</a></h3>
-<ol class="arabic simple">
-<li>Since Freeseer is well organized into modules, we&#8217;d like to mirror this setup in the test folder. This means that if your code is located in src/freeseer/framework/core.py then your test code should be found in src/test/framework/test_core.py (more about file naming conventions later). We do this for logical ordering: it tells us that test modules in src/freeseer/test/folder_name are for testing modules in src/freeseer/folder_name.</li>
-<li>If you are creating a new folder in src/freeseer/test/*, ensure that your folder contains a __init__.py such that your test module can be imported by unittest during discovery.</li>
-</ol>
 </div>
 </div>
 <div class="section" id="running-the-test-suite">
@@ -380,6 +386,17 @@ FAILED (failures=1)
 <li>Ensure that you are using __init__.py files (they can be empty files as they only tell Python to treat the folder as a package) in all the directories inside src/freeseer/test. If that&#8217;s correct, maybe</li>
 <li>Make sure you that in your test module, you are importing from freeseer.folder.module_name</li>
 </ol>
+<div class="section" id="what-should-testers-focus-on">
+<h3>What should testers focus on?<a class="headerlink" href="#what-should-testers-focus-on" title="Permalink to this headline">¶</a></h3>
+<p>Ultimately, testers should protect users and the organization from bad design,
+confusing UX, functional bugs, security and privacy issues, and so forth.</p>
+<p>Some things testers should consider:</p>
+<p>· Where are the weak points in the software?</p>
+<p>· What are the security, privacy, performance and reliability concerns?</p>
+<p>· Do all the primary user scenarios work as expected? For all international audiences?</p>
+<p>· Does the product interoperate with other products (hardware and software)?</p>
+<p>· In the event of a problem, how good are the diagnostics?</p>
+</div>
 </div>
 </div>
 
@@ -396,19 +413,23 @@ FAILED (failures=1)
           <a href="../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="../developers/coding-guidelines.html" title="Coding Guidelines"
+          <a href="coding-guidelines.html" title="Coding Guidelines"
              >next</a> |</li>
         <li class="right" >
-          <a href="../developers/develop-from-source.html" title="Develop from Source"
+          <a href="develop-from-source.html" title="Develop from Source"
              >previous</a> |</li>
         <li><a href="../../index.html">Freeseer 3.0.0 documentation</a> &raquo;</li>
           <li><a href="../index.html" >Contributor Guide</a> &raquo;</li>
-          <li><a href="../developers/index.html" >Developer</a> &raquo;</li> 
+          <li><a href="index.html" >Developer</a> &raquo;</li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2011-2012  Free and Open Source Software Learning Centre.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
-    </div>
+<div class="footer">
+  © 2013 FOSSLC
+  | <a href="./contact.html">Contact us</a>
+  | Found an issue?
+  <a href="https://github.com/Freeseer/freeseer/issues/new" target="_blank">Report it!</a>
+  | Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
+</div>
+
   </body>
 </html>
