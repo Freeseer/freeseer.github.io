@@ -59,8 +59,11 @@
 <li><a class="reference internal" href="#step-1-search">Step 1: Search</a></li>
 <li><a class="reference internal" href="#step-2-don-t-file-an-issue-yet">Step 2: Don&#8217;t File An Issue... Yet</a></li>
 <li><a class="reference internal" href="#step-3-contact-the-community">Step 3: Contact the Community</a></li>
+<li><a class="reference internal" href="#step-4-file-a-new-issue-using-a-template">Step 4: File a New Issue using a Template</a><ul>
 <li><a class="reference internal" href="#bug-report-template">Bug Report Template</a></li>
 <li><a class="reference internal" href="#feature-request-template">Feature Request Template</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -105,10 +108,9 @@ idea for Freeseer, here&#8217;s what you can do to get help or feedback.</p>
 <div class="section" id="step-1-search">
 <h2>Step 1: Search<a class="headerlink" href="#step-1-search" title="Permalink to this headline">¶</a></h2>
 <p>To avoid duplicate work, search our <a class="reference internal" href="../index.html"><em>documentation</em></a>,
-<a class="reference internal" href="../contact.html#mailing-list-label"><em>mailing list</em></a>, and <a class="reference external" href="https://github.com/Freeseer/freeseer/issues">issue tracker</a> or ask us on
-<a class="reference internal" href="../contact.html#irc-label"><em>IRC</em></a> to make sure your problem or idea hasn&#8217;t already been
-documented or discussed. If it has, follow up on the existing mailing
-list thread thread or issue tracker comment thread to discuss further.</p>
+<a class="reference internal" href="../contact.html#mailing-list-label"><em>mailing list</em></a>, and <a class="reference external" href="https://github.com/Freeseer/freeseer/issues">issue tracker</a> to make sure your problem or
+idea hasn&#8217;t already been documented or discussed. If it has, follow up on the
+existing mailing list thread or issue tracker comment thread to discuss further.</p>
 <p>If your problem or idea hasn&#8217;t been addressed before, continue to Step 2.</p>
 </div>
 <div class="section" id="step-2-don-t-file-an-issue-yet">
@@ -117,29 +119,79 @@ list thread thread or issue tracker comment thread to discuss further.</p>
 public, but try not to file a new issue unless the problem or feature
 request has been discussed with the Freeseer community.
 If you file a new issue without discussing, you risk it being closed for reasons
-such as it being a known issue, or previously rejected idea, or off-topic.</p>
+such as it being a known issue, previously rejected idea, or off-topic.</p>
 </div>
 <div class="section" id="step-3-contact-the-community">
 <h2>Step 3: Contact the Community<a class="headerlink" href="#step-3-contact-the-community" title="Permalink to this headline">¶</a></h2>
 <p>Send an email to our <a class="reference internal" href="../contact.html#mailing-list-label"><em>mailing list</em></a> describing your
 problem or idea. You may also use our <a class="reference internal" href="../contact.html#irc-label"><em>IRC channel</em></a>
 if you think it&#8217;s a minor issue, but mailing list is preferred.
-Please be specific when communicating.</p>
-<p>For bug reports, describe step by step exactly what you did and what went wrong, including application messaging word
-for word, as well as what version of Freeseer you are running and what operating system and version of Python you are running.</p>
-<p>For feature ideas, describe exactly how you think the new functionality should work, and include mockups and
-screenshots if you can. Sell your idea to the community by clearly explaining its benefits and use cases, and how you plan to
-help make the feature. We only build features which align with <tt class="xref doc docutils literal"><span class="pre">Freeseer's</span> <span class="pre">purpose</span></tt>.</p>
-<p>You can find templates for bug reports and feature requests, below. They are written in github-flavoured markdown format.</p>
-<p>Thanks for helping us make Freeseer a great application, and for respecting the community&#8217;s time and public spaces!</p>
+Please be specific and courteous when communicating.</p>
+<p>Thanks for helping improve Freeseer, and for respecting the community&#8217;s time
+and public spaces!</p>
+</div>
+<div class="section" id="step-4-file-a-new-issue-using-a-template">
+<h2>Step 4: File a New Issue using a Template<a class="headerlink" href="#step-4-file-a-new-issue-using-a-template" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">You can find templates for bug reports and feature requests, below.</div>
+<div class="line">We ask that new contributors follow these templates closely.</div>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Please assign the appropriate label(s) to classify your issue.
+You will see a list of options when reporting your issue.</p>
 </div>
 <div class="section" id="bug-report-template">
-<h2>Bug Report Template<a class="headerlink" href="#bug-report-template" title="Permalink to this headline">¶</a></h2>
-<p><em>TODO</em></p>
+<h3>Bug Report Template<a class="headerlink" href="#bug-report-template" title="Permalink to this headline">¶</a></h3>
+<p>For bug reports, describe step by step exactly what you did and what went wrong.</p>
+<div class="highlight-python"><pre>Steps to reproduce the problem:
+1.
+2.
+3.
+
+
+What is the expected behavior?
+
+
+What went wrong? (Place any screenshots here)
+
+
+Did this work before?
+- Not applicable / I don't know
+- Yes, this is a regression
+- No, I think it never worked
+
+
+Any other comments? (E.g. Freeseer version, Python version, operating system, error messages, etc.)</pre>
+</div>
+<p>Another, more concise, bug template:</p>
+<div class="highlight-python"><pre>Steps:
+1.
+2.
+3.
+
+Expected:
+
+Observed:
+
+Notes:</pre>
+</div>
 </div>
 <div class="section" id="feature-request-template">
-<h2>Feature Request Template<a class="headerlink" href="#feature-request-template" title="Permalink to this headline">¶</a></h2>
-<p><em>TODO</em></p>
+<h3>Feature Request Template<a class="headerlink" href="#feature-request-template" title="Permalink to this headline">¶</a></h3>
+<p>For feature ideas, describe exactly how you think the new functionality should
+work, and include mockups and screenshots if you can. Sell your idea to the
+community by clearly explaining its benefits and use cases, and how you plan to
+help make the feature.</p>
+<div class="highlight-python"><pre>Purpose of this new feature:
+
+
+Describe the feature and its functionality:
+
+
+Mockups / Screenshots / Examples:</pre>
+</div>
+</div>
 </div>
 </div>
 

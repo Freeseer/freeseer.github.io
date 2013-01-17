@@ -7,36 +7,37 @@ We've worked with students through Google Summer of Code (GSoC),
 Undergraduate Capstone Open Source Projects (UCOSP), and Fedora Summer Coding.
 
 .. todo:: project evaluation -> https://docs.google.com/open?id=0B-Zj-q_JCBWbS1lNcHBuTEllcUE
-.. todo:: project proposal (verify it's in good condition) you can add, edit,
-          and remove sections as necessary. file > make copy
-.. attitude of forgiveness in the face of failure. When people have the interest
-.. of the company in mind, if mistakes are made along the way, those shouldn't be
-.. met with punishment.
 
 Getting Started
 ---------------
-1. :doc: `Introduce yourself</contact>` to the Freeseer community via the mailing list
-2. Register a GitHub account Apply for a free micro account at `github.com/edu <http://github.com/edu>`_.
+1. `Register a (free) GitHub account <https://github.com/>`_ if you don't have one
+2. Introduce yourself to the Freeseer community via the
+   :ref:`mailing list <mailing-list-label>` and tell us:
 
-   - This step is optional, it's one of the perks of being a student
-   - A micro account allows you to have 5 private repositories
+   - your GitHub username
+   - why you chose Freeseer
+   - what you hope to learn
+3. :ref:`Fork freeseer <fork-freeseer-label>` and get it up and running
+4. Make a copy of the `project proposal <todo>`_ on Google Docs (``File`` > ``Make Copy``)
+5. Start thinking of ways how you can improve Freeseer!
 
-.. tip:: As a student, you can apply for a free micro account at `github.com/edu
-         <http://github.com/edu>`_, which gets you up to 5 private repositories.
+.. tip::
+  As a student, you can apply for a **free micro account** at
+  `github.com/edu <http://github.com/edu>`_ and get 5 private repositories!
 
 Deciding What To Work On
 ------------------------
 
-We let students choose their projects. There are no set work hours, we think you work best when you want to work.
-As long as you get your work done on time, you'll have nothing to worry about.
+We let students choose their projects. There are no set work hours -- we think
+you work best when you want to work. Meet your deadlines and you'll be fine.
 
-First you should get familiar with Freeseer and the community.
-:doc:`Introduce yourself on the mailing list</contact>`, tell us what you're experienced in or what you want to learn.
-
-Depending on which program you're participating in, you may have to attend a `sprint <http://en.wikipedia.org/wiki/Sprint_(software_development)>`_ with your new teammates.
+Depending on which program you're participating in, you may have to attend a
+`sprint <http://en.wikipedia.org/wiki/Sprint_(software_development)>`_ with your
+new teammates.
 
 Next, you need to document your ideas. Use this
-`project proposal template <https://github.com/Freeseer/freeseer/blob/development/docs/developer_templates/Project_proposal.odt?raw=true>`_.
+`project proposal template
+<https://github.com/Freeseer/freeseer/blob/development/docs/developer_templates/Project_proposal.odt?raw=true>`_.
 You may modify it by adding or removing sections that you think are relevant or irrelevant.
 It also includes a timeline to help schedule your work. Decide with your professor and/or project mentor when your end date will be.
 
@@ -76,9 +77,10 @@ Expectations
 ------------
 
 * Be available for others to contact you
-* Communicate often: be active on IRC and the mailing list
-* Try to be a team player, not just a teammate
+* Communicate often: be active on IRC, the mailing list, and status updates
+* Be a team player, not just a teammate
 * Post updates often, let us know when you completed a feature or if you're having difficulty
+* Ask for help when you need it!
 * 8-10 hours of work per week
 
 
@@ -86,7 +88,7 @@ How To Succeed
 --------------
 
 * Choose an appropriate project that you can realistically accomplish
-* We don't expect you to be qualified, that's the point, you're here to learn
+* We don't expect you to be completely qualified, that's the point, you're here to learn
 
 For more info, check out these `videos from a GSoC information session <http://fosslc.org/drupal/node/374>`_ held at
 the University of Toronto.
