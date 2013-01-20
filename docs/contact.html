@@ -47,7 +47,11 @@
   <ul>
 <li><a class="reference internal" href="#">Contact Us</a><ul>
 <li><a class="reference internal" href="#mailing-list">Mailing List</a></li>
-<li><a class="reference internal" href="#irc-channel">IRC Channel</a></li>
+<li><a class="reference internal" href="#irc-channel">IRC Channel</a><ul>
+<li><a class="reference internal" href="#irc-clients">IRC Clients</a></li>
+<li><a class="reference internal" href="#channel-bot">Channel Bot</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#twitter-facebook-and-blog">Twitter, Facebook, and Blog</a></li>
 <li><a class="reference internal" href="#toll-free-phone-number">Toll-free Phone Number</a></li>
 <li><a class="reference internal" href="#google-hangouts">Google+ Hangouts</a></li>
@@ -99,20 +103,24 @@ through <a class="reference external" href="mailto:freeseer&#37;&#52;&#48;google
 </div>
 <div class="section" id="irc-channel">
 <span id="irc-label"></span><h2>IRC Channel<a class="headerlink" href="#irc-channel" title="Permalink to this headline">¶</a></h2>
-<p>Chat live with Freeseer community members in our IRC channel. Here are the connection details:</p>
+<p>Chat live with Freeseer community members in our IRC channel.
+Here are the connection details:</p>
 <ul class="simple">
-<li>IRC Server: irc.freenode.net</li>
-<li>Channel/Room: #freeseer</li>
+<li>IRC Server: <cite>irc.freenode.net</cite></li>
+<li>Channel/Room: <cite>#freeseer</cite></li>
 </ul>
+<div class="section" id="irc-clients">
+<h3>IRC Clients<a class="headerlink" href="#irc-clients" title="Permalink to this headline">¶</a></h3>
 <p>You can <a class="reference external" href="http://webchat.freenode.net/?channels=#freeseer">join using your browser</a>
 or your favourite IRC client.</p>
 <p>If you enjoy working from the terminal, you can try <a class="reference external" href="http://irssi.org/">irssi</a>.
 To quickly get started:</p>
 <div class="highlight-python"><pre>$ sudo apt-get install irssi
 $ irssi
-&gt; /connect irc.freenode.net
-&gt; /nick my-preferred-nickname (optional)
-&gt; /join #freeseer</pre>
+# Then, from irssi's prompt:
+/connect irc.freenode.net
+/nick &lt;your-nickname&gt;
+/join #freeseer</pre>
 </div>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
@@ -121,13 +129,28 @@ $ irssi
 <li>Some IRC clients (like irssi) support autocompletion via the tab key</li>
 </ul>
 </li>
-<li>Shortcuts exists, such as <cite>/j</cite> for <cite>/join</cite> and <cite>/w</cite> for <cite>/who</cite></li>
-<li>To block activity messages in the room: <cite>/ignore -channels #freeseer * JOINS
-PARTS QUITS NICKS</cite><ul>
+<li>Shortcuts exists, such as <tt class="docutils literal"><span class="pre">/j</span></tt> for <tt class="docutils literal"><span class="pre">/join</span></tt> and <tt class="docutils literal"><span class="pre">/w</span></tt> for <tt class="docutils literal"><span class="pre">/who</span></tt></li>
+<li>To block activity messages in the room:
+<tt class="docutils literal"><span class="pre">/ignore</span> <span class="pre">-channels</span> <span class="pre">#freeseer</span> <span class="pre">*</span> <span class="pre">JOINS</span> <span class="pre">PARTS</span> <span class="pre">QUITS</span> <span class="pre">NICKS</span></tt><ul>
 <li>You can specificy more rooms by comma separating them</li>
 </ul>
 </li>
 </ul>
+</div>
+</div>
+<div class="section" id="channel-bot">
+<h3>Channel Bot<a class="headerlink" href="#channel-bot" title="Permalink to this headline">¶</a></h3>
+<p>You&#8217;ve probably noticed this guy <tt class="docutils literal"><span class="pre">[o__o]</span></tt> hanging out in <cite>#freeseer</cite>.
+He&#8217;s our friendly channel bot from <a class="reference external" href="https://botbot.me">BotBot.me</a>.</p>
+<p>He&#8217;ll respond to certain queries. Try asking him for help:</p>
+<div class="highlight-python"><pre>&lt;You&gt; [o__o]: help</pre>
+</div>
+<p>He can <strong>look up GitHub issues</strong> for you, just type <tt class="docutils literal"><span class="pre">gh&lt;issue-number&gt;</span></tt>:</p>
+<div class="highlight-python"><pre>&lt;You&gt; gh1
+&lt;[o__o]&gt; Package freeseer for Fedora.: https://github.com/Freeseer/freeseer/issues/1</pre>
+</div>
+<p>He also keeps a <strong>log of our channel</strong>. Read any discussions you missed at
+<a class="reference external" href="http://botbot.me/freenode/freeseer">http://botbot.me/freenode/freeseer</a>.</p>
 </div>
 </div>
 <div class="section" id="twitter-facebook-and-blog">
@@ -148,16 +171,18 @@ personal blogs.</p>
 <div class="section" id="toll-free-phone-number">
 <h2>Toll-free Phone Number<a class="headerlink" href="#toll-free-phone-number" title="Permalink to this headline">¶</a></h2>
 <p>Call for free at <strong>1-877-253-0617 x27</strong>.
-If Andrew (our project leader) isn&#8217;t available to answer the call, then you&#8217;ll be asked to leave a voicemail message.</p>
-<p>We&#8217;re thinking of setting up a system that forwards these voicemails to our mailing list. Stay tuned!</p>
+If Andrew (our project leader) isn&#8217;t available to answer the call,
+then you&#8217;ll be asked to leave a voicemail message.</p>
+<p>We&#8217;re thinking of setting up a system that forwards these voicemails to our mailing list.
+Stay tuned!</p>
 </div>
 <div class="section" id="google-hangouts">
 <h2>Google+ Hangouts<a class="headerlink" href="#google-hangouts" title="Permalink to this headline">¶</a></h2>
 <p>We occasionally use <a class="reference external" href="http://www.google.com/+/learnmore/hangouts/">Google+ Hangouts</a> for Freeseer meetings.</p>
 <p>Here&#8217;s some tips for joining our next video chat:</p>
 <ul class="simple">
-<li>Add <a class="reference external" href="http://gplus.to/aross">Andrew Ross</a> to your G+ circles, he leads the
-discussion and starts the hangout</li>
+<li>Add <a class="reference external" href="http://gplus.to/aross">Andrew Ross</a> to your G+ circles,
+he leads the discussion and starts the hangout</li>
 <li>Have a webcam ready</li>
 <li>Have a headset ready (optional but recommended)</li>
 </ul>
