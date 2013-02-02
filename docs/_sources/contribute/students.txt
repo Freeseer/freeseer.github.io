@@ -109,8 +109,11 @@ before the weekly hangout.
 We hold weekly scrum meetings on `G+ Hangouts
 <http://www.google.com/+/learnmore/hangouts/>`_. These meetings will take place
 after you've written your weekly blog post. In the meeting we'll ask you to give
-a summary of your blog post, but
+a summary of your blog post, but the focus is on any issues you're having.
 
+These hangouts will be scheduled on Google Calendar and you should receive an
+event invitation for every scheduled hangout. You'll be able to join the hangout
+via the invitation.
 
 Stay In Touch
 -------------

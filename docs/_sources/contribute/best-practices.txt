@@ -1,12 +1,16 @@
 Best Practices
 ==============
 
-Don't Develop on Master Branch
-------------------------------
+Don't Develop on Master or Experimental Branch
+----------------------------------------------
 
-The master branch is where code goes that's ready to ship.
-It's way too risky to include development code on it.
-Instead, base your development branch off Freeseer's experimental or development branch.
+The master branch is where stable code goes that's ready to ship to users.
+It's too risky to include development code in it.
+The experimental branch contains the latest development version of Freeseer.
+Think of it as the release candidate, it's a version that's not yet in its final
+form. You should base your local development branch off of Freeseer's
+experimental branch, then when your feature is complete, send a pull request to
+Freeseer's experimental branch via GitHub.
 
 
 .. _branch-names:
