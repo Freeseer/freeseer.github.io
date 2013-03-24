@@ -8,7 +8,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Code Review &mdash; Freeseer 3.0.0 documentation</title>
+    <title>Pull Requests &amp; Code Review &mdash; Freeseer 3.0.0 documentation</title>
     
     <link rel="stylesheet" href="../../_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -28,7 +28,7 @@
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="top" title="Freeseer 3.0.0 documentation" href="../../index.html" />
     <link rel="up" title="Developer" href="index.html" />
-    <link rel="next" title="Pull Request Checklist" href="pull-requests.html" />
+    <link rel="next" title="Technical Writer" href="../documentation.html" />
     <link rel="prev" title="Plugins" href="plugins.html" /> 
   </head>
   <body>
@@ -39,7 +39,7 @@
           <a href="../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="pull-requests.html" title="Pull Request Checklist"
+          <a href="../documentation.html" title="Technical Writer"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="plugins.html" title="Plugins"
@@ -56,7 +56,13 @@
             </a></p>
   <h3><a href="../../index.html">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">Code Review</a><ul>
+<li><a class="reference internal" href="#">Pull Requests &amp; Code Review</a><ul>
+<li><a class="reference internal" href="#what-we-look-for">What we look for</a><ul>
+<li><a class="reference internal" href="#in-a-pull-request">in a pull request</a></li>
+<li><a class="reference internal" href="#in-the-code">in the code</a></li>
+<li><a class="reference internal" href="#in-the-commits">in the commits</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#tips">Tips</a></li>
 </ul>
 </li>
@@ -66,11 +72,11 @@
   <p class="topless"><a href="plugins.html"
                         title="previous chapter">Plugins</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="pull-requests.html"
-                        title="next chapter">Pull Request Checklist</a></p>
+  <p class="topless"><a href="../documentation.html"
+                        title="next chapter">Technical Writer</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
-    <li><a href="../../_sources/contribute/developers/code-review.txt"
+    <li><a href="../../_sources/contribute/developers/pull-requests-and-code-review.txt"
            rel="nofollow">Show Source</a></li>
   </ul>
 <div id="searchbox" style="display: none">
@@ -94,10 +100,11 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="code-review">
-<h1>Code Review<a class="headerlink" href="#code-review" title="Permalink to this headline">¶</a></h1>
-<p>We do our code reviews on GitHub through <a class="reference external" href="https://help.github.com/articles/using-pull-requests">Pull Requests</a>.
-Pull requests let you tell others about changes you&#8217;ve pushed to a GitHub
+  <div class="section" id="pull-requests-code-review">
+<h1>Pull Requests &amp; Code Review<a class="headerlink" href="#pull-requests-code-review" title="Permalink to this headline">¶</a></h1>
+<p>We use <a class="reference external" href="https://help.github.com/articles/using-pull-requests">Pull Requests</a>
+on GitHub for code reviews and merging changes into Freeseer/freeseer.</p>
+<p>Pull requests let you tell others about changes you&#8217;ve pushed to a GitHub
 repository. Once a pull request is sent, we can review the set of changes,
 discuss potential modifications, and you can even push follow-up commits if
 necessary (without having to close and re-open the pull request).</p>
@@ -109,6 +116,37 @@ necessary (without having to close and re-open the pull request).</p>
 (for anyone with push access to the destination repository)</li>
 <li><a class="reference external" href="https://help.github.com/articles/closing-a-pull-request">Closing a pull request</a></li>
 </ul>
+</div>
+<div class="section" id="what-we-look-for">
+<h2>What we look for<a class="headerlink" href="#what-we-look-for" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="in-a-pull-request">
+<h3>in a pull request<a class="headerlink" href="#in-a-pull-request" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Descriptive title</li>
+<li>Summary describing the changes</li>
+<li>Points to and from the correct branches</li>
+</ul>
+</div>
+<div class="section" id="in-the-code">
+<h3>in the code<a class="headerlink" href="#in-the-code" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Code should follow our <a class="reference internal" href="coding-guidelines.html"><em>Coding Guidelines</em></a></li>
+<li>Logic of the code makes sense</li>
+<li>Code is efficient and readable</li>
+<li>Your code is thoroughly documented and uses
+<a class="reference external" href="http://google-styleguide.googlecode.com/svn/trunk/pyguide.html?showone=Comments#Comments">docstrings</a> where appropriate</li>
+<li>You&#8217;ve rebased your work on the current state of the Freeseer/freeseer development tree</li>
+</ul>
+</div>
+<div class="section" id="in-the-commits">
+<h3>in the commits<a class="headerlink" href="#in-the-commits" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Each commit should represent one type of change</li>
+<li>Your commit messages are as descriptive as possible</li>
+<li>Your commit messages follow our <a class="reference external" href="../best-practices.html#properly-style-your-commit-messages">formatting guidelines</a></li>
+<li><a class="reference external" href="http://gitready.com/advanced/2009/02/10/squashing-commits-with-rebase.html">Squash multiple commits related to a single change into a single commit</a></li>
+</ul>
+</div>
 </div>
 <div class="section" id="tips">
 <h2>Tips<a class="headerlink" href="#tips" title="Permalink to this headline">¶</a></h2>
@@ -127,6 +165,10 @@ Create your topic branch on Freeseer/freeseer instead, then make a pull request 
 <p>Pull requests are easy to make and a great way to get feedback and track progress on a branch.
 But some ideas don&#8217;t make it. It&#8217;s <em>okay</em> to close a pull request without merging.</p>
 </li>
+<li><p class="first"><strong>Anyone can review code</strong></p>
+<p>Reviewing code isn&#8217;t exclusive to active contributors. Anyone is welcome and
+encouraged to review code—the more the better!</p>
+</li>
 </ul>
 </div>
 </div>
@@ -144,7 +186,7 @@ But some ideas don&#8217;t make it. It&#8217;s <em>okay</em> to close a pull req
           <a href="../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="pull-requests.html" title="Pull Request Checklist"
+          <a href="../documentation.html" title="Technical Writer"
              >next</a> |</li>
         <li class="right" >
           <a href="plugins.html" title="Plugins"
