@@ -102,14 +102,10 @@ The server can be used to <strong>start</strong>, <strong>stop</strong>, <strong
 <h2>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h2>
 <p>The PassLib library is required to run the server.</p>
 <p>To install it using pip:</p>
-<div class="highlight-python"><pre>sudo pip install passlib</pre>
+<div class="highlight-python"><pre>pip install passlib</pre>
 </div>
 <p>To install it using easy_install:</p>
-<div class="highlight-python"><pre>sudo easy_install passlib</pre>
-</div>
-<div class="admonition-todo admonition" id="index-0">
-<p class="first admonition-title">Todo</p>
-<p class="last">Add MS instructions</p>
+<div class="highlight-python"><pre>easy_install passlib</pre>
 </div>
 </div>
 <div class="section" id="usage">
@@ -119,31 +115,48 @@ The server can be used to <strong>start</strong>, <strong>stop</strong>, <strong
 </ol>
 <div class="figure align-center">
 <img alt="../_images/server_s1.png" src="../_images/server_s1.png" />
-<p class="caption">The server interface will appear.</p>
+<p class="caption"><em>Main server interface</em></p>
 </div>
-<p>Before clicking &#8220;Start Server&#8221; button, you can choose the IP you would like to use from the combobox next to the &#8220;IP:&#8221; label
-After you choose the ip or leaving the default you will have to click &#8220;Start Server&#8221;. This will initialize and start our server.</p>
+<p>Before clicking &#8220;Start Server&#8221; button, you need to select the IP and port
+you wish to listen for connections on. 0.0.0.0 will listen on all
+available IP Addresses. Additionally selecting a passphrase for the server
+this password is needed by Freeseer clients and must match what is configured
+on the server in order to successfully connect to the server. This passphrase
+is not secure and is simply a simple check to ensure the client is connecting
+to the right server.</p>
 <div class="figure align-center">
 <img alt="../_images/server_s2.png" src="../_images/server_s2.png" />
-<p class="caption">This is how the server looks when it is running.</p>
+<p class="caption"><em>Server interface while running</em></p>
 </div>
+<p>Once the server is running the server connection details will appear in the
+text box at the top. This is a convenience feature which you can use to copy
+and paste the settings in the client dialog.</p>
+<p>Pressing &#8220;Stop Server&#8221; will stop the server.</p>
+<p>Clicking the &#8220;Control Clients&#8221; tab will switch to a view that will allow you
+to see all clients currently connected to the server.</p>
 <div class="figure align-center">
 <img alt="../_images/server_s3.png" src="../_images/server_s3.png" />
-<p class="caption">A client is connected.</p>
+<p class="caption"><em>A client is connected</em></p>
 </div>
-<p>From here we can tell the client to start recording, pause recording or stop recording. Client&#8217;s status is shown next to the IP address of the client.
-Right now client is idle so we can start recording.
-When &#8220;Start Recording&#8221; button is pressed, client&#8217;s status will change. Acording to the client&#8217;s status, the buttons will updated with the appropriate labels.
-Client can also be disconnected if &#8220;Disconnect&#8221; button is triggered. Client can also be disconnect from the server from client side.</p>
+<p>From here we can tell the client to start, pause, or stop recording.
+Client&#8217;s status is shown next to the IP address of the client. Right
+now the client is idle so we can start recording. When the
+&#8220;Start Recording&#8221; button is pressed the client&#8217;s status will change.
+According to the client&#8217;s status, the buttons will updated with the
+appropriate labels.</p>
+<p>Clients can also be disconnected if &#8220;Disconnect&#8221; button is triggered.
+The Client can also be disconnect from client side.</p>
 <div class="figure align-center">
 <img alt="../_images/server_s4.png" src="../_images/server_s4.png" />
-<p class="caption">Here client is in recording state.</p>
+<p class="caption"><em>Client in recording state</em></p>
 </div>
-<p>When client is recording we could pause or stop recording. Triggering the appropriate button will send the action to the client.</p>
+<p>When client is recording we could pause or stop recording. Triggering
+the appropriate button will send the action to the client.</p>
 <div class="figure align-center">
 <img alt="../_images/server_s5.png" src="../_images/server_s5.png" />
-<p class="caption">When recording is paused it can be resumed or it can be stopped.</p>
+<p class="caption"><em>Client in paused state</em></p>
 </div>
+<p>When recording is paused it can be resumed or it can be stopped.</p>
 </div>
 </div>
 
