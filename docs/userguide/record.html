@@ -56,11 +56,22 @@
   <h3><a href="../index.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Record</a><ul>
+<li><a class="reference internal" href="#record-interface">Record Interface</a><ul>
+<li><a class="reference internal" href="#select-a-talk">Select a Talk</a></li>
+<li><a class="reference internal" href="#audio-feedback">Audio Feedback</a></li>
+<li><a class="reference internal" href="#status-area">Status Area</a></li>
+<li><a class="reference internal" href="#recording-controls">Recording Controls</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#report-tool">Report Tool</a><ul>
 <li><a class="reference internal" href="#using-the-report-tool">Using the Report Tool</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#record-over-a-network">Record Over a Network</a></li>
+<li><a class="reference internal" href="#record-over-a-network">Record Over a Network</a><ul>
+<li><a class="reference internal" href="#via-command-line-interface-cli">Via Command Line Interface (CLI)</a></li>
+<li><a class="reference internal" href="#via-graphical-user-interface-gui">Via Graphical User Interface (GUI)</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -99,46 +110,82 @@
             
   <div class="section" id="record">
 <span id="record-tool"></span><h1>Record<a class="headerlink" href="#record" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="record-interface">
+<h2>Record Interface<a class="headerlink" href="#record-interface" title="Permalink to this headline">¶</a></h2>
 <p>The Freeseer recording interface provides the main window for recording a
 video. This interface is designed with features that enable you to record
-a conference very easily.</p>
+talks at a conference very easily.</p>
 <div class="figure align-center">
-<img alt="../_images/record.png" src="../_images/record.png" />
-<p class="caption"><em>Freeseer Recording Interface</em></p>
+<img alt="Freeseer's recording interface" src="../_images/record.png" />
+<p class="caption"><em>Freeseer&#8217;s Recording interface with a sample talk loaded</em></p>
 </div>
-<p>The typical workflow is to select a filter for the Event &gt; Room &gt; Date of
-the Event you are recording. Which will filter down a list of <em>Talks</em>
-available for the filter selected. This data is generally pre-inputted via
-the <a class="reference internal" href="talkeditor.html#talk-editor"><em>Talk Editor</em></a>. It is good practice to pre-fill this data before
-an event as this data will be used to populate metadata in the final output
-of your recording file.</p>
-<p>At the bottom right there is a checkbox with a image of headphones. Checking
-this will enable audio feedback which will play the sounds being recorded back
-to your speakers. This is useful if you need to check audio levels while a
-recording is in progress. When using this feature it is recommended to plug in
-headphones.</p>
-<p>At the bottom of the interface where there is text &#8220;Idle&#8221; this is the status
-area. Information from Freeseer will be displayed here while the recording is
-in progress.</p>
-<p>Finally pressing &#8220;Prepare to Record&#8221; will initialize the Freeseer recording
-backend.</p>
+<div class="figure align-center">
+<img alt="Freeseer's recording interface with annotations" src="../_images/record-annotated.png" />
+<p class="caption"><em>Freeseer&#8217;s Recording interface with notes</em></p>
+</div>
+<div class="section" id="select-a-talk">
+<h3>Select a Talk<a class="headerlink" href="#select-a-talk" title="Permalink to this headline">¶</a></h3>
+<p>Typically the first task is to <strong>find the talk you want to record</strong> out of all
+the possible talks that are stored in the Freeseer database.
+You can <strong>filter the list of talks</strong> by selecting an <strong>Event</strong>, <strong>Room</strong>, and
+then a <strong>Date</strong> from the dropdown lists.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">When you record a talk, the output file will contain some of the associated
+talk data as metadata.</p>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p>You can enter new talks or modify existing talks using the <a class="reference internal" href="talkeditor.html#talk-editor"><em>Talk Editor</em></a> tool.</p>
+<p class="last">Conferences typically release information about their talks prior
+to the event. It&#8217;s good practice to enter such data (e.g. title, speaker,
+event, etc.) for every talk you plan to record, prior to attending the
+conference rather than last minute.</p>
+</div>
+</div>
+<div class="section" id="audio-feedback">
+<h3>Audio Feedback<a class="headerlink" href="#audio-feedback" title="Permalink to this headline">¶</a></h3>
+<p>At the bottom right of the interface there is a checkbox with a headphones icon.
+Checking this will enable audio feedback, which will play any sounds being
+recorded back to your speakers. This is useful if you need to check the audio
+levels. We recommend using headphones when using this feature.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<ul class="last simple">
+<li>You cannot enable or disable audio feedback while recording; the checkbox
+will be locked</li>
+<li>Audio feedback is only audible while recording</li>
+</ul>
+</div>
+</div>
+<div class="section" id="status-area">
+<h3>Status Area<a class="headerlink" href="#status-area" title="Permalink to this headline">¶</a></h3>
+<p>At the bottom of the interface where it says &#8220;Idle&#8221;, is the status area.
+It shows information such as what state the program is in and how much free
+space is remaining once you start recording.</p>
+</div>
+<div class="section" id="recording-controls">
+<h3>Recording Controls<a class="headerlink" href="#recording-controls" title="Permalink to this headline">¶</a></h3>
+<p>Pressing &#8220;Prepare to Record&#8221; will initialize the Freeseer recording backend.
+Freeseer has to be &#8220;prepared&#8221; to record because of a technical limitation.</p>
 <div class="figure align-center">
 <img alt="../_images/record-prepare.png" src="../_images/record-prepare.png" />
-<p class="caption"><em>Freeseer Prepare to Record</em></p>
+<p class="caption"><em>Freeseer is ready to record</em></p>
 </div>
-<p>Once &#8220;Prepare to Record&#8221; is clicked new buttons &#8220;Record&#8221; and &#8220;Pause&#8221; will
+<p>Once &#8220;Prepare to Record&#8221; is clicked, new buttons &#8220;Record&#8221; and &#8220;Pause&#8221; will
 replace the &#8220;Prepare to Record&#8221; button.</p>
-<p>Clicking &#8220;Record&#8221; will begin recording.</p>
-<p>During a recording you can click &#8220;Pause&#8221; to pause the recording. This is useful
-if a Talk is long and the speaker has decided to put a break in the presentation.</p>
+<p>Click &#8220;Record&#8221; to begin recording.</p>
+<p>During a recording you can click &#8220;Pause&#8221; to pause the recording and resume it at
+a later time. This is useful if presentation contains a break period.</p>
 <div class="figure align-center">
 <img alt="../_images/record-recording.png" src="../_images/record-recording.png" />
-<p class="caption"><em>Freeseer Stop Button</em></p>
+<p class="caption"><em>Freeseer shows a Stop button during recording</em></p>
 </div>
-<p>Once a recording is in progress the &#8220;Record&#8221; button will change into a &#8220;Stop&#8221;
-button. Clicking this will stop recording and shutdown the recording backend.</p>
-<p>You will be returned to the initial state of Freeseer Recording Interface at
-this point.</p>
+<p>When a recording is in progress the &#8220;Record&#8221; button will change into a &#8220;Stop&#8221;
+button. Clicking this will stop recording and Freeseer&#8217;s interface will return
+to its initial state.</p>
+</div>
+</div>
 <div class="section" id="report-tool">
 <h2>Report Tool<a class="headerlink" href="#report-tool" title="Permalink to this headline">¶</a></h2>
 <p>Issues can occasionally occur during a recording, such as the audio or video
@@ -176,10 +223,15 @@ view the submitted reports.</p>
 </div>
 <div class="section" id="record-over-a-network">
 <h2>Record Over a Network<a class="headerlink" href="#record-over-a-network" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="via-command-line-interface-cli">
+<h3>Via Command Line Interface (CLI)<a class="headerlink" href="#via-command-line-interface-cli" title="Permalink to this headline">¶</a></h3>
 <div class="admonition-todo admonition" id="index-0">
 <p class="first admonition-title">Todo</p>
 <p class="last">Document using SSH and Freeseer&#8217;s CLI to record over a network.</p>
 </div>
+</div>
+<div class="section" id="via-graphical-user-interface-gui">
+<h3>Via Graphical User Interface (GUI)<a class="headerlink" href="#via-graphical-user-interface-gui" title="Permalink to this headline">¶</a></h3>
 <p>The client tool is used for controlling Freeseer over a network.
 The client connects to a running Freeseer <a class="reference internal" href="server.html"><em>Server</em></a>.
 The server can be used to start, pause, and stop recording on multiple remote
@@ -206,6 +258,7 @@ presenters to sign a legal release form indicating they are giving permission
 to record their talk.</td></tr>
 </tbody>
 </table>
+</div>
 </div>
 </div>
 

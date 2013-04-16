@@ -81,58 +81,23 @@ with students, don't be shy to point out when we're wrong or to suggest a better
 alternative!
 
 
-Status Updates
---------------
-
-Weekly status updates are **mandatory**.
-There are a few different ways you'll be updating the team.
-
-1. Weekly Blog Posts
-^^^^^^^^^^^^^^^^^^^^
-
-Your weekly blog post should answer the following questions:
-
-1. What did you work on this week?
-2. What issues do/did you have?
-3. What do you plan on doing next week?
-
-It doesn't matter where you write your blog posts,
-you can use `fosslc.org <http://www.fosslc.org>`_ (`email Andrew
-<http://www.google.com/recaptcha/mailhide/d?k=01fYvwMWUz2e1s1dwXbxnCmQ==&c=7_oEyCUPzi1h80tvR5Yt7EjWDmWUM_lLGTYKlnrFEcY=>`_
-and request an account) or use your own blog (recommended if you already blog).
-Post the link to your latest blog post on the mailing list *at least* a day
-before the weekly hangout.
-
-2. Weekly Meetings
-^^^^^^^^^^^^^^^^^^
-
-We hold weekly scrum meetings on `G+ Hangouts
-<http://www.google.com/+/learnmore/hangouts/>`_. These meetings will take place
-after you've written your weekly blog post. In the meeting we'll ask you to give
-a summary of your blog post, but the focus is on any issues you're having.
-
-These hangouts will be scheduled on Google Calendar and you should receive an
-event invitation for every scheduled hangout. You'll be able to join the hangout
-via the invitation.
-
 Stay In Touch
 -------------
 
-A good analogy is driving to a destination.
-Imagine a friend is driving and you're the navigator in the passenger seat.
-The more updates you give your driver, the sooner and safer you'll get to your
-destination. On the other hand, rarely updating your driver with directions can
-get you easily lost or you may not reach your destination on time.
+A good analogy is driving to a destination. Imagine a friend is driving and you're the navigator in the passenger seat.
+The more updates you give your driver, the sooner and safer you'll get to your destination.
+On the other hand, rarely updating your driver with directions can get you easily lost or you may not reach your destination on time.
 
 Same goes with your teammates in a project.
-If you update them frequently, they can help you out often and give you feedback
-on your work so there's less chance of screwing up. But if no one knows what
-you're working on or if you're having difficulties, then by the time they find
-out it may be too late to make changes or get help.
+If you update them frequently, they can help you out often and give you feedback on your work so there's less chance of screwing up.
+But if no one knows what you're working on or if you're having difficulties, then by the time they find out it may be too late to
+make changes or get help.
 
-In addition to being active on the mailing list and IRC, you'll be required to
-write a few blog posts about your progress. There's usually one at the beginning,
-one at the midpoint of the term, and one at the end, but feel free to write more!
+In addition to being active on the mailing list and IRC, you'll be required to write a few blog posts about your progress.
+There's usually one at the beginning, one at the midpoint of the term, and one at the end, but feel free to write more!
+
+You may write your blog posts at `fosslc.org <http://www.fosslc.org>`_ (you'll have to register an account first).
+Or, if you prefer, you may use your own blog. Just tell us on the mailing list where we can read your latest blog post.
 
 
 Expectations

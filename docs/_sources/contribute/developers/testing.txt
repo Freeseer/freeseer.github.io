@@ -3,7 +3,7 @@ Run Freeseer's Test Suite
 
 .. TODO: improve names of subsections
 .. TODO: finish reviewing this page
-.. TODO: reference Qt class docs (see Lance's last blog post) in a See Also box
+.. TODO: reference Qt class docs (see Lance's last blog post) in See Also box
 
 Configure your Test Environment
 *******************************
@@ -29,15 +29,12 @@ Extending the Test Suite
 
 Structure of Test Directory
 ---------------------------
+ 
+As of Python 2.7, `unittest` supports (recursive) test module discovery.
+All test modules should exist somewhere inside ``src/freeseer/test/`` so that the
+test suite can find them.
 
-.. warning:: test
-.. important:: All test modules should exist somewhere inside ``src/freeseer/test/`` for
-               `unittest` to find them.
-
-Since Freeseer is well organized into modules, we'd like to mirror this setup
-in the test folder. For example, the test code for src/freeseer/framework/core.py
-should be located in src/test/framework/test_core.py (more about file naming conventions later).
-We do this for logical ordering: it tells us that test modules in src/freeseer/test/folder_name are for testing modules in src/freeseer/folder_name.
+Since Freeseer is well organized into modules, we'd like to mirror this setup in the test folder. This means that if your code is located in src/freeseer/framework/core.py then your test code should be found in src/test/framework/test_core.py (more about file naming conventions later). We do this for logical ordering: it tells us that test modules in src/freeseer/test/folder_name are for testing modules in src/freeseer/folder_name.
   
 If you are creating a new folder in src/freeseer/test/\*, ensure that your folder contains a __init__.py such that your test module can be imported by unittest during discovery. 
 
