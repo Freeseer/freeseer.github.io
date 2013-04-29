@@ -121,26 +121,19 @@ Freeseer.</p>
 <p class="first admonition-title">See also</p>
 <ul class="last simple">
 <li>Set up Git and your GitHub account
-<span class="math">\(\rightarrow\)</span>
- <a class="reference external" href="http://help.github.com">help.github.com</a></li>
+→ <a class="reference external" href="http://help.github.com">help.github.com</a></li>
 <li>Learn by doing
-<span class="math">\(\rightarrow\)</span>
- <a class="reference external" href="http://try.github.com/">Try Git</a></li>
+→ <a class="reference external" href="http://try.github.com/">Try Git</a></li>
 <li>Learn by watching
-<span class="math">\(\rightarrow\)</span>
- <a class="reference external" href="http://git-scm.com/videos">Git Videos</a></li>
+→ <a class="reference external" href="http://git-scm.com/videos">Git Videos</a></li>
 <li>Learn by reading
-<span class="math">\(\rightarrow\)</span>
- <a class="reference external" href="http://book.git-scm.com">Pro Git book</a> (free)</li>
+→ <a class="reference external" href="http://book.git-scm.com">Pro Git book</a> (free)</li>
 <li>Forgetful?
-<span class="math">\(\rightarrow\)</span>
- <a class="reference external" href="https://na1.salesforce.com/help/doc/en/salesforce_git_developer_cheatsheet.pdf">Git Cheat Sheet</a></li>
+→ <a class="reference external" href="https://na1.salesforce.com/help/doc/en/salesforce_git_developer_cheatsheet.pdf">Git Cheat Sheet</a></li>
 <li>Eclipse is your preferred IDE?
-<span class="math">\(\rightarrow\)</span>
- <a class="reference external" href="https://github.com/blog/1181-eclipse-git-plugin-2-0-released">Eclipse Git Plugin</a></li>
+→ <a class="reference external" href="https://github.com/blog/1181-eclipse-git-plugin-2-0-released">Eclipse Git Plugin</a></li>
 <li>Prefer GUIs over CLIs?
-<span class="math">\(\rightarrow\)</span>
- <a class="reference external" href="http://windows.github.com/">GitHub for Windows</a> or
+→ <a class="reference external" href="http://windows.github.com/">GitHub for Windows</a> or
 <a class="reference external" href="http://mac.github.com/">GitHub for Mac</a></li>
 </ul>
 </div>
@@ -195,7 +188,7 @@ $ git merge upstream/experimental
 # OR
 $ git pull upstream experimental # Fetch and merge
 # The latter method (pull) is more prone to conflicts.
-# If you want to keep your repo up to date but don&#x27;t want to break something
+# If you want to keep your repo up to date but don't want to break something
 # by updating your files, fetch but do not merge right after.</pre>
 </div>
 </li>
@@ -255,7 +248,7 @@ for shorthand.</p>
 When you reference an issue via a commit message, the commit that contains the
 reference will appear as a note on the issue&#8217;s page. This is useful if you
 want to easily see which commits are related to the issue.
-<a class="reference external" href="https://github.com/Freeseer/freeseer/issues/258#commit-ref-c578203">See an example of this in practice.</a></p>
+<a class="reference external" href="https://github.com/Freeseer/freeseer/issues/258#ref-commit-c578203">See an example of this in practice.</a></p>
 <p>There are two ways to reference issues.
 For example, let&#8217;s reference issue 123 from a commit message.</p>
 <ol class="arabic simple">
@@ -264,7 +257,7 @@ For example, let&#8217;s reference issue 123 from a commit message.</p>
 </ol>
 <p>Using the long form, you can also reference issues that belong to different
 repositories on GitHub. This is called a cross-repo reference.
-<a class="reference external" href="https://github.com/Freeseer/freeseer/issues/266#commit-ref-619d989">See an example of this in practice.</a></p>
+<a class="reference external" href="https://github.com/Freeseer/freeseer/issues/266#ref-commit-619d989">See an example of this in practice.</a></p>
 <p>To close an issue, place a supported keyword directly in front of the reference.
 E.g. <cite>&#8216;Close #123&#8217;</cite>, <cite>&#8216;Fix gh-123&#8217;</cite>.</p>
 <div class="admonition tip">
@@ -299,7 +292,7 @@ $ git mergetool -t meld  # Some alternatives are kdiff3, opendiff, diffmerge, et
 ... The visual merge tool is launched.
 ... It shows three versions of the file (local, failed merge, remote).
 ... You can easily choose code from any and all of them to resolve conflicts.
-... Don&#x27;t forget to save the file when you&#x27;re done.</pre>
+... Don't forget to save the file when you're done.</pre>
 </div>
 </li>
 <li><p class="first">Ignore their changes, use your file:</p>
@@ -312,7 +305,7 @@ $ git mergetool -t meld  # Some alternatives are kdiff3, opendiff, diffmerge, et
 </li>
 </ol>
 <p>Once you&#8217;ve resolved all conflicts:</p>
-<div class="highlight-python"><pre>$ git add &lt;filename&gt;  # Or &#x27;git add .&#x27; to mark all files as resolved
+<div class="highlight-python"><pre>$ git add &lt;filename&gt;  # Or 'git add .' to mark all files as resolved
 $ git rebase --continue</pre>
 </div>
 <p>To abort the conflict merging process at any time:</p>

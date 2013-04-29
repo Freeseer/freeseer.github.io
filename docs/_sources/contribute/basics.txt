@@ -24,25 +24,25 @@ Freeseer.
 .. seealso::
 
    * Set up Git and your GitHub account
-     :math:`\rightarrow` `help.github.com <http://help.github.com>`_
+     → `help.github.com <http://help.github.com>`_
    
    * Learn by doing
-     :math:`\rightarrow` `Try Git <http://try.github.com/>`_
+     → `Try Git <http://try.github.com/>`_
    
    * Learn by watching
-     :math:`\rightarrow` `Git Videos <http://git-scm.com/videos>`_
+     → `Git Videos <http://git-scm.com/videos>`_
 
    * Learn by reading
-     :math:`\rightarrow` `Pro Git book <http://book.git-scm.com>`_ (free)
+     → `Pro Git book <http://book.git-scm.com>`_ (free)
 
    * Forgetful?
-     :math:`\rightarrow` `Git Cheat Sheet <https://na1.salesforce.com/help/doc/en/salesforce_git_developer_cheatsheet.pdf>`_
+     → `Git Cheat Sheet <https://na1.salesforce.com/help/doc/en/salesforce_git_developer_cheatsheet.pdf>`_
 
    * Eclipse is your preferred IDE?
-     :math:`\rightarrow` `Eclipse Git Plugin <https://github.com/blog/1181-eclipse-git-plugin-2-0-released>`_
+     → `Eclipse Git Plugin <https://github.com/blog/1181-eclipse-git-plugin-2-0-released>`_
 
    * Prefer GUIs over CLIs?
-     :math:`\rightarrow` `GitHub for Windows <http://windows.github.com/>`_ or
+     → `GitHub for Windows <http://windows.github.com/>`_ or
      `GitHub for Mac <http://mac.github.com/>`_
 
 
@@ -157,7 +157,7 @@ When you reference an issue via a commit message, the commit that contains the
 reference will appear as a note on the issue's page. This is useful if you
 want to easily see which commits are related to the issue.
 `See an example of this in practice.
-<https://github.com/Freeseer/freeseer/issues/258#commit-ref-c578203>`_
+<https://github.com/Freeseer/freeseer/issues/258#ref-commit-c578203>`_
 
 There are two ways to reference issues.
 For example, let's reference issue 123 from a commit message.
@@ -168,7 +168,7 @@ For example, let's reference issue 123 from a commit message.
 Using the long form, you can also reference issues that belong to different
 repositories on GitHub. This is called a cross-repo reference.
 `See an example of this in practice.
-<https://github.com/Freeseer/freeseer/issues/266#commit-ref-619d989>`_
+<https://github.com/Freeseer/freeseer/issues/266#ref-commit-619d989>`_
 
 To close an issue, place a supported keyword directly in front of the reference.
 E.g. `'Close #123'`, `'Fix gh-123'`.

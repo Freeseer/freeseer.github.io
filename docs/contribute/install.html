@@ -58,10 +58,7 @@
 <li><a class="reference internal" href="#">Installation</a><ul>
 <li><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
 <li><a class="reference internal" href="#installers">Installers</a></li>
-<li><a class="reference internal" href="#build-from-source">Build from Source</a><ul>
-<li><a class="reference internal" href="#installation-of-passlib-for-freeseer-server">Installation of passlib for Freeseer Server</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#build-from-source">Build from Source</a></li>
 </ul>
 </li>
 </ul>
@@ -114,10 +111,10 @@ On Linux it&#8217;s <tt class="docutils literal"><span class="pre">/home/usernam
 <li>Python 2.7</li>
 <li>Sqlite3</li>
 <li>PyQt4</li>
+<li>gstreamer0.10-python (pygst)</li>
 <li>python-feedparser</li>
 <li>python-setuptools</li>
 <li>yapsy (needs setuptools to install)</li>
-<li>passlib (this is required for the server)</li>
 </ul>
 </div>
 <div class="section" id="installers">
@@ -133,17 +130,6 @@ for installers for Debian/Ubuntu and Windows.</p>
 <div class="highlight-python"><pre>$ git clone git@github.com:Freeseer/freeseer.git  # Clones a copy of the master repo</pre>
 </div>
 <p>Potential contributors should <a class="reference internal" href="basics.html#fork-freeseer-label"><em>fork Freeseer</em></a>.</p>
-<div class="admonition-todo admonition" id="index-0">
-<p class="first admonition-title">Todo</p>
-<p class="last">Add build instructions (or just link to readme)</p>
-</div>
-<div class="section" id="installation-of-passlib-for-freeseer-server">
-<h3>Installation of passlib for Freeseer Server<a class="headerlink" href="#installation-of-passlib-for-freeseer-server" title="Permalink to this headline">¶</a></h3>
-<p>Passlib needs to be installed to run the Freeseer Server.
-It can be easily installed using this command:</p>
-<div class="highlight-python"><pre>$ sudo easy_install passlib</pre>
-</div>
-</div>
 </div>
 </div>
 
