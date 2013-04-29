@@ -1,4 +1,4 @@
-[![freeseer](https://github.com/Freeseer/freeseer.github.com/raw/master/img/banner.png "Freeseer by FOSSLC")](http://freeseer.github.com)
+[![freeseer](img/banner.png "Freeseer by FOSSLC")](http://freeseer.github.com)
 
 ## Freeseer Pages
 
