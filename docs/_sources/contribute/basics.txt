@@ -46,41 +46,34 @@ Freeseer.
      `GitHub for Mac <http://mac.github.com/>`_
 
 
-
-Git Philosophy
---------------
-- Branches are tasks, commits are subtasks
-- Commit early, commit often
-- Your local repo is your scratch pad
-
 .. _fork-freeseer-label:
 
 Forking and Cloning Freeseer
 ----------------------------
 
-Once you have a GitHub account and Git installed and configured, the next step is to fork the Freeseer repo[sitory].
-"Forking" means you use someone's project as a starting point for your own.
+1. Go to the `Freeseer repository <https://github.com/Freeseer/freeseer>`_ on
+   GitHub and click the fork button. This creates your own public copy of the
+   project under your GitHub profile (github.com/username/freeseer). A fork
+   allows you to easily use someone's project as a starting point for your own.
 
-1. Go to the `Freeseer repo <https://github.com/Freeseer/freeseer>`_ on GitHub.
-2. Fork the "Freeseer" repo by clicking the fork button. This creates a remote
-   copy of the project under your GitHub profile (github.com/username/freeseer).
-   Next, you'll use your fork to set up your local repo [#f1]_.
-
-.. image:: /images/fork.jpg
+.. image:: /images/fork.png
     :align: center
     :alt: Click the fork button on the page *github.com/Freeseer/freeseer*.
 
-3. Clone the experimental branch. You'll be basing your work off of this branch.
-   Cloning the master branch is optional---it contains an older version of
-   Freeseer that you won't be working on---so we skip that step. ::
+2. So far your fork only exists on GitHub. You'll need to clone it to your local
+   machine to be able to work on the project. ::
 
-    $ git clone -b experimental https://github.com/your_username/freeseer.git freeseer-experimental
+    $ git clone https://github.com/your_username/freeseer.git
 
-4. Configure remotes. Add a remote named ``upstream`` to keep track of the original Freeseer repo. ::
+3. Your cloned repository has a default remote named ``origin`` that points to 
+   your fork on GitHub, which can be used for pushing and pulling updates.
+   But there is no remote that points to the original repository that you forked
+   from. Add a remote named ``upstream`` to keep track of the original Freeseer
+   repository. ::
 
-    $ cd freeseer-experimental
+    $ cd freeseer
     $ git remote add upstream https://github.com/Freeseer/freeseer.git
-    $ git fetch upstream
+    $ git remote -v # Lists your remotes, you should see origin and upstream
 
    .. tip:: The name ``upstream`` is by convention. You can use whatever name
      you prefer (e.g. ``mainstream`` or ``mothership``). 
@@ -89,24 +82,81 @@ Once you have a GitHub account and Git installed and configured, the next step i
 Basic Workflow
 --------------
 
-.. todo: (Dennis) See NumPy's docs (Development workflow), ThinkUp's docs (Developer), and my Google Doc's Freeseer scrap notes!
+Whenever you're going to make a set of edits to the project, you should create a
+topic branch (also called a feature branch) for your changes. Your topic branch
+will usually be branched off of master.
 
-1. Create a new branch based off the central repo's (i.e. Freeseer's) experimental branch.
-2. Fetch any changes for good measure (optional). ::
+Never make changes directly in the master branch. Your master branch should
+mirror upstream's master branch, try to keep them in sync. You'll use
+your local master branch to pull in changes from upstream.
 
-    $ git fetch upstream
-    $ git merge upstream/experimental
-    # OR
-    $ git pull upstream experimental # Fetch and merge
-    # The latter method (pull) is more prone to conflicts.
-    # If you want to keep your repo up to date but don't want to break something
-    # by updating your files, fetch but do not merge right after.
+1. Switch to the master branch and pull in the latest changes from upstream. ::
 
-3. Work on your feature.
-4. Add and commit files you worked on. Optionally sign-off your commit with -s.
-5. Push your branch to your remote fork (and automatically create it if it doesn't exist yet) on GitHub.
-6. Send a pull request when your feature is ready to be merged. You can still make additional changes later.
-7. Delete your local (and remote) branch when you're absolutely sure you no longer need it.
+    $ git checkout master
+    $ git pull upstream master
+   
+2. Create and checkout a new branch.
+   Please follow our :ref:`naming guidelines <branch-names>`. ::
+
+    $ git checkout -b my-topic-branch
+
+3. Start making your changes. Commit early and often. ::
+
+   $ git add modified_file
+   $ git commit -m "Add foo" # Omit the -m flag to write a more detailed commit message.
+
+4. After your first few commits, push your topic branch to GitHub. ::
+
+   $ git push -u origin my-topic-branch # The next time you need to push, simply use git push
+
+5. Go to GitHub and `open a pull request <https://help.github.com/articles/creating-a-pull-request>`_
+   from your topic branch to upstream's master branch.
+
+   This allows members of the `Freeseer organization <https://github.com/Freeseer?tab=members>`_
+   to easily see updates made to your branch and perform code reviews as you
+   make changes. So please **open a pull request as soon as possible!**
+
+6. Rebase frequently to incorporate changes from upstream. ::
+
+   $ git checkout master
+   $ git pull upstream master # At this point you can also use just git pull
+   $ git checkout my-topic-branch
+   $ git rebase master
+
+7. Push your commits to GitHub frequently. At a minimum, push your changes when
+   you're done working for the day.
+
+8. When you consider your work complete and ready to be merged, rebase any
+   changes from upstream into your branch once more (see step 6).
+
+9. `Squash <http://gitready.com/advanced/2009/02/10/squashing-commits-with-rebase.html>`_
+   any dirty commits via an interactive rebase, so the remaining commits are
+   meaningful and comprehensible. For example, squash commits that
+   only fix a typo or whitespace, and rewrite poor commit messages. ::
+
+   $ git rebase -i master
+
+10. Let others know you consider your work ready to be merged by leaving a
+    comment in your pull request. :doc:`You may be asked to make some changes.
+    <developers/pull-requests-and-code-review>`
+
+11. When your pull request has been merged, celebrate, then clean up by deleting
+    your local and remote topic branch. ::
+
+    $ git checkout master
+    $ git pull
+    $ git branch --delete my-topic-branch # Deletes the topic branch on your machine (can also use -d)
+    $ git push --delete my-topic-branch # Deletes the topic branch on your fork
+
+.. warning:: Performing an interactive rebase (as in step 9) will `rewrite
+             history <http://git-scm.com/book/en/Git-Tools-Rewriting-History>`_,
+             and should therefore only be used on personal branches.
+             Never rewrite history on branches that others are also working on.
+
+.. tip:: If you rewrite history that's already been pushed, you'll need to
+         force push the next time (``git push -f``). Try to avoid forced pushes
+         by only editing commits that haven't been pushed yet.
+         Use ``git rebase -i HEAD~N`` to edit the last *N* commits.
 
 Workflow Diagram
 ----------------
@@ -175,7 +225,9 @@ E.g. `'Close #123'`, `'Fix gh-123'`.
 
 .. tip::
 
-  - Supported keywords: **close**, **closes**, **closed**, **fix**, **fixes**, **fixed**, **resolved**
+  - Supported keywords: **close**, **closes**, **closed**,
+                        **fix**, **fixes**, **fixed**,
+                        **resolve**, **resolves**, **resolved**
 
   - Keywords (including organization and repo names) are case-insensitive.
       
@@ -254,10 +306,8 @@ If you don't have a remote tracking branch yet (i.e. you only have a local branc
          need to be if you want to push your changes to a remote repo or pull in
          changes from a remote repo.
 
-.. [#f2] You can reference any issue on GitHub via a commit message, but you
-         can only close an issue via a commit message if the issue belongs to
-         the same repository as the commit. In other words, you cannot close an
-         issue from a commit message if it’s cross-repo. You’ll have to close
-         it manually on GitHub. Keep this in mind when working on issues that
-         belong to Freeseer’s documentation.
-         
+.. [#f2] You can even use commit messages to close issues in other repositories,
+         provided you have permission to push to that repository.
+         E.g. "close user/repo#123". This is very handy when closing an issue in
+         freeseer/freeseer (where we keep our issue tracker) from a commit
+         message that belongs to another repo such as freeseer/freeseer-docs.

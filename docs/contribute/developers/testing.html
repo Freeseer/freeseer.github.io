@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -10,7 +9,7 @@
     
     <title>Run Freeseer’s Test Suite &mdash; Freeseer 3.0.0 documentation</title>
     
-    <link rel="stylesheet" href="../../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
@@ -29,7 +28,16 @@
     <link rel="top" title="Freeseer 3.0.0 documentation" href="../../index.html" />
     <link rel="up" title="Developer" href="index.html" />
     <link rel="next" title="Coding Guidelines" href="coding-guidelines.html" />
-    <link rel="prev" title="Develop from Source" href="develop-from-source.html" /> 
+    <link rel="prev" title="Develop from Source" href="develop-from-source.html" /> <!-- This block is used to add content to <head> tag. -->
+<style>
+  a:link {color:#3B5998}
+  a:visited {color:#005B81}
+  a:hover {color:#8A2BE2}
+  a:active {color:#E32E00}
+  div.footer {color:#E2F3CC; font-size: 80%;}
+  div.footer a {color:#E2F3CC}
+</style>
+
   </head>
   <body>
     <div class="related">
@@ -48,74 +56,7 @@
           <li><a href="../index.html" >Contributor Guide</a> &raquo;</li>
           <li><a href="index.html" accesskey="U">Developer</a> &raquo;</li> 
       </ul>
-    </div>
-      <div class="sphinxsidebar">
-        <div class="sphinxsidebarwrapper">
-            <p class="logo"><a href="../../index.html">
-              <img class="logo" src="../../_static/freeseer_logo.png" alt="Logo"/>
-            </a></p>
-  <h3><a href="../../index.html">Table Of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">Run Freeseer&#8217;s Test Suite</a><ul>
-<li><a class="reference internal" href="#configure-your-test-environment">Configure your Test Environment</a></li>
-<li><a class="reference internal" href="#extending-the-test-suite">Extending the Test Suite</a><ul>
-<li><a class="reference internal" href="#structure-of-test-directory">Structure of Test Directory</a></li>
-<li><a class="reference internal" href="#adding-editing-a-test-module">Adding/Editing a test module</a><ul>
-<li><a class="reference internal" href="#an-example">An example</a></li>
-<li><a class="reference internal" href="#import-unittest">import unittest</a></li>
-<li><a class="reference internal" href="#from-freeseer-framework-presentation-import-presentation">from freeseer.framework.presentation import Presentation</a></li>
-<li><a class="reference internal" href="#class-testpresentation-unittest-testcase">class TestPresentation(unittest.TestCase):</a></li>
-<li><a class="reference internal" href="#setup-runtest-test-teardown">setUp, runTest, test_*, tearDown</a></li>
-<li><a class="reference internal" href="#python-s-unittest-module-lifecycle">Python&#8217;s unittest module &#8220;lifecycle&#8221;</a></li>
-<li><a class="reference internal" href="#the-assert-family-of-methods">The assert* family of methods</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#running-the-test-suite">Running the Test Suite</a><ul>
-<li><a class="reference internal" href="#introduction">Introduction</a></li>
-<li><a class="reference internal" href="#command-line-options">Command line options</a><ul>
-<li><a class="reference internal" href="#example-1-discovery-run-all-tests">Example #1: Discovery, Run all tests</a></li>
-<li><a class="reference internal" href="#example-2-discovery-verbose-run-all-tests">Example #2: Discovery, Verbose, Run all tests</a></li>
-<li><a class="reference internal" href="#example-3-discovery-verbose-run-until-fail">Example #3: Discovery, Verbose, Run until fail</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#gotchas-a-k-a-q-a">Gotchas! a.k.a Q&amp;A</a><ul>
-<li><a class="reference internal" href="#what-should-testers-focus-on">What should testers focus on?</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="develop-from-source.html"
-                        title="previous chapter">Develop from Source</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="coding-guidelines.html"
-                        title="next chapter">Coding Guidelines</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="../../_sources/contribute/developers/testing.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
-  <h3>Quick search</h3>
-    <form class="search" action="../../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
-        </div>
-      </div>
+    </div>  
 
     <div class="document">
       <div class="documentwrapper">
@@ -393,6 +334,73 @@ confusing UX, functional bugs, security and privacy issues, and so forth.</p>
 
 
           </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../../index.html">
+              <img class="logo" src="../../_static/freeseer_logo.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Run Freeseer&#8217;s Test Suite</a><ul>
+<li><a class="reference internal" href="#configure-your-test-environment">Configure your Test Environment</a></li>
+<li><a class="reference internal" href="#extending-the-test-suite">Extending the Test Suite</a><ul>
+<li><a class="reference internal" href="#structure-of-test-directory">Structure of Test Directory</a></li>
+<li><a class="reference internal" href="#adding-editing-a-test-module">Adding/Editing a test module</a><ul>
+<li><a class="reference internal" href="#an-example">An example</a></li>
+<li><a class="reference internal" href="#import-unittest">import unittest</a></li>
+<li><a class="reference internal" href="#from-freeseer-framework-presentation-import-presentation">from freeseer.framework.presentation import Presentation</a></li>
+<li><a class="reference internal" href="#class-testpresentation-unittest-testcase">class TestPresentation(unittest.TestCase):</a></li>
+<li><a class="reference internal" href="#setup-runtest-test-teardown">setUp, runTest, test_*, tearDown</a></li>
+<li><a class="reference internal" href="#python-s-unittest-module-lifecycle">Python&#8217;s unittest module &#8220;lifecycle&#8221;</a></li>
+<li><a class="reference internal" href="#the-assert-family-of-methods">The assert* family of methods</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#running-the-test-suite">Running the Test Suite</a><ul>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#command-line-options">Command line options</a><ul>
+<li><a class="reference internal" href="#example-1-discovery-run-all-tests">Example #1: Discovery, Run all tests</a></li>
+<li><a class="reference internal" href="#example-2-discovery-verbose-run-all-tests">Example #2: Discovery, Verbose, Run all tests</a></li>
+<li><a class="reference internal" href="#example-3-discovery-verbose-run-until-fail">Example #3: Discovery, Verbose, Run until fail</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#gotchas-a-k-a-q-a">Gotchas! a.k.a Q&amp;A</a><ul>
+<li><a class="reference internal" href="#what-should-testers-focus-on">What should testers focus on?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="develop-from-source.html"
+                        title="previous chapter">Develop from Source</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="coding-guidelines.html"
+                        title="next chapter">Coding Guidelines</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/contribute/developers/testing.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>

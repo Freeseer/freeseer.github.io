@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -10,7 +9,7 @@
     
     <title>Basics &mdash; Freeseer 3.0.0 documentation</title>
     
-    <link rel="stylesheet" href="../_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
@@ -29,7 +28,16 @@
     <link rel="top" title="Freeseer 3.0.0 documentation" href="../index.html" />
     <link rel="up" title="Contributor Guide" href="index.html" />
     <link rel="next" title="Best Practices" href="best-practices.html" />
-    <link rel="prev" title="Installation" href="install.html" /> 
+    <link rel="prev" title="Installation" href="install.html" /> <!-- This block is used to add content to <head> tag. -->
+<style>
+  a:link {color:#3B5998}
+  a:visited {color:#005B81}
+  a:hover {color:#8A2BE2}
+  a:active {color:#E32E00}
+  div.footer {color:#E2F3CC; font-size: 80%;}
+  div.footer a {color:#E2F3CC}
+</style>
+
   </head>
   <body>
     <div class="related">
@@ -47,54 +55,7 @@
         <li><a href="../index.html">Freeseer 3.0.0 documentation</a> &raquo;</li>
           <li><a href="index.html" accesskey="U">Contributor Guide</a> &raquo;</li> 
       </ul>
-    </div>
-      <div class="sphinxsidebar">
-        <div class="sphinxsidebarwrapper">
-            <p class="logo"><a href="../index.html">
-              <img class="logo" src="../_static/freeseer_logo.png" alt="Logo"/>
-            </a></p>
-  <h3><a href="../index.html">Table Of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">Basics</a><ul>
-<li><a class="reference internal" href="#git-github">Git &amp; GitHub</a></li>
-<li><a class="reference internal" href="#git-philosophy">Git Philosophy</a></li>
-<li><a class="reference internal" href="#forking-and-cloning-freeseer">Forking and Cloning Freeseer</a></li>
-<li><a class="reference internal" href="#basic-workflow">Basic Workflow</a></li>
-<li><a class="reference internal" href="#workflow-diagram">Workflow Diagram</a></li>
-<li><a class="reference internal" href="#create-issue-specific-branches">Create Issue-Specific Branches</a></li>
-<li><a class="reference internal" href="#close-and-reference-issues-with-a-commit-message">Close and Reference Issues with a Commit Message</a></li>
-<li><a class="reference internal" href="#dealing-with-conflicts">Dealing with Conflicts</a></li>
-<li><a class="reference internal" href="#renaming-your-branch">Renaming your Branch</a></li>
-</ul>
-</li>
-</ul>
-
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="install.html"
-                        title="previous chapter">Installation</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="best-practices.html"
-                        title="next chapter">Best Practices</a></p>
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="../_sources/contribute/basics.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
-  <h3>Quick search</h3>
-    <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
-        </div>
-      </div>
+    </div>  
 
     <div class="document">
       <div class="documentwrapper">
@@ -138,36 +99,29 @@ Freeseer.</p>
 </ul>
 </div>
 </div>
-<div class="section" id="git-philosophy">
-<h2>Git Philosophy<a class="headerlink" href="#git-philosophy" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li>Branches are tasks, commits are subtasks</li>
-<li>Commit early, commit often</li>
-<li>Your local repo is your scratch pad</li>
-</ul>
-</div>
 <div class="section" id="forking-and-cloning-freeseer">
 <span id="fork-freeseer-label"></span><h2>Forking and Cloning Freeseer<a class="headerlink" href="#forking-and-cloning-freeseer" title="Permalink to this headline">¶</a></h2>
-<p>Once you have a GitHub account and Git installed and configured, the next step is to fork the Freeseer repo[sitory].
-&#8220;Forking&#8221; means you use someone&#8217;s project as a starting point for your own.</p>
 <ol class="arabic simple">
-<li>Go to the <a class="reference external" href="https://github.com/Freeseer/freeseer">Freeseer repo</a> on GitHub.</li>
-<li>Fork the &#8220;Freeseer&#8221; repo by clicking the fork button. This creates a remote
-copy of the project under your GitHub profile (github.com/username/freeseer).
-Next, you&#8217;ll use your fork to set up your local repo <a class="footnote-reference" href="#f1" id="id1">[1]</a>.</li>
+<li>Go to the <a class="reference external" href="https://github.com/Freeseer/freeseer">Freeseer repository</a> on
+GitHub and click the fork button. This creates your own public copy of the
+project under your GitHub profile (github.com/username/freeseer). A fork
+allows you to easily use someone&#8217;s project as a starting point for your own.</li>
 </ol>
-<img alt="Click the fork button on the page *github.com/Freeseer/freeseer*." class="align-center" src="../_images/fork.jpg" />
-<ol class="arabic" start="3">
-<li><p class="first">Clone the experimental branch. You&#8217;ll be basing your work off of this branch.
-Cloning the master branch is optional&#8212;it contains an older version of
-Freeseer that you won&#8217;t be working on&#8212;so we skip that step.</p>
-<div class="highlight-python"><pre>$ git clone -b experimental https://github.com/your_username/freeseer.git freeseer-experimental</pre>
+<img alt="Click the fork button on the page *github.com/Freeseer/freeseer*." class="align-center" src="../_images/fork.png" />
+<ol class="arabic" start="2">
+<li><p class="first">So far your fork only exists on GitHub. You&#8217;ll need to clone it to your local
+machine to be able to work on the project.</p>
+<div class="highlight-python"><pre>$ git clone https://github.com/your_username/freeseer.git</pre>
 </div>
 </li>
-<li><p class="first">Configure remotes. Add a remote named <tt class="docutils literal"><span class="pre">upstream</span></tt> to keep track of the original Freeseer repo.</p>
-<div class="highlight-python"><pre>$ cd freeseer-experimental
+<li><p class="first">Your cloned repository has a default remote named <tt class="docutils literal"><span class="pre">origin</span></tt> that points to
+your fork on GitHub, which can be used for pushing and pulling updates.
+But there is no remote that points to the original repository that you forked
+from. Add a remote named <tt class="docutils literal"><span class="pre">upstream</span></tt> to keep track of the original Freeseer
+repository.</p>
+<div class="highlight-python"><pre>$ cd freeseer
 $ git remote add upstream https://github.com/Freeseer/freeseer.git
-$ git fetch upstream</pre>
+$ git remote -v # Lists your remotes, you should see origin and upstream</pre>
 </div>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
@@ -179,30 +133,84 @@ you prefer (e.g. <tt class="docutils literal"><span class="pre">mainstream</span
 </div>
 <div class="section" id="basic-workflow">
 <h2>Basic Workflow<a class="headerlink" href="#basic-workflow" title="Permalink to this headline">¶</a></h2>
+<p>Whenever you&#8217;re going to make a set of edits to the project, you should create a
+topic branch (also called a feature branch) for your changes. Your topic branch
+will usually be branched off of master.</p>
+<p>Never make changes directly in the master branch. Your master branch should
+mirror upstream&#8217;s master branch, try to keep them in sync. You&#8217;ll use
+your local master branch to pull in changes from upstream.</p>
 <ol class="arabic">
-<li><p class="first">Create a new branch based off the central repo&#8217;s (i.e. Freeseer&#8217;s) experimental branch.</p>
-</li>
-<li><p class="first">Fetch any changes for good measure (optional).</p>
-<div class="highlight-python"><pre>$ git fetch upstream
-$ git merge upstream/experimental
-# OR
-$ git pull upstream experimental # Fetch and merge
-# The latter method (pull) is more prone to conflicts.
-# If you want to keep your repo up to date but don't want to break something
-# by updating your files, fetch but do not merge right after.</pre>
+<li><p class="first">Switch to the master branch and pull in the latest changes from upstream.</p>
+<div class="highlight-python"><pre>$ git checkout master
+$ git pull upstream master</pre>
 </div>
 </li>
-<li><p class="first">Work on your feature.</p>
+<li><p class="first">Create and checkout a new branch.
+Please follow our <a class="reference internal" href="best-practices.html#branch-names"><em>naming guidelines</em></a>.</p>
+<div class="highlight-python"><pre>$ git checkout -b my-topic-branch</pre>
+</div>
 </li>
-<li><p class="first">Add and commit files you worked on. Optionally sign-off your commit with -s.</p>
+<li><p class="first">Start making your changes. Commit early and often.</p>
+<div class="highlight-python"><pre>$ git add modified_file
+$ git commit -m "Add foo" # Omit the -m flag to write a more detailed commit message.</pre>
+</div>
 </li>
-<li><p class="first">Push your branch to your remote fork (and automatically create it if it doesn&#8217;t exist yet) on GitHub.</p>
+<li><p class="first">After your first few commits, push your topic branch to GitHub.</p>
+<div class="highlight-python"><pre>$ git push -u origin my-topic-branch # The next time you need to push, simply use git push</pre>
+</div>
 </li>
-<li><p class="first">Send a pull request when your feature is ready to be merged. You can still make additional changes later.</p>
+<li><p class="first">Go to GitHub and <a class="reference external" href="https://help.github.com/articles/creating-a-pull-request">open a pull request</a>
+from your topic branch to upstream&#8217;s master branch.</p>
+<p>This allows members of the <a class="reference external" href="https://github.com/Freeseer?tab=members">Freeseer organization</a>
+to easily see updates made to your branch and perform code reviews as you
+make changes. So please <strong>open a pull request as soon as possible!</strong></p>
 </li>
-<li><p class="first">Delete your local (and remote) branch when you&#8217;re absolutely sure you no longer need it.</p>
+<li><p class="first">Rebase frequently to incorporate changes from upstream.</p>
+<div class="highlight-python"><pre>$ git checkout master
+$ git pull upstream master # At this point you can also use just git pull
+$ git checkout my-topic-branch
+$ git rebase master</pre>
+</div>
+</li>
+<li><p class="first">Push your commits to GitHub frequently. At a minimum, push your changes when
+you&#8217;re done working for the day.</p>
+</li>
+<li><p class="first">When you consider your work complete and ready to be merged, rebase any
+changes from upstream into your branch once more (see step 6).</p>
+</li>
+<li><p class="first"><a class="reference external" href="http://gitready.com/advanced/2009/02/10/squashing-commits-with-rebase.html">Squash</a>
+any dirty commits via an interactive rebase, so the remaining commits are
+meaningful and comprehensible. For example, squash commits that
+only fix a typo or whitespace, and rewrite poor commit messages.</p>
+<div class="highlight-python"><pre>$ git rebase -i master</pre>
+</div>
+</li>
+<li><p class="first">Let others know you consider your work ready to be merged by leaving a
+comment in your pull request. <a class="reference internal" href="developers/pull-requests-and-code-review.html"><em>You may be asked to make some changes.</em></a></p>
+</li>
+<li><p class="first">When your pull request has been merged, celebrate, then clean up by deleting
+your local and remote topic branch.</p>
+<div class="highlight-python"><pre>$ git checkout master
+$ git pull
+$ git branch --delete my-topic-branch # Deletes the topic branch on your machine (can also use -d)
+$ git push --delete my-topic-branch # Deletes the topic branch on your fork</pre>
+</div>
 </li>
 </ol>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Performing an interactive rebase (as in step 9) will <a class="reference external" href="http://git-scm.com/book/en/Git-Tools-Rewriting-History">rewrite
+history</a>,
+and should therefore only be used on personal branches.
+Never rewrite history on branches that others are also working on.</p>
+</div>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">If you rewrite history that&#8217;s already been pushed, you&#8217;ll need to
+force push the next time (<tt class="docutils literal"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">-f</span></tt>). Try to avoid forced pushes
+by only editing commits that haven&#8217;t been pushed yet.
+Use <tt class="docutils literal"><span class="pre">git</span> <span class="pre">rebase</span> <span class="pre">-i</span> <span class="pre">HEAD~N</span></tt> to edit the last <em>N</em> commits.</p>
+</div>
 </div>
 <div class="section" id="workflow-diagram">
 <h2>Workflow Diagram<a class="headerlink" href="#workflow-diagram" title="Permalink to this headline">¶</a></h2>
@@ -244,7 +252,7 @@ for shorthand.</p>
 <p class="last">To reduce overhead, we use a single issue tracker for all the organization&#8217;s repositories:
 <a class="reference external" href="https://github.com/Freeseer/freeseer/issues">github.com/Freeseer/freeseer/issues</a></p>
 </div>
-<p>GitHub allows you to reference and close issues from a commit message. <a class="footnote-reference" href="#f2" id="id4">[2]</a>
+<p>GitHub allows you to reference and close issues from a commit message. <a class="footnote-reference" href="#f2" id="id3">[2]</a>
 When you reference an issue via a commit message, the commit that contains the
 reference will appear as a note on the issue&#8217;s page. This is useful if you
 want to easily see which commits are related to the issue.
@@ -262,14 +270,23 @@ repositories on GitHub. This is called a cross-repo reference.
 E.g. <cite>&#8216;Close #123&#8217;</cite>, <cite>&#8216;Fix gh-123&#8217;</cite>.</p>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
-<ul class="last simple">
-<li>Supported keywords: <strong>close</strong>, <strong>closes</strong>, <strong>closed</strong>, <strong>fix</strong>, <strong>fixes</strong>, <strong>fixed</strong>, <strong>resolved</strong></li>
-<li>Keywords (including organization and repo names) are case-insensitive.</li>
-<li>If you don&#8217;t have permission to close a specific issue on GitHub,
-you won&#8217;t be able to close it from a commit message.</li>
-<li>If you forked a repository, you can use the short form to reference issues
+<ul class="last">
+<li><dl class="first docutils">
+<dt>Supported keywords: <strong>close</strong>, <strong>closes</strong>, <strong>closed</strong>,</dt>
+<dd><p class="first last"><strong>fix</strong>, <strong>fixes</strong>, <strong>fixed</strong>,
+<strong>resolve</strong>, <strong>resolves</strong>, <strong>resolved</strong></p>
+</dd>
+</dl>
+</li>
+<li><p class="first">Keywords (including organization and repo names) are case-insensitive.</p>
+</li>
+<li><p class="first">If you don&#8217;t have permission to close a specific issue on GitHub,
+you won&#8217;t be able to close it from a commit message.</p>
+</li>
+<li><p class="first">If you forked a repository, you can use the short form to reference issues
 that belong to the original repository. This is especially useful for
-interns who contribute to Freeseer.</li>
+interns who contribute to Freeseer.</p>
+</li>
 </ul>
 </div>
 </div>
@@ -327,7 +344,7 @@ If you don&#8217;t have a remote tracking branch yet (i.e. you only have a local
 <table class="docutils footnote" frame="void" id="f1" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Your local repo, in this case, will be a copy (or <em>clone</em>) of your fork onto your computer.
+<tr><td class="label">[1]</td><td>Your local repo, in this case, will be a copy (or <em>clone</em>) of your fork onto your computer.
 You&#8217;ll be doing all your work in your local repo. You don&#8217;t need to be
 connected to the internet to work in your local repo. However, you will
 need to be if you want to push your changes to a remote repo or pull in
@@ -337,12 +354,11 @@ changes from a remote repo.</td></tr>
 <table class="docutils footnote" frame="void" id="f2" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id4">[2]</a></td><td>You can reference any issue on GitHub via a commit message, but you
-can only close an issue via a commit message if the issue belongs to
-the same repository as the commit. In other words, you cannot close an
-issue from a commit message if it’s cross-repo. You’ll have to close
-it manually on GitHub. Keep this in mind when working on issues that
-belong to Freeseer’s documentation.</td></tr>
+<tr><td class="label"><a class="fn-backref" href="#id3">[2]</a></td><td>You can even use commit messages to close issues in other repositories,
+provided you have permission to push to that repository.
+E.g. &#8220;close user/repo#123&#8221;. This is very handy when closing an issue in
+freeseer/freeseer (where we keep our issue tracker) from a commit
+message that belongs to another repo such as freeseer/freeseer-docs.</td></tr>
 </tbody>
 </table>
 </div>
@@ -350,6 +366,52 @@ belong to Freeseer’s documentation.</td></tr>
 
 
           </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/freeseer_logo.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Basics</a><ul>
+<li><a class="reference internal" href="#git-github">Git &amp; GitHub</a></li>
+<li><a class="reference internal" href="#forking-and-cloning-freeseer">Forking and Cloning Freeseer</a></li>
+<li><a class="reference internal" href="#basic-workflow">Basic Workflow</a></li>
+<li><a class="reference internal" href="#workflow-diagram">Workflow Diagram</a></li>
+<li><a class="reference internal" href="#create-issue-specific-branches">Create Issue-Specific Branches</a></li>
+<li><a class="reference internal" href="#close-and-reference-issues-with-a-commit-message">Close and Reference Issues with a Commit Message</a></li>
+<li><a class="reference internal" href="#dealing-with-conflicts">Dealing with Conflicts</a></li>
+<li><a class="reference internal" href="#renaming-your-branch">Renaming your Branch</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="install.html"
+                        title="previous chapter">Installation</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="best-practices.html"
+                        title="next chapter">Best Practices</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/contribute/basics.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
