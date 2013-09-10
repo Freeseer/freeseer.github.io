@@ -1,0 +1,190 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Server &mdash; Freeseer 3.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="Freeseer 3.0.0 documentation" href="../index.html" />
+    <link rel="up" title="User Guide" href="index.html" />
+    <link rel="next" title="YouTube Uploader" href="youtube-uploader.html" />
+    <link rel="prev" title="Report Editor" href="reporteditor.html" /> <!-- This block is used to add content to <head> tag. -->
+<style>
+  a:link {color:#3B5998}
+  a:visited {color:#005B81}
+  a:hover {color:#8A2BE2}
+  a:active {color:#E32E00}
+  div.footer {color:#E2F3CC; font-size: 80%;}
+  div.footer a {color:#E2F3CC}
+</style>
+
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="youtube-uploader.html" title="YouTube Uploader"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="reporteditor.html" title="Report Editor"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Freeseer 3.0.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">User Guide</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="server">
+<h1>Server<a class="headerlink" href="#server" title="Permalink to this headline">¶</a></h1>
+<p>The <em>Freeseer Server</em> tool communicates with the <a class="reference internal" href="record.html"><em>Freeseer Record</em></a> tool over a network.
+The server can be used to <strong>start</strong>, <strong>stop</strong>, <strong>pause</strong>, and <strong>resume recording</strong>.</p>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Open <strong>freeseer-server</strong></li>
+</ol>
+<div class="figure align-center">
+<img alt="../_images/server_s1.png" src="../_images/server_s1.png" />
+<p class="caption"><em>Main server interface</em></p>
+</div>
+<p>Before clicking &#8220;Start Server&#8221; button, you need to select the IP and port
+you wish to listen for connections on. 0.0.0.0 will listen on all
+available IP Addresses. Additionally selecting a passphrase for the server
+this password is needed by Freeseer clients and must match what is configured
+on the server in order to successfully connect to the server. This passphrase
+is not secure and is simply a simple check to ensure the client is connecting
+to the right server.</p>
+<div class="figure align-center">
+<img alt="../_images/server_s2.png" src="../_images/server_s2.png" />
+<p class="caption"><em>Server interface while running</em></p>
+</div>
+<p>Once the server is running the server connection details will appear in the
+text box at the top. This is a convenience feature which you can use to copy
+and paste the settings in the client dialog.</p>
+<p>Pressing &#8220;Stop Server&#8221; will stop the server.</p>
+<p>Clicking the &#8220;Control Clients&#8221; tab will switch to a view that will allow you
+to see all clients currently connected to the server.</p>
+<div class="figure align-center">
+<img alt="../_images/server_s3.png" src="../_images/server_s3.png" />
+<p class="caption"><em>A client is connected</em></p>
+</div>
+<p>From here we can tell the client to start, pause, or stop recording.
+Client&#8217;s status is shown next to the IP address of the client. Right
+now the client is idle so we can start recording. When the
+&#8220;Start Recording&#8221; button is pressed the client&#8217;s status will change.
+According to the client&#8217;s status, the buttons will updated with the
+appropriate labels.</p>
+<p>Clients can also be disconnected if &#8220;Disconnect&#8221; button is triggered.
+The Client can also be disconnect from client side.</p>
+<div class="figure align-center">
+<img alt="../_images/server_s4.png" src="../_images/server_s4.png" />
+<p class="caption"><em>Client in recording state</em></p>
+</div>
+<p>When client is recording we could pause or stop recording. Triggering
+the appropriate button will send the action to the client.</p>
+<div class="figure align-center">
+<img alt="../_images/server_s5.png" src="../_images/server_s5.png" />
+<p class="caption"><em>Client in paused state</em></p>
+</div>
+<p>When recording is paused it can be resumed or it can be stopped.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/freeseer_logo.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Server</a><ul>
+<li><a class="reference internal" href="#usage">Usage</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="reporteditor.html"
+                        title="previous chapter">Report Editor</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="youtube-uploader.html"
+                        title="next chapter">YouTube Uploader</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/userguide/server.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="youtube-uploader.html" title="YouTube Uploader"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="reporteditor.html" title="Report Editor"
+             >previous</a> |</li>
+        <li><a href="../index.html">Freeseer 3.0.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" >User Guide</a> &raquo;</li> 
+      </ul>
+    </div>
+<div class="footer">
+  © 2013 FOSSLC
+  | <a href="/docs/contact.html">Contact us</a>
+  | <a href="https://github.com/Freeseer/freeseer/issues/new" target="_blank">Report an issue</a>
+  | Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
+</div>
+
+  </body>
+</html>

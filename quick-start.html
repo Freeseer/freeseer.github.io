@@ -1,0 +1,320 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Quick-Start Guide &mdash; Freeseer 3.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '3.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="top" title="Freeseer 3.0.0 documentation" href="index.html" />
+    <link rel="next" title="User Guide" href="userguide/index.html" />
+    <link rel="prev" title="Recording Events" href="about/record.html" /> <!-- This block is used to add content to <head> tag. -->
+<style>
+  a:link {color:#3B5998}
+  a:visited {color:#005B81}
+  a:hover {color:#8A2BE2}
+  a:active {color:#E32E00}
+  div.footer {color:#E2F3CC; font-size: 80%;}
+  div.footer a {color:#E2F3CC}
+</style>
+
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="userguide/index.html" title="User Guide"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="about/record.html" title="Recording Events"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Freeseer 3.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="quick-start-guide">
+<h1>Quick-Start Guide<a class="headerlink" href="#quick-start-guide" title="Permalink to this headline">¶</a></h1>
+<p>Freeseer is a free and open source screencasting application, primarily
+developed for capturing and streaming computer-aided presentations at conferences.</p>
+<p>It&#8217;s been successfully used to capture presentations, demos, training material,
+and other videos. It&#8217;s capable of handling large conferences with many talks
+in various rooms.</p>
+<p>With Freeseer, you can record video from external sources such as FireWire and
+USB (e.g. webcam or another computer&#8217;s screen via VGA output <a class="footnote-reference" href="#f1" id="id1">[1]</a>).</p>
+<p>Freeseer is written in Python, uses Qt4 for its GUI, and Gstreamer for video/audio processing.
+And it&#8217;s based on open standards so it supports royalty free audio and video codecs.</p>
+<p><a class="reference external" href="http://fosslc.org/drupal/node/596">Read our history</a> to find out why Freeseer
+was created.</p>
+<div class="section" id="installing-freeseer-from-a-package">
+<h2>Installing Freeseer from a package<a class="headerlink" href="#installing-freeseer-from-a-package" title="Permalink to this headline">¶</a></h2>
+<p>Use this option if you just want to run Freeseer. If you plan on developing
+Freeseer, skip to the next section: <a class="reference internal" href="#install-for-dev"><em>Installing Freeseer for Development</em></a>.</p>
+<div class="section" id="arch-linux">
+<h3>Arch Linux<a class="headerlink" href="#arch-linux" title="Permalink to this headline">¶</a></h3>
+<p>Freeseer is available in AUR: <a class="reference external" href="https://aur.archlinux.org/packages/freeseer-git/">https://aur.archlinux.org/packages/freeseer-git/</a></p>
+<p>Or install with yaourt:</p>
+<div class="highlight-python"><pre>yaourt -S freeseer-git</pre>
+</div>
+</div>
+<div class="section" id="gentoo-linux">
+<h3>Gentoo Linux<a class="headerlink" href="#gentoo-linux" title="Permalink to this headline">¶</a></h3>
+<p>Freeseer is available in PaddyMac&#8217;s portage overlay: <a class="reference external" href="https://github.com/PaddyMac/overlay">https://github.com/PaddyMac/overlay</a></p>
+<p>After adding this overlay:</p>
+<div class="highlight-python"><pre>emerge -av freeseer</pre>
+</div>
+</div>
+<div class="section" id="opensuse">
+<h3>OpenSUSE<a class="headerlink" href="#opensuse" title="Permalink to this headline">¶</a></h3>
+<p>Freeseer is available in the OpenSUSE repository:</p>
+<div class="highlight-python"><pre>zypper install freeseer</pre>
+</div>
+</div>
+<div class="section" id="python-package-index">
+<h3>Python Package Index<a class="headerlink" href="#python-package-index" title="Permalink to this headline">¶</a></h3>
+<p>Freeseer can also be installed with pip:</p>
+<div class="highlight-python"><pre>pip install freeseer</pre>
+</div>
+</div>
+</div>
+<div class="section" id="installing-freeseer-for-development">
+<span id="install-for-dev"></span><h2>Installing Freeseer for Development<a class="headerlink" href="#installing-freeseer-for-development" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="dependencies">
+<h3>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Git</li>
+<li>Python 2.7+</li>
+<li>sqlite3</li>
+<li>gstreamer0.10-python (pygst)</li>
+<li>PyQT development tools</li>
+<li>python-xlib (Required for video preview plugin)</li>
+</ul>
+<div class="section" id="ubuntu-linux">
+<h4>Ubuntu Linux<a class="headerlink" href="#ubuntu-linux" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python"><pre>$ sudo apt-get install -y build-essential git python-gst0.10 \
+  python-gst0.10-dev gstreamer0.10-plugins-good qt4-qmake pyqt4-dev-tools \
+  libqt4-dev libqt4-sql libqt4-sql-sqlite python-qt4 python-qt4-dev \
+  python-qt4-sql python2.7-dev python-feedparser python-setuptools python-xlib
+$ sudo pip install yapsy</pre>
+</div>
+</div>
+<div class="section" id="fedora-linux">
+<h4>Fedora Linux<a class="headerlink" href="#fedora-linux" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python"><pre>$ sudo yum install git PyQt4-devel python-feedparser.noarch python-setuptools
+$ sudo pip install yapsy</pre>
+</div>
+</div>
+<div class="section" id="windows">
+<h4>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h4>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">x86 version recommended whenever there is a choice.</p>
+</div>
+<ul>
+<li><p class="first"><a class="reference external" href="http://www.python.org/getit/">python 2.7.* x86</a></p>
+</li>
+<li><p class="first"><a class="reference external" href="https://pypi.python.org/pypi/setuptools#files">setuptools-0.6c11.win32-py2.7</a></p>
+</li>
+<li><p class="first"><a class="reference external" href="https://code.google.com/p/ossbuild/downloads/list">GStreamer-WinBuilds-GPL-x86-Beta04-0.10.7</a></p>
+</li>
+<li><p class="first"><a class="reference external" href="https://code.google.com/p/ossbuild/downloads/list">GStreamer-WinBuilds-SDK-GPL-x86-Beta04-0.10.7</a></p>
+</li>
+<li><p class="first"><a class="reference external" href="http://www.riverbankcomputing.com/software/pyqt/download">PyQt-Py2.7-x86-gpl-4.8.5-1</a></p>
+</li>
+<li><dl class="first docutils">
+<dt><a class="reference external" href="http://ftp.gnome.org/pub/GNOME/binaries/win32/pygtk/2.24/">PyGTK py2.7 all-in-one</a></dt>
+<dd><ul class="first last simple">
+<li>Windows 32-bit packages are recommended because pygtk-all-in-one package does not have a 64-bit installer.</li>
+<li>Add the following paths to your PATH variable : <tt class="docutils literal"><span class="pre">`C:\Python27;C:\Python27\Lib\site-packages\PyQt4\bin`</span></tt></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>Install the following packages with pip:</p>
+<div class="highlight-python"><pre>pip install feedparser
+pip install pygtk
+pip install yapsy</pre>
+</div>
+</div>
+</div>
+<div class="section" id="get-the-source-code">
+<h3>Get the source code<a class="headerlink" href="#get-the-source-code" title="Permalink to this headline">¶</a></h3>
+<p>If you plan on contributing to Freeseer, you&#8217;ll need to <a class="reference internal" href="contribute/basics.html#fork-freeseer-label"><em>fork and clone the
+project</em></a>.</p>
+</div>
+</div>
+<div class="section" id="running-freeseer">
+<h2>Running Freeseer<a class="headerlink" href="#running-freeseer" title="Permalink to this headline">¶</a></h2>
+<p>Once you&#8217;ve installed the dependencies, you can run the various Freeseer tools:</p>
+<div class="highlight-python"><pre>$ freeseer-record  # Recording tool
+$ freeseer-config  # Configuration tool
+$ freeseer-talkeditor  # Talk-list editor</pre>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For development purposes, these scripts are in the <tt class="docutils literal"><span class="pre">src/</span></tt> directory of the repo.</p>
+</div>
+</div>
+<div class="section" id="issue-tracker">
+<h2>Issue tracker<a class="headerlink" href="#issue-tracker" title="Permalink to this headline">¶</a></h2>
+<p>Found an issue? Open an issue on GitHub!</p>
+<p><a class="reference external" href="https://github.com/Freeseer/freeseer/issues">https://github.com/Freeseer/freeseer/issues</a></p>
+</div>
+<div class="section" id="irc-channel">
+<h2>IRC channel<a class="headerlink" href="#irc-channel" title="Permalink to this headline">¶</a></h2>
+<p>Drop by our <a class="reference external" href="irc://irc.freenode.net/#freeseer">#freeseer</a> channel on
+irc.freenode.net to chat with us.</p>
+<p><a class="reference external" href="http://webchat.freenode.net/?channels=#freeseer">http://webchat.freenode.net/?channels=#freeseer</a></p>
+</div>
+<div class="section" id="mailing-list">
+<h2>Mailing list<a class="headerlink" href="#mailing-list" title="Permalink to this headline">¶</a></h2>
+<p>We have a mailing list that&#8217;s also a discussion group.</p>
+<p><a class="reference external" href="http://groups.google.com/group/freeseer">http://groups.google.com/group/freeseer</a></p>
+<p>Once you&#8217;ve joined the group, you can email subscribers at <a class="reference external" href="mailto:freeseer&#37;&#52;&#48;googlegroups&#46;com">freeseer<span>&#64;</span>googlegroups<span>&#46;</span>com</a>.</p>
+</div>
+<div class="section" id="authors">
+<h2>Authors<a class="headerlink" href="#authors" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/fosslc">Andrew Ross</a></li>
+<li><a class="reference external" href="https://github.com/zxiiro">Thanh Ha</a></li>
+</ul>
+<p>And many student contributors from <a class="reference external" href="http://code.google.com/soc">Google Summer of Code</a>, Fedora Summer Coding,
+and <a class="reference external" href="http://ucosp.ca">Undergraduate Capstone Open Source Projects</a>.</p>
+</div>
+<div class="section" id="copyright-and-license">
+<h2>Copyright and license<a class="headerlink" href="#copyright-and-license" title="Permalink to this headline">¶</a></h2>
+<p>© 2011-2013 FOSSLC</p>
+<p>Licensed under the GNU General Public License, version 3 (GPLv3);
+you may not use this work except in compliance with the GPLv3.</p>
+<p>You may obtain a copy of the GPLv3 in the <a class="reference external" href="https://raw.github.com/Freeseer/freeseer/a0497fabdc5a548d0dea4f6fb4925aa41a6d62e8/src/LICENSE">LICENSE file</a>, or at
+<a class="reference external" href="http://www.fsf.org/licensing/licenses/gpl.html">http://www.fsf.org/licensing/licenses/gpl.html</a>.</p>
+<p class="rubric">Footnotes</p>
+<table class="docutils footnote" frame="void" id="f1" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td><a class="reference internal" href="about/record.html#equipment-label"><em>Requires a VGA capture device</em></a>, also known as a
+frame grabber.</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/freeseer_logo.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Quick-Start Guide</a><ul>
+<li><a class="reference internal" href="#installing-freeseer-from-a-package">Installing Freeseer from a package</a><ul>
+<li><a class="reference internal" href="#arch-linux">Arch Linux</a></li>
+<li><a class="reference internal" href="#gentoo-linux">Gentoo Linux</a></li>
+<li><a class="reference internal" href="#opensuse">OpenSUSE</a></li>
+<li><a class="reference internal" href="#python-package-index">Python Package Index</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#installing-freeseer-for-development">Installing Freeseer for Development</a><ul>
+<li><a class="reference internal" href="#dependencies">Dependencies</a><ul>
+<li><a class="reference internal" href="#ubuntu-linux">Ubuntu Linux</a></li>
+<li><a class="reference internal" href="#fedora-linux">Fedora Linux</a></li>
+<li><a class="reference internal" href="#windows">Windows</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#get-the-source-code">Get the source code</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#running-freeseer">Running Freeseer</a></li>
+<li><a class="reference internal" href="#issue-tracker">Issue tracker</a></li>
+<li><a class="reference internal" href="#irc-channel">IRC channel</a></li>
+<li><a class="reference internal" href="#mailing-list">Mailing list</a></li>
+<li><a class="reference internal" href="#authors">Authors</a></li>
+<li><a class="reference internal" href="#copyright-and-license">Copyright and license</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="about/record.html"
+                        title="previous chapter">Recording Events</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="userguide/index.html"
+                        title="next chapter">User Guide</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/quick-start.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="userguide/index.html" title="User Guide"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="about/record.html" title="Recording Events"
+             >previous</a> |</li>
+        <li><a href="index.html">Freeseer 3.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+<div class="footer">
+  © 2013 FOSSLC
+  | <a href="/docs/contact.html">Contact us</a>
+  | <a href="https://github.com/Freeseer/freeseer/issues/new" target="_blank">Report an issue</a>
+  | Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
+</div>
+
+  </body>
+</html>

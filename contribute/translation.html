@@ -1,0 +1,206 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Translator &mdash; Freeseer 3.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '3.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="Freeseer 3.0.0 documentation" href="../index.html" />
+    <link rel="up" title="Contributor Guide" href="index.html" />
+    <link rel="next" title="UI or UX Designer" href="designers.html" />
+    <link rel="prev" title="Technical Writer" href="documentation.html" /> <!-- This block is used to add content to <head> tag. -->
+<style>
+  a:link {color:#3B5998}
+  a:visited {color:#005B81}
+  a:hover {color:#8A2BE2}
+  a:active {color:#E32E00}
+  div.footer {color:#E2F3CC; font-size: 80%;}
+  div.footer a {color:#E2F3CC}
+</style>
+
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="designers.html" title="UI or UX Designer"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="documentation.html" title="Technical Writer"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Freeseer 3.0.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Contributor Guide</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="translator">
+<h1>Translator<a class="headerlink" href="#translator" title="Permalink to this headline">¶</a></h1>
+<p>We want to adapt Freeseer for as many non-native environments as possible, especially other nations and cultures.
+There should be no language barrier between Freeseer and our users.
+You can help in our localization efforts.</p>
+<div class="section" id="add-a-translation">
+<h2>Add a Translation<a class="headerlink" href="#add-a-translation" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Open the <strong>Qt Linguist</strong> tool &#8211;
+it should come with your installation of <strong>PyQt</strong></li>
+<li>Translation files are located in
+<tt class="docutils literal"><span class="pre">&lt;path-to-freeseer&gt;/src/freeseer/frontend/qtcommon/languages/</span></tt>.
+If a file for your language exists, continue to step 3.
+Otherwise, you&#8217;ll need to <a class="reference internal" href="#update-translation-resources">update translation resources</a> first.</li>
+<li>Using Qt Linguist, open a translation (<tt class="docutils literal"><span class="pre">.ts</span></tt>) file for your language</li>
+<li>Once you&#8217;ve completed the translation, <a class="reference external" href="https://help.github.com/articles/creating-a-pull-request">send a pull request</a>
+containing only the <tt class="docutils literal"><span class="pre">.ts</span></tt> file(s) that you modified.</li>
+</ol>
+<div class="admonition-see-also admonition seealso">
+<p class="first admonition-title">See also</p>
+<p class="last"><a class="reference external" href="http://doc.qt.digia.com/qt/linguist-translators.html">Qt Linguist documentation for translators</a></p>
+</div>
+</div>
+<div class="section" id="update-translation-resources">
+<h2>Update Translation Resources<a class="headerlink" href="#update-translation-resources" title="Permalink to this headline">¶</a></h2>
+<p>For new translations to appear in Freeseer, you need to update the translation
+resources. This task is typically left to a developer, not a translator.
+Please ask a developer to update the translation resources before you attempt to.</p>
+<div class="section" id="update-translation-files">
+<h3>1. Update Translation Files<a class="headerlink" href="#update-translation-files" title="Permalink to this headline">¶</a></h3>
+<p>This step only needs to be completed if a developer wrote code that contains
+new translation strings in the user-interface. To update translation files:</p>
+<div class="highlight-python"><pre>cd &lt;path-to-freeseer&gt;/src/freeseer/frontend/qtcommon/languages
+pylupdate4 freeseer.pro</pre>
+</div>
+<p>The <tt class="docutils literal"><span class="pre">freeseer.pro</span></tt> file specifies which source files contain translation
+strings, as well as which translation files need to be updated and/or created.
+If you want to translate to a new language, add a new locale for that language.</p>
+</div>
+<div class="section" id="add-qt-translation-files-to-freeseer-monitored-list">
+<h3>2. Add Qt Translation Files to Freeseer-monitored List<a class="headerlink" href="#add-qt-translation-files-to-freeseer-monitored-list" title="Permalink to this headline">¶</a></h3>
+<p>Next, you need to update the list of monitored translations by editing the
+<tt class="docutils literal"><span class="pre">resource.qrc</span></tt> file:</p>
+<div class="highlight-python"><pre>cd &lt;path-to-freeseer&gt;/src/freeseer/frontend/qtcommon
+&lt;text-editor&gt; resource.qrc</pre>
+</div>
+<p>Add the following line:</p>
+<div class="highlight-python"><pre>&lt;file alias="languages/tr_LANGUAGE_LOCALE.qm"&gt;languages/tr_LANGUAGE_LOCALE.qm&lt;/file&gt;</pre>
+</div>
+<p>where <cite>LANGUAGE</cite> and <cite>LOCALE</cite> are specific to your translation.
+For example, for an American English translation:</p>
+<div class="highlight-python"><pre>&lt;file alias="languages/tr_en_US.qm"&gt;languages/tr_en_US.qm&lt;/file&gt;</pre>
+</div>
+</div>
+<div class="section" id="update-qt-resource-files">
+<h3>3. Update Qt Resource Files<a class="headerlink" href="#update-qt-resource-files" title="Permalink to this headline">¶</a></h3>
+<p>When translations are ready to be used, they need to be imported into Qt&#8217;s resource files.
+We included a script to automate the process. Simply run:</p>
+<div class="highlight-python"><pre>cd &lt;path-to-freeseer&gt;/src/freeseer/frontend/qtcommon
+make</pre>
+</div>
+<p>You should now see your translation(s) the next time you run Freeseer.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/freeseer_logo.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Translator</a><ul>
+<li><a class="reference internal" href="#add-a-translation">Add a Translation</a></li>
+<li><a class="reference internal" href="#update-translation-resources">Update Translation Resources</a><ul>
+<li><a class="reference internal" href="#update-translation-files">1. Update Translation Files</a></li>
+<li><a class="reference internal" href="#add-qt-translation-files-to-freeseer-monitored-list">2. Add Qt Translation Files to Freeseer-monitored List</a></li>
+<li><a class="reference internal" href="#update-qt-resource-files">3. Update Qt Resource Files</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="documentation.html"
+                        title="previous chapter">Technical Writer</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="designers.html"
+                        title="next chapter">UI or UX Designer</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/contribute/translation.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="designers.html" title="UI or UX Designer"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="documentation.html" title="Technical Writer"
+             >previous</a> |</li>
+        <li><a href="../index.html">Freeseer 3.0.0 documentation</a> &raquo;</li>
+          <li><a href="index.html" >Contributor Guide</a> &raquo;</li> 
+      </ul>
+    </div>
+<div class="footer">
+  © 2013 FOSSLC
+  | <a href="/docs/contact.html">Contact us</a>
+  | <a href="https://github.com/Freeseer/freeseer/issues/new" target="_blank">Report an issue</a>
+  | Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>
+</div>
+
+  </body>
+</html>

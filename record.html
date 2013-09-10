@@ -1,0 +1,203 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Recording Events &mdash; Freeseer 3.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '3.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="top" title="Freeseer 3.0.0 documentation" href="index.html" />
+    <link rel="next" title="Troubleshoot" href="troubleshoot/index.html" />
+    <link rel="prev" title="Output" href="userguide/config/plugins/output.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="troubleshoot/index.html" title="Troubleshoot"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="userguide/config/plugins/output.html" title="Output"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Freeseer 3.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/freeseer_logo.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Recording Events</a><ul>
+<li><a class="reference internal" href="#equipment-needed">Equipment Needed</a></li>
+<li><a class="reference internal" href="#setup">Setup</a></li>
+<li><a class="reference internal" href="#preparation-avoiding-common-errors">Preparation (Avoiding Common Errors)</a></li>
+<li><a class="reference internal" href="#troubleshooting">Troubleshooting</a></li>
+<li><a class="reference internal" href="#hosting-the-videos">Hosting the Videos</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="userguide/config/plugins/output.html"
+                        title="previous chapter">Output</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="troubleshoot/index.html"
+                        title="next chapter">Troubleshoot</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/record.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="recording-events">
+<h1>Recording Events<a class="headerlink" href="#recording-events" title="Permalink to this headline">¶</a></h1>
+<p>Freeseer&#8217;s primary use case is recording large events such as conferences.
+You can run Freeseer locally and have the presenter record their desktop,
+but a much more useful configuration is when Freeseer is used from a dedicated
+laptop to record VGA output from the presenter&#8217;s laptop.</p>
+<div class="section" id="equipment-needed">
+<h2>Equipment Needed<a class="headerlink" href="#equipment-needed" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>A working installation of Freeseer on a dedicated computer for recording</li>
+<li>VGA Capture Device<ul>
+<li>We recommend an <a class="reference external" href="http://www.epiphan.com/products/frame-grabbers/">Epiphan frame grabber</a></li>
+<li>We use the <a class="reference external" href="http://www.epiphan.com/products/frame-grabbers/vga2usb/">VGA2USB device</a> (the red one)
+as it&#8217;s the cheapest and does a decent job</li>
+</ul>
+</li>
+<li>Wireless Microphones<ul>
+<li>We use Sennheiser EW100 G2</li>
+</ul>
+</li>
+<li>USB extension cable (optional)</li>
+</ul>
+</div>
+<div class="section" id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Permalink to this headline">¶</a></h2>
+<iframe width="840" height="480" src="http://www.youtube-nocookie.com/embed/jXs8beuvvrM" frameborder="0" allowfullscreen></iframe></div>
+<div class="section" id="preparation-avoiding-common-errors">
+<h2>Preparation (Avoiding Common Errors)<a class="headerlink" href="#preparation-avoiding-common-errors" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">Presentations that contain lots of animations or quick movements (e.g. live demos)
+are best recorded with a higher-end frame grabber since they output higher FPS.</p>
+</li>
+<li><p class="first">Use the Talk Editor tool to enter all the talks and their info beforehand.</p>
+</li>
+<li><p class="first">Do a test recording with your completed setup to make sure everything works.</p>
+</li>
+<li><p class="first">Verify that the presenters don&#8217;t have their mics muted.</p>
+</li>
+<li><p class="first">Have the presenter disable their screen saver and power saving mode. <a class="footnote-reference" href="#id2" id="id1">[1]</a></p>
+<ul>
+<li><p class="first">Linux users can use the caffeine app:</p>
+<div class="highlight-python"><pre>sudo add-apt-repository ppa:caffeine-developers/ppa
+sudo apt-get update
+sudo apt-get install caffeine</pre>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="troubleshooting">
+<h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>If you only see the red indicator light on the VGA2USB device (the green one
+isn&#8217;t showing), and everything has worked previously, then it&#8217;s possible that
+the USB cable connecting the device is damaged.</li>
+<li>When a new presenter&#8217;s laptop is plugged-in and you get a noisy signal the
+first time you hit record, then try stopping and restarting the recording.</li>
+</ul>
+</div>
+<div class="section" id="hosting-the-videos">
+<h2>Hosting the Videos<a class="headerlink" href="#hosting-the-videos" title="Permalink to this headline">¶</a></h2>
+<p>The Free and Open Source Software Learning Centre (FOSSLC) can place your videos
+on <a class="reference external" href="http://fosslc.org">fosslc.org</a> for free if the talks are open source related.
+FOSSLC will promote them on the site and host them on YouTube.
+The site is somewhat popular and gets quite a few hits from various communities.
+If you decide to use the services of FOSSLC, please email <a class="reference external" href="mailto:fosslc&#37;&#52;&#48;gmail&#46;com">fosslc<span>&#64;</span>gmail<span>&#46;</span>com</a>.
+Of course you can always use your own hosting solution.</p>
+<p class="rubric">Footnotes</p>
+<table class="docutils footnote" frame="void" id="id2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>If the presenter&#8217;s laptop goes into power saving mode, then the vga2usb
+device loses the signal and you will have to pause and restart the recording.</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="troubleshoot/index.html" title="Troubleshoot"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="userguide/config/plugins/output.html" title="Output"
+             >previous</a> |</li>
+        <li><a href="index.html">Freeseer 3.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2011-2012  Free and Open Source Software Learning Centre.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>
