@@ -1,10 +1,8 @@
-[![freeseer](img/banner.png "Freeseer by FOSSLC")](http://freeseer.github.com)
+[![freeseer](img/banner.png "Freeseer by FOSSLC")](http://freeseer.github.io)
 
-## Freeseer Pages
+## Freeseer Website
 
-Freeseer is a free and open source **screencasting application**.
+Freeseer is a free and open source screencasting application.
 Its primary purpose is capturing or streaming video at conferences.
 
-This repository is dedicated for our online user-facing content,
-such as our [**landing page**](http://freeseer.github.com) and
-[**documentation pages**](http://freeseer.github.com/docs).
+This repository is dedicated for our online user-facing [documentation](http://freeseer.github.io).
