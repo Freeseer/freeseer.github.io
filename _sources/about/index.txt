@@ -3,15 +3,14 @@ About Freeseer
 
 .. sidebar:: Software with a Purpose.
 
-    Development of Freeseer is led by the `Free and Open Source Software
-    Learning Centre (FOSSLC) <http://fosslc.org>`_, a non-profit whose vision is
-    to improve lives with open source.  FOSSLC also specializes in technology
-    and know-how to record conferences with excellent quality.
+    Development of Freeseer is led by the `Free and Open Source Software Learning Centre (FOSSLC) <http://fosslc.org>`_,
+    a non-profit whose vision is to improve lives with open source.
+    FOSSLC also specializes in technology and know-how to record conferences with excellent quality.
 
-    From large conferences with hundreds of talks to presentations in
-    classrooms, anyone can use Freeseer to capture talks.
+    From large conferences with hundreds of talks to presentations in classrooms,
+    anyone can use Freeseer to capture talks.
 
-`Freeseer <http://freeseer.github.com>`_ (pronounced *free-see-ar*) is a free & open source cross-platform application that
+`Freeseer <http://freeseer.github.com>`_ (pronounced *free-see-ar*) is a free, open source, cross-platform application that
 captures or streams your desktop. It's designed for capturing presentations, and has been succesfully used at many
 open source conferences to record hundreds of talks (which can be seen at `fosslc.org <http://fosslc.org>`_).
 Though designed for capturing presentations, it can also be used to capture demos, training materials, lectures, and other videos.
@@ -19,7 +18,7 @@ Though designed for capturing presentations, it can also be used to capture demo
 Freeseer is written in Python, uses Qt4 for its GUI, and Gstreamer for video/audio processing.
 Freeseer is based on open standards and supports royalty free audio and video codecs.
 
-Freeseer's source code is licensed under the `GNU General Public License <http://www.gnu.org/licenses/gpl.html>`_ and 
+Freeseer's source code is licensed under the `GNU General Public License <http://www.gnu.org/licenses/gpl.html>`_ and
 is available on `GitHub <http://github.com/Freeseer/freeseer>`_.
 
 
@@ -29,7 +28,7 @@ Who We Are
 We're an open source community of developers, writers, designers, bloggers, students, and open source enthusiasts
 whose goal is to make meaningful software with world-class documentation (inspired by ThinkUp and GitHub).
 
-You're reading the very beginning of that effort. This documentation is an incomplete, work-in-progress. Please 
+You're reading the very beginning of that effort. This documentation is an incomplete, work-in-progress. Please
 join us and help :doc:`fill in the gaps </contribute/documentation>`.
 
 
@@ -42,7 +41,8 @@ There were issues such as costs, ownership, portability, and simplicity. There h
 Freeseer began in 2009 as an in-house solution for FOSSLC to record conference talks.
 Many people have contributed since then and development is still on-going.
 
-You can read more about Freeseer's history at `fosslc.org <http://fosslc.org/drupal/node/596>`_.
+.. seealso::
+   `Freeseer's history <http://fosslc.org/drupal/node/596>`_
 
 
 Expectations Around Sharing Freeseer
@@ -80,12 +80,14 @@ to later share with others.
 
 What Freeseer Can Do
 --------------------
-.. TODO: Add a video
-.. .. sidebar:: Freeseer's Features in Action
 
-..    .. raw:: html
+.. topic:: Introduction to Freeseer v2.5 (outdated video, but still demonstrates the essence of Freeseer)
 
-..        <iframe title="YouTube video player" style="width: 100%; height:250px; border: 0;" src=""></iframe> 
+   .. raw:: html
+
+      <iframe type="text/html" width="100%" height="500"
+       src="http://www.youtube-nocookie.com/embed/wOr1ZeQG__k?rel=0&autohide=1&showinfo=0&theme=light"
+       frameborder="0"></iframe>
 
 At its heart, Freeseer is a screencasting tool. Freeseer helps you record your desktop and audio,
 whether you're recording hundreds of talks at a conference or making a how-to video at home.
