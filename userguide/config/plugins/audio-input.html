@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Audio Input &mdash; Freeseer 3.0.0 documentation</title>
+    <title>Audio Input Plugins &mdash; Freeseer 3.0.0 documentation</title>
     
     <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -27,7 +27,7 @@
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="top" title="Freeseer 3.0.0 documentation" href="../../../index.html" />
     <link rel="up" title="Plugins" href="index.html" />
-    <link rel="next" title="Audio Mixer" href="audio-mixer.html" />
+    <link rel="next" title="Audio Mixer Plugins" href="audio-mixer.html" />
     <link rel="prev" title="Plugins" href="index.html" /> <!-- This block is used to add content to <head> tag. -->
 <style>
   a:link {color:#3B5998}
@@ -47,7 +47,10 @@
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="audio-mixer.html" title="Audio Mixer"
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="audio-mixer.html" title="Audio Mixer Plugins"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="index.html" title="Plugins"
@@ -63,20 +66,34 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="audio-input">
-<h1>Audio Input<a class="headerlink" href="#audio-input" title="Permalink to this headline">¶</a></h1>
-<p><em>TODO</em></p>
+  <div class="section" id="module-freeseer.plugins.audioinput.alsasrc">
+<span id="audio-input-plugins"></span><h1>Audio Input Plugins<a class="headerlink" href="#module-freeseer.plugins.audioinput.alsasrc" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="alsa-source">
 <h2>ALSA Source<a class="headerlink" href="#alsa-source" title="Permalink to this headline">¶</a></h2>
+<p>An audio plugin which uses ALSA as the audio input.</p>
+<p>&#64;author: Thanh Ha</p>
 </div>
-<div class="section" id="pulse-audio-source">
-<h2>Pulse Audio Source<a class="headerlink" href="#pulse-audio-source" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="audio-test-source">
+<span class="target" id="module-freeseer.plugins.audioinput.audiotestsrc"></span><div class="section" id="audio-test-source">
 <h2>Audio Test Source<a class="headerlink" href="#audio-test-source" title="Permalink to this headline">¶</a></h2>
+<p>An audio plugin that generates a test pattern. Useful for testing
+and debugging Freeseer.</p>
+<p>&#64;author: Thanh Ha</p>
 </div>
-<div class="section" id="auto-audio-source">
+<span class="target" id="module-freeseer.plugins.audioinput.autoaudiosrc"></span><div class="section" id="auto-audio-source">
 <h2>Auto Audio Source<a class="headerlink" href="#auto-audio-source" title="Permalink to this headline">¶</a></h2>
+<p>Very basic plugin which allows GStreamer to auto detect
+which audio source to use. Not configurable.</p>
+<p>&#64;author: Thanh Ha</p>
+</div>
+<span class="target" id="module-freeseer.plugins.audioinput.jackaudiosrc"></span><div class="section" id="jack-audio-source">
+<h2>Jack Audio Source<a class="headerlink" href="#jack-audio-source" title="Permalink to this headline">¶</a></h2>
+<p>An audio plugin which uses JACK as the audio input.</p>
+<p>&#64;author: Thanh Ha</p>
+</div>
+<span class="target" id="module-freeseer.plugins.audioinput.pulsesrc"></span><div class="section" id="pulseaudio-source">
+<h2>PulseAudio Source<a class="headerlink" href="#pulseaudio-source" title="Permalink to this headline">¶</a></h2>
+<p>An audio plugin which uses PulseAudio as the audio input.</p>
+<p>&#64;author: Thanh Ha</p>
 </div>
 </div>
 
@@ -91,11 +108,12 @@
             </a></p>
   <h3><a href="../../../index.html">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">Audio Input</a><ul>
+<li><a class="reference internal" href="#">Audio Input Plugins</a><ul>
 <li><a class="reference internal" href="#alsa-source">ALSA Source</a></li>
-<li><a class="reference internal" href="#pulse-audio-source">Pulse Audio Source</a></li>
 <li><a class="reference internal" href="#audio-test-source">Audio Test Source</a></li>
 <li><a class="reference internal" href="#auto-audio-source">Auto Audio Source</a></li>
+<li><a class="reference internal" href="#jack-audio-source">Jack Audio Source</a></li>
+<li><a class="reference internal" href="#pulseaudio-source">PulseAudio Source</a></li>
 </ul>
 </li>
 </ul>
@@ -105,7 +123,7 @@
                         title="previous chapter">Plugins</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="audio-mixer.html"
-                        title="next chapter">Audio Mixer</a></p>
+                        title="next chapter">Audio Mixer Plugins</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="../../../_sources/userguide/config/plugins/audio-input.txt"
@@ -135,7 +153,10 @@
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="audio-mixer.html" title="Audio Mixer"
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="audio-mixer.html" title="Audio Mixer Plugins"
              >next</a> |</li>
         <li class="right" >
           <a href="index.html" title="Plugins"

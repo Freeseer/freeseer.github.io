@@ -27,7 +27,7 @@
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="top" title="Freeseer 3.0.0 documentation" href="../../../index.html" />
     <link rel="up" title="User Guide" href="../../index.html" />
-    <link rel="next" title="Audio Input" href="audio-input.html" />
+    <link rel="next" title="Audio Input Plugins" href="audio-input.html" />
     <link rel="prev" title="Settings" href="../index.html" /> <!-- This block is used to add content to <head> tag. -->
 <style>
   a:link {color:#3B5998}
@@ -47,7 +47,10 @@
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="audio-input.html" title="Audio Input"
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="audio-input.html" title="Audio Input Plugins"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="../index.html" title="Settings"
@@ -70,39 +73,34 @@
 </div>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="audio-input.html">Audio Input</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="audio-input.html">Audio Input Plugins</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="audio-input.html#alsa-source">ALSA Source</a></li>
-<li class="toctree-l2"><a class="reference internal" href="audio-input.html#pulse-audio-source">Pulse Audio Source</a></li>
 <li class="toctree-l2"><a class="reference internal" href="audio-input.html#audio-test-source">Audio Test Source</a></li>
 <li class="toctree-l2"><a class="reference internal" href="audio-input.html#auto-audio-source">Auto Audio Source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="audio-input.html#jack-audio-source">Jack Audio Source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="audio-input.html#pulseaudio-source">PulseAudio Source</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="audio-mixer.html">Audio Mixer</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="audio-mixer.html">Audio Mixer Plugins</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="audio-mixer.html#audio-passthrough">Audio Passthrough</a></li>
-<li class="toctree-l2"><a class="reference internal" href="audio-mixer.html#adder">Adder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="audio-mixer.html#multiple-audio-plugin">Multiple Audio Plugin</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="video-input.html">Video Input</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="video-input.html#desktop-windows-source">Desktop-Windows Source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="video-input.html">Video Input Plugins</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="video-input.html#desktop-source">Desktop Source</a></li>
 <li class="toctree-l2"><a class="reference internal" href="video-input.html#firewire-source">Firewire Source</a></li>
-<li class="toctree-l2"><a class="reference internal" href="video-input.html#desktop-linux-source">Desktop-Linux Source</a></li>
 <li class="toctree-l2"><a class="reference internal" href="video-input.html#usb-source">USB Source</a></li>
 <li class="toctree-l2"><a class="reference internal" href="video-input.html#video-test-source">Video Test Source</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="video-mixer.html">Video Mixer</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="video-mixer.html#picture-in-picture">Picture-In-Picture</a></li>
-<li class="toctree-l2"><a class="reference internal" href="video-mixer.html#input-selector">Input Selector</a></li>
+<li class="toctree-l1"><a class="reference internal" href="video-mixer.html">Video Mixer Plugins</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="video-mixer.html#video-passthrough">Video Passthrough</a></li>
+<li class="toctree-l2"><a class="reference internal" href="video-mixer.html#picture-in-picture">Picture-In-Picture</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="output.html">Output</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="output.html#webm-output">WebM Output</a></li>
-<li class="toctree-l2"><a class="reference internal" href="output.html#video-preview">Video Preview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="output.html">Output Plugins</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="output.html#audio-feedback">Audio Feedback</a></li>
-<li class="toctree-l2"><a class="reference internal" href="output.html#rtmp-streaming">RTMP streaming</a></li>
-<li class="toctree-l2"><a class="reference internal" href="output.html#ogg-icecast">Ogg Icecast</a></li>
-<li class="toctree-l2"><a class="reference internal" href="output.html#ogg-output">Ogg Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="output.html#video-preview">Video Preview</a></li>
 </ul>
 </li>
 </ul>
@@ -123,7 +121,7 @@
                         title="previous chapter">Settings</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="audio-input.html"
-                        title="next chapter">Audio Input</a></p>
+                        title="next chapter">Audio Input Plugins</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="../../../_sources/userguide/config/plugins/index.txt"
@@ -153,7 +151,10 @@
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="audio-input.html" title="Audio Input"
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="audio-input.html" title="Audio Input Plugins"
              >next</a> |</li>
         <li class="right" >
           <a href="../index.html" title="Settings"

@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Output &mdash; Freeseer 3.0.0 documentation</title>
+    <title>Output Plugins &mdash; Freeseer 3.0.0 documentation</title>
     
     <link rel="stylesheet" href="../../../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
@@ -28,7 +28,7 @@
     <link rel="top" title="Freeseer 3.0.0 documentation" href="../../../index.html" />
     <link rel="up" title="Plugins" href="index.html" />
     <link rel="next" title="Report Editor" href="../../reporteditor.html" />
-    <link rel="prev" title="Video Mixer" href="video-mixer.html" /> <!-- This block is used to add content to <head> tag. -->
+    <link rel="prev" title="Video Mixer Plugins" href="video-mixer.html" /> <!-- This block is used to add content to <head> tag. -->
 <style>
   a:link {color:#3B5998}
   a:visited {color:#005B81}
@@ -47,10 +47,13 @@
           <a href="../../../genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
           <a href="../../reporteditor.html" title="Report Editor"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="video-mixer.html" title="Video Mixer"
+          <a href="video-mixer.html" title="Video Mixer Plugins"
              accesskey="P">previous</a> |</li>
         <li><a href="../../../index.html">Freeseer 3.0.0 documentation</a> &raquo;</li>
           <li><a href="../../index.html" >User Guide</a> &raquo;</li>
@@ -63,86 +66,19 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="output">
-<h1>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="webm-output">
-<h2>WebM Output<a class="headerlink" href="#webm-output" title="Permalink to this headline">¶</a></h2>
-<div class="admonition-todo admonition" id="index-0">
-<p class="first last admonition-title">Todo</p>
-</div>
-</div>
-<div class="section" id="video-preview">
-<h2>Video Preview<a class="headerlink" href="#video-preview" title="Permalink to this headline">¶</a></h2>
-<div class="admonition-todo admonition" id="index-1">
-<p class="first last admonition-title">Todo</p>
-</div>
-</div>
+  <div class="section" id="module-freeseer.plugins.output.audiofeedback">
+<span id="output-plugins"></span><h1>Output Plugins<a class="headerlink" href="#module-freeseer.plugins.output.audiofeedback" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="audio-feedback">
 <h2>Audio Feedback<a class="headerlink" href="#audio-feedback" title="Permalink to this headline">¶</a></h2>
-<div class="admonition-todo admonition" id="index-2">
-<p class="first last admonition-title">Todo</p>
+<p>An output plugin which routes sound to the device&#8217;s available
+speakers.</p>
+<p>&#64;author: Thanh Ha</p>
 </div>
-</div>
-<div class="section" id="rtmp-streaming">
-<h2>RTMP streaming<a class="headerlink" href="#rtmp-streaming" title="Permalink to this headline">¶</a></h2>
-<p>The <a class="reference external" href="http://en.wikipedia.org/wiki/Real_Time_Messaging_Protocol">Real Time Messaging Protocol (RTMP)</a>
-is a popular format for video/audio streaming. You can stream from Freeseer
-to an arbitrary server using the RTMP plugin.</p>
-<p>To enable streaming</p>
-<ol class="arabic simple">
-<li>Open <a class="reference internal" href="../index.html#config"><em>Freeseer&#8217;s configuration</em></a> and go to the &#8220;Recording&#8221; tab</li>
-<li>Check the &#8220;Record to Stream&#8221; box</li>
-<li>Set the stream format to &#8220;RTMP Streaming&#8221;</li>
-<li>Click the &#8220;Setup&#8221; button to access more options</li>
-<li>Specify the &#8220;Stream URL&#8221; (the location you&#8217;ll be streaming to)</li>
-</ol>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">All outputs must be set to &#8220;leaky mode&#8221;.
-Go to &#8220;Plugins&#8221; &gt; &#8220;Output&#8221; &gt; &#8220;Video Preview&#8221; &gt; &#8220;Leaky Queue&#8221;.</p>
-</div>
-<div class="section" id="justin-tv">
-<h3>Justin.tv<a class="headerlink" href="#justin-tv" title="Permalink to this headline">¶</a></h3>
-<p>There is built-in support for streaming to <a class="reference external" href="http://www.justin.tv/">Justin.tv</a>.
-To enable it, repeat the above steps 1-4, then change the
-&#8220;Streaming Destination&#8221; from &#8220;custom&#8221; to &#8220;justin.tv&#8221;.</p>
-<p>You also have to input your &#8220;Streaming Key&#8221;.
-To get one, <a class="reference external" href="http://www.justin.tv/user/login">log in to your Justin.tv account</a>
-and go to <a class="reference external" href="http://www.justin.tv/broadcast/adv_other">http://www.justin.tv/broadcast/adv_other</a>.</p>
-<p>You also have the option to set your Justin.tv channel properties (stream title
-and description). Check the &#8220;Set Justin.tv channel properties&#8221; box and enter
-your &#8220;Consumer Key&#8221; and &#8220;Consumer Secret&#8221;.</p>
-<div class="admonition tip">
-<p class="first admonition-title">Tip</p>
-<p>To obtain a Consumer Key and Consumer Secret from Justin.tv,
-got to <a class="reference external" href="http://www.twitch.tv/developer/activate">http://www.twitch.tv/developer/activate</a>.</p>
-<p>You will need to provide login credentials for Justin.tv.
-This will make your account a developer account (as of this moment,
-this does not have any adverse effects).</p>
-<p>In order to obtain the Consumer Key and Consumer Secret,
-you will have to create an application in Justin.tv.
-To do this, go to <a class="reference external" href="http://www.twitch.tv/oauth_clients/create">http://www.twitch.tv/oauth_clients/create</a>.</p>
-<p class="last">On this page you will be asked to provide a name for the application and
-a set of URLs - these can be chosen arbitrarily, they serve no purpose for
-RTMP streaming. After you press &#8220;Save&#8221;, you will be taken to a page where the
-Consumer Key and Consumer Secret will be shown - you can now provide
-these to Freeseer!</p>
-</div>
-<p>When you&#8217;re done setting up your Justin.tv preferences in Freeseer, click the
-&#8220;Apply - stream to Justin.tv&#8221; button on the bottom of the settings tab. Enjoy!</p>
-</div>
-</div>
-<div class="section" id="ogg-icecast">
-<h2>Ogg Icecast<a class="headerlink" href="#ogg-icecast" title="Permalink to this headline">¶</a></h2>
-<div class="admonition-todo admonition" id="index-3">
-<p class="first last admonition-title">Todo</p>
-</div>
-</div>
-<div class="section" id="ogg-output">
-<h2>Ogg Output<a class="headerlink" href="#ogg-output" title="Permalink to this headline">¶</a></h2>
-<div class="admonition-todo admonition" id="index-4">
-<p class="first last admonition-title">Todo</p>
-</div>
+<span class="target" id="module-freeseer.plugins.output.videopreview"></span><div class="section" id="video-preview">
+<h2>Video Preview<a class="headerlink" href="#video-preview" title="Permalink to this headline">¶</a></h2>
+<p>An output plugin which provides a video window to preview the video that
+is being recorded in real time.</p>
+<p>&#64;author: Thanh Ha</p>
 </div>
 </div>
 
@@ -157,23 +93,16 @@ these to Freeseer!</p>
             </a></p>
   <h3><a href="../../../index.html">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">Output</a><ul>
-<li><a class="reference internal" href="#webm-output">WebM Output</a></li>
-<li><a class="reference internal" href="#video-preview">Video Preview</a></li>
+<li><a class="reference internal" href="#">Output Plugins</a><ul>
 <li><a class="reference internal" href="#audio-feedback">Audio Feedback</a></li>
-<li><a class="reference internal" href="#rtmp-streaming">RTMP streaming</a><ul>
-<li><a class="reference internal" href="#justin-tv">Justin.tv</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#ogg-icecast">Ogg Icecast</a></li>
-<li><a class="reference internal" href="#ogg-output">Ogg Output</a></li>
+<li><a class="reference internal" href="#video-preview">Video Preview</a></li>
 </ul>
 </li>
 </ul>
 
   <h4>Previous topic</h4>
   <p class="topless"><a href="video-mixer.html"
-                        title="previous chapter">Video Mixer</a></p>
+                        title="previous chapter">Video Mixer Plugins</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="../../reporteditor.html"
                         title="next chapter">Report Editor</a></p>
@@ -206,10 +135,13 @@ these to Freeseer!</p>
           <a href="../../../genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
+          <a href="../../../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
           <a href="../../reporteditor.html" title="Report Editor"
              >next</a> |</li>
         <li class="right" >
-          <a href="video-mixer.html" title="Video Mixer"
+          <a href="video-mixer.html" title="Video Mixer Plugins"
              >previous</a> |</li>
         <li><a href="../../../index.html">Freeseer 3.0.0 documentation</a> &raquo;</li>
           <li><a href="../../index.html" >User Guide</a> &raquo;</li>
