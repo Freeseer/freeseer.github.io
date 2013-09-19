@@ -63,11 +63,13 @@
             
   <div class="section" id="best-practices">
 <h1>Best Practices<a class="headerlink" href="#best-practices" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="don-t-develop-on-master-or-experimental-branch">
-<h2>Don&#8217;t Develop on Master or Experimental Branch<a class="headerlink" href="#don-t-develop-on-master-or-experimental-branch" title="Permalink to this headline">¶</a></h2>
-<p>The master branch is where stable production code goes that&#8217;s ready to ship.
-The experimental branch contains the latest development version of Freeseer.
-Use topic/feature branches instead of working directly on master or experimental.</p>
+<div class="section" id="don-t-develop-on-master-branch">
+<h2>Don&#8217;t Develop on Master Branch<a class="headerlink" href="#don-t-develop-on-master-branch" title="Permalink to this headline">¶</a></h2>
+<p>The master branch contains stable code that&#8217;s ready to ship. The master branch
+build should always be passing.</p>
+<p>The maintenance branch (if it exists) contains patches for the latest release,
+and doesn&#8217;t get any new features.</p>
+<p>Use topic branches instead of working directly on master.</p>
 </div>
 <div class="section" id="name-your-branch-after-an-issue-or-task">
 <span id="branch-names"></span><h2>Name Your Branch After an Issue or Task<a class="headerlink" href="#name-your-branch-after-an-issue-or-task" title="Permalink to this headline">¶</a></h2>
@@ -141,7 +143,7 @@ git commit&#8217;s message argument:</p>
   <h3><a href="../index.html">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Best Practices</a><ul>
-<li><a class="reference internal" href="#don-t-develop-on-master-or-experimental-branch">Don&#8217;t Develop on Master or Experimental Branch</a></li>
+<li><a class="reference internal" href="#don-t-develop-on-master-branch">Don&#8217;t Develop on Master Branch</a></li>
 <li><a class="reference internal" href="#name-your-branch-after-an-issue-or-task">Name Your Branch After an Issue or Task</a></li>
 <li><a class="reference internal" href="#start-a-new-task-on-a-new-branch">Start a New Task on a New Branch</a></li>
 <li><a class="reference internal" href="#properly-style-your-commit-messages">Properly Style Your Commit Messages</a></li>
