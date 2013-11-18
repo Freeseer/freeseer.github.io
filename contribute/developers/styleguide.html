@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Building a Plugin &mdash; Freeseer 3.0.0 documentation</title>
+    <title>Style Guide &mdash; Freeseer 3.0.0 documentation</title>
     
     <link rel="stylesheet" href="../../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -27,8 +27,8 @@
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="top" title="Freeseer 3.0.0 documentation" href="../../index.html" />
     <link rel="up" title="Developer" href="index.html" />
-    <link rel="next" title="Code Review" href="review.html" />
-    <link rel="prev" title="Testing" href="testing.html" /> <!-- This block is used to add content to <head> tag. -->
+    <link rel="next" title="Testing" href="testing.html" />
+    <link rel="prev" title="Developer" href="index.html" /> <!-- This block is used to add content to <head> tag. -->
 <style>
   a:link {color:#3B5998}
   a:visited {color:#005B81}
@@ -50,10 +50,10 @@
           <a href="../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="review.html" title="Code Review"
+          <a href="testing.html" title="Testing"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="testing.html" title="Testing"
+          <a href="index.html" title="Developer"
              accesskey="P">previous</a> |</li>
         <li><a href="../../index.html">Freeseer 3.0.0 documentation</a> &raquo;</li>
           <li><a href="../index.html" >Contributor Guide</a> &raquo;</li>
@@ -66,11 +66,35 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="building-a-plugin">
-<h1>Building a Plugin<a class="headerlink" href="#building-a-plugin" title="Permalink to this headline">¶</a></h1>
-<div class="admonition-todo admonition" id="index-0">
-<p class="first admonition-title">Todo</p>
-<p class="last">Rio is drafting a tutorial.</p>
+  <div class="section" id="style-guide">
+<h1>Style Guide<a class="headerlink" href="#style-guide" title="Permalink to this headline">¶</a></h1>
+<p>Every major project has its own style guide: a set of conventions (sometimes
+arbitrary) about how to write code for that project. It&#8217;s much easier to
+understand a large codebase when all the code is in a consistent style.</p>
+<p>Freeseer follows
+<a class="reference external" href="http://www.python.org/dev/peps/pep-0008/">PEP 8 (Style Guide for Python Code)</a> and the
+<a class="reference external" href="http://google-styleguide.googlecode.com/svn/trunk/pyguide.html">Google Python Style Guide</a>.
+The two style guides mostly overlap but the Google one is more detailed and
+easier to navigate. Freeseer also contains tests that will loosely check the code for PEP
+8 compatibility.</p>
+<div class="section" id="custom-guidelines">
+<h2>Custom Guidelines<a class="headerlink" href="#custom-guidelines" title="Permalink to this headline">¶</a></h2>
+<p>There are a few exceptions or additions to the above style guides.</p>
+<p class="rubric">Line Length</p>
+<p>We use 120 characters at most, instead of the common 80-column limit.</p>
+<p class="rubric">Python 3 Compatibility</p>
+<p>Write code that&#8217;s compatible with Python 3 whenever possible. This will make our
+transition easier.</p>
+<p class="rubric">Printing vs Logging</p>
+<p>You should never print to debug, log instead. Chances are the logging will
+come in handy in the future so you may as well leave it in.</p>
+<p>Use print when working on a CLI tool and the output must always be shown to the
+end user.</p>
+<p class="rubric">String Formatting</p>
+<p>For logging, use <tt class="docutils literal"><span class="pre">logging.info(&quot;%s</span> <span class="pre">%s&quot;,</span> <span class="pre">foo,</span> <span class="pre">bar)</span></tt> (with the appropriate
+logging level of course).</p>
+<p>For everything else, use <tt class="docutils literal"><span class="pre">str.format()</span></tt>. E.g. <tt class="docutils literal"><span class="pre">'{}</span> <span class="pre">-</span> <span class="pre">{}'.format(foo,</span> <span class="pre">bar)</span></tt>
+or <tt class="docutils literal"><span class="pre">'{0},</span> <span class="pre">{1},</span> <span class="pre">{0}'.format(foo,</span> <span class="pre">bar)</span></tt>.</p>
 </div>
 </div>
 
@@ -83,15 +107,23 @@
             <p class="logo"><a href="../../index.html">
               <img class="logo" src="../../_static/freeseer_logo.png" alt="Logo"/>
             </a></p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Style Guide</a><ul>
+<li><a class="reference internal" href="#custom-guidelines">Custom Guidelines</a></li>
+</ul>
+</li>
+</ul>
+
   <h4>Previous topic</h4>
-  <p class="topless"><a href="testing.html"
-                        title="previous chapter">Testing</a></p>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Developer</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="review.html"
-                        title="next chapter">Code Review</a></p>
+  <p class="topless"><a href="testing.html"
+                        title="next chapter">Testing</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
-    <li><a href="../../_sources/contribute/developers/plugins.txt"
+    <li><a href="../../_sources/contribute/developers/styleguide.txt"
            rel="nofollow">Show Source</a></li>
   </ul>
 <div id="searchbox" style="display: none">
@@ -121,10 +153,10 @@
           <a href="../../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="review.html" title="Code Review"
+          <a href="testing.html" title="Testing"
              >next</a> |</li>
         <li class="right" >
-          <a href="testing.html" title="Testing"
+          <a href="index.html" title="Developer"
              >previous</a> |</li>
         <li><a href="../../index.html">Freeseer 3.0.0 documentation</a> &raquo;</li>
           <li><a href="../index.html" >Contributor Guide</a> &raquo;</li>
