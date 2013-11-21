@@ -77,6 +77,7 @@ understand a large codebase when all the code is in a consistent style.</p>
 The two style guides mostly overlap but the Google one is more detailed and
 easier to navigate. Freeseer also contains tests that will loosely check the code for PEP
 8 compatibility.</p>
+<p>Not all existing code follows these guidelines, but all new code is expected to.</p>
 <div class="section" id="custom-guidelines">
 <h2>Custom Guidelines<a class="headerlink" href="#custom-guidelines" title="Permalink to this headline">¶</a></h2>
 <p>There are a few exceptions or additions to the above style guides.</p>
@@ -95,6 +96,11 @@ end user.</p>
 logging level of course).</p>
 <p>For everything else, use <tt class="docutils literal"><span class="pre">str.format()</span></tt>. E.g. <tt class="docutils literal"><span class="pre">'{}</span> <span class="pre">-</span> <span class="pre">{}'.format(foo,</span> <span class="pre">bar)</span></tt>
 or <tt class="docutils literal"><span class="pre">'{0},</span> <span class="pre">{1},</span> <span class="pre">{0}'.format(foo,</span> <span class="pre">bar)</span></tt>.</p>
+<p class="rubric">Write Short Methods</p>
+<p>Methods and functions should be kept small and focused.</p>
+<p>Long methods are sometimes appropriate, so no hard limit is placed on method
+length. However, if a method exceeds 40 lines or so, think about whether it can
+be broken up without harming the structure of the program.</p>
 </div>
 </div>
 
