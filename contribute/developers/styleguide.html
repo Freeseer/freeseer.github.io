@@ -92,8 +92,8 @@ come in handy in the future so you may as well leave it in.</p>
 <p>Use print when working on a CLI tool and the output must always be shown to the
 end user.</p>
 <p class="rubric">String Formatting</p>
-<p>For logging, use <tt class="docutils literal"><span class="pre">logging.info(&quot;%s</span> <span class="pre">%s&quot;,</span> <span class="pre">foo,</span> <span class="pre">bar)</span></tt> (with the appropriate
-logging level of course).</p>
+<p>For logging, use printf style formatting. E.g. <tt class="docutils literal"><span class="pre">logging.info(&quot;%s</span> <span class="pre">%s&quot;,</span> <span class="pre">foo,</span> <span class="pre">bar)</span></tt>
+using the appropriate logger name and logging level.</p>
 <p>For everything else, use <tt class="docutils literal"><span class="pre">str.format()</span></tt>. E.g. <tt class="docutils literal"><span class="pre">'{}</span> <span class="pre">-</span> <span class="pre">{}'.format(foo,</span> <span class="pre">bar)</span></tt>
 or <tt class="docutils literal"><span class="pre">'{0},</span> <span class="pre">{1},</span> <span class="pre">{0}'.format(foo,</span> <span class="pre">bar)</span></tt>.</p>
 <p class="rubric">Write Short Methods</p>
