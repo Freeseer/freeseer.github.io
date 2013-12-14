@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Building a Plugin &mdash; Freeseer 3.0.0 documentation</title>
+    <title>Plugin Framework &mdash; Freeseer 3.0.0 documentation</title>
     
     <link rel="stylesheet" href="../../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -66,11 +66,234 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="building-a-plugin">
-<h1>Building a Plugin<a class="headerlink" href="#building-a-plugin" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="plugin-framework">
+<h1>Plugin Framework<a class="headerlink" href="#plugin-framework" title="Permalink to this headline">¶</a></h1>
+<p>Freeseer uses plugins so developers can easily extend the capabilities of
+Freeseer in a modular fashion.</p>
+<p>Freeseer&#8217;s plugin framework is built on <a class="reference external" href="http://yapsy.sourceforge.net">Yapsy</a>,
+a minimal plugin system that only depends on Python&#8217;s standard library.</p>
+<div class="section" id="plugin-system-setup">
+<h2>Plugin System Setup<a class="headerlink" href="#plugin-system-setup" title="Permalink to this headline">¶</a></h2>
+<p>Yapsy&#8217;s <tt class="docutils literal"><span class="pre">PluginManager</span></tt> class provides the core logic needed to find, load,
+and activate plugins. Freeseer has a <tt class="docutils literal"><span class="pre">PluginManager</span></tt> class that builds
+on top of that, and can be found in <tt class="docutils literal"><span class="pre">src/freeseer/framework/plugin.py</span></tt>.</p>
+<p>Yapsy provides a <tt class="docutils literal"><span class="pre">PluginFileLocator</span></tt> class which locates plugins when they are
+accessible via the filesystem. <a class="footnote-reference" href="#f1" id="id1">[1]</a> Plugins are described by a text file
+called the <em>plugin info file</em> which have a &#8221;.yapsy-plugin&#8221; extension by default.
+But Freeseer plugins use a customized extension, &#8221;.freeseer-plugin&#8221;.</p>
 <div class="admonition-todo admonition" id="index-0">
 <p class="first admonition-title">Todo</p>
-<p class="last">Rio is drafting a tutorial.</p>
+<p class="last">introduce the code snippet so it&#8217;s not shown as a surprise</p>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">yapsy.PluginManager</span> <span class="kn">import</span> <span class="n">PluginManagerSingleton</span>
+<span class="kn">from</span> <span class="nn">yapsy.ConfigurablePluginManager</span> <span class="kn">import</span> <span class="n">ConfigurablePluginManager</span>
+<span class="o">...</span>
+
+<span class="k">class</span> <span class="nc">PluginManager</span><span class="p">(</span><span class="n">QtCore</span><span class="o">.</span><span class="n">QObject</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Freeseer&#39;s Plugin Manager provides plugin support.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+      <span class="o">...</span>
+      <span class="n">PluginManagerSingleton</span><span class="o">.</span><span class="n">setBehaviour</span><span class="p">([</span><span class="n">ConfigurablePluginManager</span><span class="p">])</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">plugmanc</span> <span class="o">=</span> <span class="n">PluginManagerSingleton</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
+      <span class="o">...</span>
+      <span class="n">locator</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">plugmanc</span><span class="o">.</span><span class="n">getPluginLocator</span><span class="p">()</span>
+      <span class="n">locator</span><span class="o">.</span><span class="n">setPluginInfoExtension</span><span class="p">(</span><span class="s">&quot;freeseer-plugin&quot;</span><span class="p">)</span>
+      <span class="o">...</span>
+</pre></div>
+</div>
+<p>Freeseer searches three different directory paths for plugins:</p>
+<ol class="arabic simple">
+<li>User&#8217;s HOME directory (<tt class="docutils literal"><span class="pre">~/.freeseer/plugins/</span></tt>)</li>
+<li>Relative to the src directory (<tt class="docutils literal"><span class="pre">src/freeseer/plugins/</span></tt>)</li>
+<li>If you installed Freeseer, the Python installation packages (<tt class="docutils literal"><span class="pre">site-packages/freeseer/plugins/</span></tt>)</li>
+</ol>
+<p>Yapsy&#8217;s <tt class="docutils literal"><span class="pre">IPlugin</span></tt> class defines the minimal interface needed for Yapsy
+plugins. We want Freeseer&#8217;s plugin classes to have a richer interface than what
+<tt class="docutils literal"><span class="pre">IPlugin</span></tt> provides, so we created the <tt class="docutils literal"><span class="pre">IBackendPlugin</span></tt> class in
+<tt class="docutils literal"><span class="pre">freeseer/framework/plugin.py</span></tt> which inherits from <tt class="docutils literal"><span class="pre">IPlugin</span></tt> and defines the
+minimal interface for all Freeseer plugin classes. All Freeseer plugins should
+descend from the <tt class="docutils literal"><span class="pre">IBackendPlugin</span></tt> class.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">yapsy.IPlugin</span> <span class="kn">import</span> <span class="n">IPlugin</span>
+<span class="o">...</span>
+
+<span class="k">class</span> <span class="nc">IBackendPlugin</span><span class="p">(</span><span class="n">IPlugin</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Defines the interface for all Freeseer plugins.&quot;&quot;&quot;</span>
+    <span class="n">CATEGORY</span> <span class="o">=</span> <span class="s">&quot;Undefined&quot;</span>
+    <span class="o">...</span>
+
+<span class="k">class</span> <span class="nc">IAudioInput</span><span class="p">(</span><span class="n">IBackendPlugin</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;A Freeseer plugin for Audio Input.&quot;&quot;&quot;</span>
+    <span class="n">CATEGORY</span> <span class="o">=</span> <span class="s">&quot;AudioInput&quot;</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<p>Each class that is a descendant of the <tt class="docutils literal"><span class="pre">IPlugin</span></tt> class needs a <tt class="docutils literal"><span class="pre">CATEGORY</span></tt>
+attribute defined. When you are writing your own Freeseer plugin, you often
+don&#8217;t need to define a new category. You can extend one of the existing plugin
+classes and will not need to override the <tt class="docutils literal"><span class="pre">CATEGORY</span></tt> attribute.</p>
+<p>If you are creating a new category, you will need to override the <tt class="docutils literal"><span class="pre">CATEGORY</span></tt>
+attribute and add the new category name and class name to the PluginManager&#8217;s
+category filter in the form of a key-value pair, where the key is the
+plugin&#8217;s category and the value is the plugin&#8217;s classname.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">class</span> <span class="nc">PluginManager</span><span class="p">(</span><span class="n">QtCore</span><span class="o">.</span><span class="n">QObject</span><span class="p">):</span>
+    <span class="o">...</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">plugmanc</span><span class="o">.</span><span class="n">setCategoriesFilter</span><span class="p">({</span>
+        <span class="n">IAudioInput</span><span class="o">.</span><span class="n">CATEGORY</span><span class="p">:</span> <span class="n">IAudioInput</span><span class="p">,</span>
+        <span class="n">IAudioMixer</span><span class="o">.</span><span class="n">CATEGORY</span><span class="p">:</span> <span class="n">IAudioMixer</span><span class="p">,</span>
+        <span class="n">IVideoInput</span><span class="o">.</span><span class="n">CATEGORY</span><span class="p">:</span> <span class="n">IVideoInput</span><span class="p">,</span>
+        <span class="n">IVideoMixer</span><span class="o">.</span><span class="n">CATEGORY</span><span class="p">:</span> <span class="n">IVideoMixer</span><span class="p">,</span>
+        <span class="n">IImporter</span><span class="o">.</span><span class="n">CATEGORY</span><span class="p">:</span>   <span class="n">IImporter</span><span class="p">,</span>
+        <span class="n">IOutput</span><span class="o">.</span><span class="n">CATEGORY</span><span class="p">:</span>     <span class="n">IOutput</span><span class="p">})</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">plugmanc</span><span class="o">.</span><span class="n">collectPlugins</span><span class="p">()</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<p>Yapsy provides a number of useful decorators for its PluginManager which modify
+behaviour. Freeseer&#8217;s plugin system uses the <tt class="docutils literal"><span class="pre">ConfigurablePluginManager</span></tt> which
+allows Freeseer to save and load the active plugins and their settings to
+a configuration file.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">yapsy.ConfigurablePluginManager</span> <span class="kn">import</span> <span class="n">ConfigurablePluginManager</span>
+<span class="o">...</span>
+
+<span class="k">class</span> <span class="nc">PluginManager</span><span class="p">(</span><span class="n">QtCore</span><span class="o">.</span><span class="n">QObject</span><span class="p">):</span>
+    <span class="o">...</span>
+    <span class="n">PluginManagerSingleton</span><span class="o">.</span><span class="n">setBehaviour</span><span class="p">([</span><span class="n">ConfigurablePluginManager</span><span class="p">])</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<p>Many of the Freeseer plugins, such as the video and audio plugins, use the
+<tt class="docutils literal"><span class="pre">ConfigurablePluginManager</span></tt> to save the active plugins.</p>
+</div>
+<div class="section" id="creating-a-plugin">
+<h2>Creating a Plugin<a class="headerlink" href="#creating-a-plugin" title="Permalink to this headline">¶</a></h2>
+<p>The basic steps for creating a new plugin are:</p>
+<ol class="arabic">
+<li><p class="first">Write a plugin info file, <tt class="docutils literal"><span class="pre">plugin_name.freeseer-plugin</span></tt>, inside the
+appropriate directory within <tt class="docutils literal"><span class="pre">src/freeseer/plugins/</span></tt>. This file will
+hold metadata for the plugin and has the following format:</p>
+<div class="highlight-python"><pre>[Core]
+Name = Plugin Name
+Module = plugin_module_or_directory
+
+[Documentation]
+Author = Your Name
+Version = Latest version of Freeseer that your plugin is compatible with
+Website = http://fosslc.org
+Description = Simple one-sentence plugin description</pre>
+</div>
+</li>
+<li><p class="first">Create the plugin Python file(s)</p>
+</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li>If you are creating a single-file plugin, create a Python module with the
+same name as your plugin info file:</li>
+</ul>
+<div class="highlight-none"><div class="highlight"><pre>plugin_name.freeseer-plugin
+plugin_name.py
+</pre></div>
+</div>
+<ul class="simple">
+<li>If you are creating a multi-file plugin, your Python modules should be
+separated from your plugin info file:</li>
+</ul>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Create a plugin directory with the same name as your plugin info file
+(minus the extension).</li>
+<li>In the new plugin directory, create the file <tt class="docutils literal"><span class="pre">__init__.py</span></tt> and write
+your plugin class inside it. Your class should extend one of the
+<tt class="docutils literal"><span class="pre">IBackendPlugin</span></tt> subclasses (e.g. <tt class="docutils literal"><span class="pre">IAudioInput</span></tt>). Don&#8217;t forget to
+override the class atribute <tt class="docutils literal"><span class="pre">name</span></tt> with your plugin&#8217;s name.</li>
+<li>Add other useful plugin code in other modules if necessary.  For example,
+if your plugin requires a GUI, create a module called <tt class="docutils literal"><span class="pre">widget.py</span></tt> inside
+your plugin&#8217;s directory and import it inside your plugin&#8217;s <tt class="docutils literal"><span class="pre">__init__.py</span></tt>
+module.</li>
+</ol>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="accessing-a-plugin">
+<h2>Accessing a Plugin<a class="headerlink" href="#accessing-a-plugin" title="Permalink to this headline">¶</a></h2>
+<p>Any modules that need to access the plugins will need to import Freeseer&#8217;s
+<tt class="docutils literal"><span class="pre">PluginManager</span></tt>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">freeseer.framework.plugin</span> <span class="kn">import</span> <span class="n">PluginManager</span>
+</pre></div>
+</div>
+<p>There are a number of ways to access the plugins via the <tt class="docutils literal"><span class="pre">PluginManager</span></tt>. You
+can iterate over all of the plugins (or all of the plugins in a given category)
+or you can access a specific plugin by its name.</p>
+<p>While Yapsy provides methods for accessing plugins (e.g. <tt class="docutils literal"><span class="pre">getAllPlugin()</span></tt>,
+<tt class="docutils literal"><span class="pre">getPluginsOfCategory()</span></tt>, and <tt class="docutils literal"><span class="pre">getPluginByName()</span></tt>), the recommended way to
+access the plugins is to use the accessor methods provided by Freeseer&#8217;s
+<tt class="docutils literal"><span class="pre">PluginManager</span></tt>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">get_plugin_by_name</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">category</span><span class="p">)</span>
+<span class="n">get_all_plugins</span><span class="p">()</span>
+<span class="n">get_plugins_of_category</span><span class="p">(</span><span class="n">category</span><span class="p">)</span>
+<span class="n">get_audioinput_plugins</span><span class="p">()</span>
+<span class="n">get_audiomixer_plugins</span><span class="p">()</span>
+<span class="n">get_videoinput_plugins</span><span class="p">()</span>
+<span class="n">get_videomixer_plugins</span><span class="p">()</span>
+<span class="n">get_importer_plugins</span><span class="p">()</span>
+<span class="n">get_output_plugins</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>When you call any of the above accessor methods, you receive a <tt class="docutils literal"><span class="pre">PluginInfo</span></tt>
+object or a list of <tt class="docutils literal"><span class="pre">PluginInfo</span></tt> objects. Such an object contains meta
+information about the plugin. Each <tt class="docutils literal"><span class="pre">PluginInfo</span></tt> object has an attribute
+<tt class="docutils literal"><span class="pre">plugin_object</span></tt> which returns an instance of the plugin which you can then
+use.</p>
+<p>For example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">plugman</span> <span class="o">=</span> <span class="n">PluginManager</span><span class="p">(</span><span class="n">config_dir</span><span class="p">)</span>
+<span class="n">plugin_info</span> <span class="o">=</span> <span class="n">plugman</span><span class="o">.</span><span class="n">get_plugin_by_name</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">category</span><span class="p">)</span>
+<span class="n">plugin</span> <span class="o">=</span> <span class="n">plugin_info</span><span class="o">.</span><span class="n">plugin_object</span>
+<span class="n">plugin</span><span class="o">.</span><span class="n">do_something</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>As another example, here&#8217;s a snippet of the Freeseer codebase where a class uses
+a plugin. It does so by creating an instance of the PluginManager and then calls the
+plugin by name, using the <tt class="docutils literal"><span class="pre">plugin_object</span></tt> attribute to access the plugin object:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">freeseer.framework.plugin</span> <span class="kn">import</span> <span class="n">PluginManager</span>
+<span class="o">...</span>
+
+<span class="k">class</span> <span class="nc">QtDBConnector</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">config_dir</span><span class="p">,</span> <span class="o">...</span><span class="p">):</span>
+        <span class="o">...</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">plugman</span> <span class="o">=</span> <span class="n">PluginManager</span><span class="p">(</span><span class="n">config_dir</span><span class="p">)</span>
+        <span class="o">...</span>
+
+    <span class="o">...</span>
+
+    <span class="k">def</span> <span class="nf">add_talks_from_rss</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">feed_url</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Adds talks from an RSS feed.&quot;&quot;&quot;</span>
+        <span class="n">plugin</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">plugman</span><span class="o">.</span><span class="n">get_plugin_by_name</span><span class="p">(</span><span class="s">&quot;Rss FeedParser&quot;</span><span class="p">,</span> <span class="s">&quot;Importer&quot;</span><span class="p">)</span>
+        <span class="n">feedparser</span> <span class="o">=</span> <span class="n">plugin</span><span class="o">.</span><span class="n">plugin_object</span>
+        <span class="n">presentations</span> <span class="o">=</span> <span class="n">feedparser</span><span class="o">.</span><span class="n">get_presentations</span><span class="p">(</span><span class="n">feed_url</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">presentations</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">presentation</span> <span class="ow">in</span> <span class="n">presentations</span><span class="p">:</span>
+                <span class="n">talk</span> <span class="o">=</span> <span class="n">Presentation</span><span class="p">(</span><span class="n">presentation</span><span class="p">[</span><span class="s">&quot;Title&quot;</span><span class="p">],</span>
+                                    <span class="n">presentation</span><span class="p">[</span><span class="s">&quot;Speaker&quot;</span><span class="p">],</span>
+                                    <span class="n">presentation</span><span class="p">[</span><span class="s">&quot;Abstract&quot;</span><span class="p">],</span>  <span class="c"># Description</span>
+                                    <span class="n">presentation</span><span class="p">[</span><span class="s">&quot;Level&quot;</span><span class="p">],</span>
+                                    <span class="n">presentation</span><span class="p">[</span><span class="s">&quot;Event&quot;</span><span class="p">],</span>
+                                    <span class="n">presentation</span><span class="p">[</span><span class="s">&quot;Room&quot;</span><span class="p">],</span>
+                                    <span class="n">presentation</span><span class="p">[</span><span class="s">&quot;Time&quot;</span><span class="p">])</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">insert_presentation</span><span class="p">(</span><span class="n">talk</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">log</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">&quot;RSS: No data found&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="rubric">Footnotes</p>
+<table class="docutils footnote" frame="void" id="f1" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>The plugins are detected through Python, so all directories leading
+to plugins should have an <tt class="docutils literal"><span class="pre">__init__.py</span></tt> file in them.</td></tr>
+</tbody>
+</table>
 </div>
 </div>
 
@@ -83,6 +306,16 @@
             <p class="logo"><a href="../../index.html">
               <img class="logo" src="../../_static/freeseer_logo.png" alt="Logo"/>
             </a></p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Plugin Framework</a><ul>
+<li><a class="reference internal" href="#plugin-system-setup">Plugin System Setup</a></li>
+<li><a class="reference internal" href="#creating-a-plugin">Creating a Plugin</a></li>
+<li><a class="reference internal" href="#accessing-a-plugin">Accessing a Plugin</a></li>
+</ul>
+</li>
+</ul>
+
   <h4>Previous topic</h4>
   <p class="topless"><a href="testing.html"
                         title="previous chapter">Testing</a></p>
