@@ -176,14 +176,27 @@ project</em></a>.</p>
 </div>
 <div class="section" id="running-freeseer">
 <h2>Running Freeseer<a class="headerlink" href="#running-freeseer" title="Permalink to this headline">¶</a></h2>
-<p>Once you&#8217;ve installed the dependencies, you can run the various Freeseer tools:</p>
-<div class="highlight-python"><pre>$ freeseer-record  # Recording tool
-$ freeseer-config  # Configuration tool
-$ freeseer-talkeditor  # Talk-list editor</pre>
+<p>Once you&#8217;ve installed Freeseer, you can run the various tools:</p>
+<div class="highlight-python"><pre>$ freeseer         # Recording UI (default when no arguments supplied)
+$ freeseer record  # Recording UI
+$ freeseer talk    # Talk Editor UI
+$ freeseer config  # Configuration UI</pre>
+</div>
+<p>You can view usage with the <tt class="docutils literal"><span class="pre">-h</span></tt> or <tt class="docutils literal"><span class="pre">--help</span></tt> option:</p>
+<div class="highlight-python"><pre>$ freeseer -h         # General usage
+$ freeseer record -h  # Recording usage
+$ freeseer talk -h    # Talk Editor usage
+$ freeseer config -h  # Config usage</pre>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">For development purposes, these scripts are in the <tt class="docutils literal"><span class="pre">src/</span></tt> directory of the repo.</p>
+<p>If you&#8217;re going to hack on Freeseer, you&#8217;ll need to run it from source.
+Go into the <tt class="docutils literal"><span class="pre">src/</span></tt> directory and run it like:</p>
+<div class="last highlight-python"><pre>$ python -m freeseer
+$ python -m freeseer record
+$ python -m freeseer talk
+$ python -m freeseer config</pre>
+</div>
 </div>
 </div>
 <div class="section" id="issue-tracker">
