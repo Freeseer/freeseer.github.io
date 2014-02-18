@@ -117,21 +117,22 @@ Freeseer, skip to the next section: <a class="reference internal" href="#install
 <li>sqlite3</li>
 <li>gstreamer0.10-python (pygst)</li>
 <li>PyQT development tools</li>
-<li>python-xlib (Required for video preview plugin)</li>
 </ul>
-<div class="section" id="ubuntu-linux">
-<h4>Ubuntu Linux<a class="headerlink" href="#ubuntu-linux" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-python"><pre>$ sudo apt-get install -y build-essential git python-gst0.10 \
-  python-gst0.10-dev gstreamer0.10-plugins-good qt4-qmake pyqt4-dev-tools \
-  libqt4-dev libqt4-sql libqt4-sql-sqlite python-qt4 python-qt4-dev \
-  python-qt4-sql python2.7-dev python-feedparser python-pip python-xlib
-$ sudo pip install yapsy</pre>
+<div class="section" id="debian-and-ubuntu-linux">
+<h4>Debian and Ubuntu Linux<a class="headerlink" href="#debian-and-ubuntu-linux" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-python"><pre>$ sudo apt-get update
+$ sudo apt-get install -y build-essential git wget python2.7-dev python-gst0.10 python-gst0.10-dev \
+  qt4-qmake python-qt4 python-qt4-dev python-qt4-sql pyqt4-dev-tools libqt4-dev libqt4-sql libqt4-sql-sqlite \
+  gstreamer0.10-plugins-good gstreamer0.10-plugins-base gstreamer0.10-pulseaudio gstreamer0.10-alsa</pre>
 </div>
 </div>
 <div class="section" id="fedora-linux">
 <h4>Fedora Linux<a class="headerlink" href="#fedora-linux" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-python"><pre>$ sudo yum install git PyQt4-devel python-feedparser.noarch python-setuptools
-$ sudo pip install yapsy</pre>
+<div class="highlight-python"><pre>$ sudo yum install git PyQt4-devel</pre>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">This list may be incomplete. Please <a class="reference internal" href="contact.html"><em>let us know</em></a> if you notice any missing packages.</p>
 </div>
 </div>
 <div class="section" id="windows">
@@ -161,10 +162,24 @@ $ sudo pip install yapsy</pre>
 </dl>
 </li>
 </ul>
-<p>Install the following packages with pip:</p>
-<div class="highlight-python"><pre>pip install feedparser
-pip install pygtk
-pip install yapsy</pre>
+</div>
+<div class="section" id="pypi-packages">
+<h4>PyPI Packages<a class="headerlink" href="#pypi-packages" title="Permalink to this headline">¶</a></h4>
+<p>You&#8217;ll need to get some packages from the <a class="reference external" href="https://pypi.python.org/pypi">Python Package Index</a> (PyPI).</p>
+<p>You can <a class="reference external" href="http://www.pip-installer.org/en/latest/installing.html">install pip</a>
+by securely downloading <a class="reference external" href="https://raw.github.com/pypa/pip/master/contrib/get-pip.py">get-pip.py</a>
+and executing it with administrator access:</p>
+<div class="highlight-python"><pre>wget -q https://raw.github.com/pypa/pip/master/contrib/get-pip.py -O- | sudo python</pre>
+</div>
+<p>If you already have pip, first upgrade it to the latest version:</p>
+<div class="highlight-python"><pre>pip install --upgrade pip</pre>
+</div>
+<p>Install the remaining packages. You may need administrator access.</p>
+<p>On Linux:</p>
+<div class="highlight-python"><pre>pip install -Ur dev_requirements.txt</pre>
+</div>
+<p>On Windows:</p>
+<div class="highlight-python"><pre>pip install -Ur windows_requirements.txt</pre>
 </div>
 </div>
 </div>
@@ -263,9 +278,10 @@ frame grabber.</td></tr>
 </li>
 <li><a class="reference internal" href="#installing-freeseer-for-development">Installing Freeseer for Development</a><ul>
 <li><a class="reference internal" href="#dependencies">Dependencies</a><ul>
-<li><a class="reference internal" href="#ubuntu-linux">Ubuntu Linux</a></li>
+<li><a class="reference internal" href="#debian-and-ubuntu-linux">Debian and Ubuntu Linux</a></li>
 <li><a class="reference internal" href="#fedora-linux">Fedora Linux</a></li>
 <li><a class="reference internal" href="#windows">Windows</a></li>
+<li><a class="reference internal" href="#pypi-packages">PyPI Packages</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#get-the-source-code">Get the source code</a></li>

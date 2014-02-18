@@ -65,26 +65,25 @@ Dependencies
 + sqlite3
 + gstreamer0.10-python (pygst)
 + PyQT development tools
-+ python-xlib (Required for video preview plugin)
 
-Ubuntu Linux
-^^^^^^^^^^^^
+Debian and Ubuntu Linux
+^^^^^^^^^^^^^^^^^^^^^^^
 
 ::
 
-    $ sudo apt-get install -y build-essential git python-gst0.10 \
-      python-gst0.10-dev gstreamer0.10-plugins-good qt4-qmake pyqt4-dev-tools \
-      libqt4-dev libqt4-sql libqt4-sql-sqlite python-qt4 python-qt4-dev \
-      python-qt4-sql python2.7-dev python-feedparser python-pip python-xlib
-    $ sudo pip install yapsy
+    $ sudo apt-get update
+    $ sudo apt-get install -y build-essential git wget python2.7-dev python-gst0.10 python-gst0.10-dev \
+      qt4-qmake python-qt4 python-qt4-dev python-qt4-sql pyqt4-dev-tools libqt4-dev libqt4-sql libqt4-sql-sqlite \
+      gstreamer0.10-plugins-good gstreamer0.10-plugins-base gstreamer0.10-pulseaudio gstreamer0.10-alsa
 
 Fedora Linux
 ^^^^^^^^^^^^
 
 ::
 
-    $ sudo yum install git PyQt4-devel python-feedparser.noarch python-setuptools
-    $ sudo pip install yapsy
+    $ sudo yum install git PyQt4-devel
+
+.. warning:: This list may be incomplete. Please :doc:`let us know </contact>` if you notice any missing packages.
 
 Windows
 ^^^^^^^
@@ -100,11 +99,30 @@ Windows
     * Windows 32-bit packages are recommended because pygtk-all-in-one package does not have a 64-bit installer.
     * Add the following paths to your PATH variable : ```C:\Python27;C:\Python27\Lib\site-packages\PyQt4\bin```
 
-Install the following packages with pip::
+PyPI Packages
+^^^^^^^^^^^^^
 
-    pip install feedparser
-    pip install pygtk
-    pip install yapsy
+You'll need to get some packages from the `Python Package Index <https://pypi.python.org/pypi>`_ (PyPI).
+
+You can `install pip <http://www.pip-installer.org/en/latest/installing.html>`_
+by securely downloading `get-pip.py <https://raw.github.com/pypa/pip/master/contrib/get-pip.py>`_
+and executing it with administrator access::
+
+    wget -q https://raw.github.com/pypa/pip/master/contrib/get-pip.py -O- | sudo python
+
+If you already have pip, first upgrade it to the latest version::
+
+    pip install --upgrade pip
+
+Install the remaining packages. You may need administrator access.
+
+On Linux::
+
+    pip install -Ur dev_requirements.txt
+
+On Windows::
+
+    pip install -Ur windows_requirements.txt
 
 
 Get the source code
